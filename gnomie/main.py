@@ -36,14 +36,16 @@ Builder.load_string('''
         #height: root.theheight
         #height: root.theheight
         StackLayout:
-            padding: root.width * 0.02, root.height * 0.02
-            spacing: root.width * 0.02, root.height * 0.02            
+            #padding: root.width * 0.02, root.height * 0.02
+            #spacing: root.width * 0.02, root.height * 0.02            
             size_hint_y: None
             size_hint_x: 1            
             do_scroll_x: False
             do_scroll_y: True
             id: container
 ''')
+
+#https://stackoverflow.com/questions/18670687/how-i-can-adjust-variable-height-text-property-kivy
 
 #https://www.psy-world.com/madrs.htm
 
@@ -52,6 +54,7 @@ class MADRS(Screen):
 	global thedate
 	global markedlines
 	theheight=NumericProperty()
+	summa = int()
 	def __init__ (self,**kwargs):
 		super(MADRS,self).__init__(**kwargs)
 		global mngr
@@ -145,6 +148,7 @@ class MADRS(Screen):
 			step=1,
 			min=-1,
 			max=7,
+			value=-1,
 			id="a1slider",
 			orientation='vertical',
 			height= 7*(a1text00.height)
@@ -244,6 +248,7 @@ class MADRS(Screen):
 			step=1,
 			min=-1,
 			max=7,
+			value=-1,
 			id="a2slider",
 			orientation='vertical',
 			height= 7*(a2text00.height)
@@ -342,6 +347,7 @@ class MADRS(Screen):
 			step=1,
 			min=-1,
 			max=7,
+			value=-1,
 			id="a3slider",
 			orientation='vertical',
 			height= 7*(a3text00.height)
@@ -439,6 +445,7 @@ class MADRS(Screen):
 			step=1,
 			min=-1,
 			max=7,
+			value=-1,
 			id="a4slider",
 			orientation='vertical',
 			height= 7*(a4text00.height)
@@ -536,6 +543,7 @@ class MADRS(Screen):
 			step=1,
 			min=-1,
 			max=7,
+			value=-1,
 			id="a5slider",
 			orientation='vertical',
 			height= 7*(a5text00.height)
@@ -634,6 +642,7 @@ class MADRS(Screen):
 			step=1,
 			min=-1,
 			max=7,
+			value=-1,
 			id="a6slider",
 			orientation='vertical',
 			height= 7*(a6text00.height)
@@ -731,6 +740,7 @@ class MADRS(Screen):
 			step=1,
 			min=-1,
 			max=7,
+			value=-1,
 			id="a7slider",
 			orientation='vertical',
 			height= 7*(a7text00.height)
@@ -827,6 +837,7 @@ class MADRS(Screen):
 			step=1,
 			min=-1,
 			max=7,
+			value=-1,
 			id="a8slider",
 			orientation='vertical',
 			height= 7*(a8text00.height)
@@ -924,6 +935,7 @@ class MADRS(Screen):
 			step=1,
 			min=-1,
 			max=7,
+			value=-1,
 			id="a9slider",
 			orientation='vertical',
 			height= 7*(a9text00.height)
@@ -1021,6 +1033,7 @@ class MADRS(Screen):
 			step=1,
 			min=-1,
 			max=7,
+			value=-1,
 			id="a10slider",
 			orientation='vertical',
 			height= 7*(a10text00.height)
@@ -1031,7 +1044,9 @@ class MADRS(Screen):
 		
 
 ###
-		self.theheight=a1slider.height+q1.height+a2slider.height+q2.height+a3slider.height+q3.height+a4slider.height+q4.height+a5slider.height+q5.height+a6slider.height+q6.height+a7slider.height+q7.height+a8slider.height+q8.height+a9slider.height+q9.height+a10slider.height+q10.height
+
+		submit_btn=Button(text='Submit',size_hint=(1, None), pos_hint= {'x': 0, 'y': .9}, orientation='vertical', height='1dp')
+		self.theheight=a1slider.height+(.5 * q1.height)+q1.height+(.5 * q1.height)+a2slider.height+(.5 * q1.height)+q2.height+(.5 * q1.height)+a3slider.height+(.5 * q1.height)+q3.height+(.5 * q1.height)+a4slider.height+(.5 * q1.height)+q4.height+(.5 * q1.height)+a5slider.height+(.5 * q1.height)+q5.height+(.5 * q1.height)+a6slider.height+(.5 * q1.height)+q6.height+(.5 * q1.height)+a7slider.height+(.5 * q1.height)+q7.height+(.5 * q1.height)+a8slider.height+(.5 * q1.height)+q8.height+(.5 * q1.height)+a9slider.height+(.5 * q1.height)+q9.height+(.5 * q1.height)+a10slider.height+(.5 * q1.height)+q10.height+(.5 * q1.height)+submit_btn.height
 		self.container.height=self.theheight
 		
 		self.container.add_widget(q1) 		
@@ -1073,8 +1088,23 @@ class MADRS(Screen):
 		self.container.add_widget(q10) 		
 		self.container.add_widget(a10slider)
 		self.container.add_widget(a10text)
+		
+		
 
+		
+		submit_btn.bind(on_release=lambda submit_btn: self.Submit(a1slider.value , a2slider.value , a3slider.value , a4slider.value , a5slider.value , a6slider.value , a7slider.value , a8slider.value , a9slider.value , a10slider.value))
+		self.container.add_widget(submit_btn)
 
+	def Submit(self, a1slider , a2slider , a3slider , a4slider , a5slider , a6slider , a7slider , a8slider , a9slider , a10slider):
+		self.summa=a1slider + a2slider + a3slider + a4slider + a5slider + a6slider + a7slider + a8slider + a9slider + a10slider
+		if a1slider < 0 or a2slider < 0 or a3slider < 0 or a4slider < 0 or a5slider < 0 or a6slider < 0 or a7slider < 0 or a8slider < 0 or a9slider < 0 or a10slider < 0 :
+			box = BoxLayout(orientation='vertical')
+			popup1 = Popup(title='', content=box, size_hint=(None, None), size=(400, 400))
+			box.add_widget(Label(text='Please fill in all the forms'))
+			store_btn = Button(text='OK')
+			store_btn.bind(on_press = lambda *args: popup1.dismiss())
+			box.add_widget(store_btn)
+			popup1.open()
 
 class gnomieApp(App):
 	global mngr
