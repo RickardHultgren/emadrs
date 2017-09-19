@@ -1096,7 +1096,6 @@ class MADRS(Screen):
 		self.container.add_widget(submit_btn)
 
 	def Submit(self, a1slider , a2slider , a3slider , a4slider , a5slider , a6slider , a7slider , a8slider , a9slider , a10slider):
-		self.summa=a1slider + a2slider + a3slider + a4slider + a5slider + a6slider + a7slider + a8slider + a9slider + a10slider
 		if a1slider < 0 or a2slider < 0 or a3slider < 0 or a4slider < 0 or a5slider < 0 or a6slider < 0 or a7slider < 0 or a8slider < 0 or a9slider < 0 or a10slider < 0 :
 			box = BoxLayout(orientation='vertical')
 			popup1 = Popup(title='', content=box, size_hint=(None, None), size=(400, 400))
@@ -1105,7 +1104,22 @@ class MADRS(Screen):
 			store_btn.bind(on_press = lambda *args: popup1.dismiss())
 			box.add_widget(store_btn)
 			popup1.open()
-
+		else:
+			self.summa=a1slider + a2slider + a3slider + a4slider + a5slider + a6slider + a7slider + a8slider + a9slider + a10slider
+			box = BoxLayout(orientation='vertical')
+			popup1 = Popup(title='', content=box, size_hint=(None, None), size=(400, 400))
+			if self.summa < 13:
+				box.add_widget(Label(text='Your MADRS-score:%s\nYou probalbly do not have a depression.'%(self.summa)))
+			if self.summa => 13 and self.summa =< 19:
+				box.add_widget(Label(text='Your MADRS-score:%s\nYou probalbly have a mild depression.'%(self.summa)))
+			if self.summa => 20 and self.summa =< 34:
+				box.add_widget(Label(text='Your MADRS-score:%s\nYou probalbly have a moderate depression.'%(self.summa)))
+			if self.summa => 35 :
+				box.add_widget(Label(text='Your MADRS-score:%s\nYou probalbly have a svere depression.'%(self.summa)))
+			store_btn = Button(text='OK')
+			store_btn.bind(on_press = lambda *args: popup1.dismiss())
+			box.add_widget(store_btn)
+			popup1.open()
 class gnomieApp(App):
 	global mngr
 	def build(self):
