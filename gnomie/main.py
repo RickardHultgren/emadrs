@@ -1092,7 +1092,7 @@ class MADRS(Screen):
 		
 
 		
-		submit_btn.bind(on_release=lambda submit_btn: self.Submit(a1slider.value , a2slider.value , a3slider.value , a4slider.value , a5slider.value , a6slider.value , a7slider.value , a8slider.value , a9slider.value , a10slider.value))
+		submit_btn.bind(on_press=lambda submit_btn: self.Submit(a1slider.value , a2slider.value , a3slider.value , a4slider.value , a5slider.value , a6slider.value , a7slider.value , a8slider.value , a9slider.value , a10slider.value))
 		self.container.add_widget(submit_btn)
 
 	def Submit(self, a1slider , a2slider , a3slider , a4slider , a5slider , a6slider , a7slider , a8slider , a9slider , a10slider):
@@ -1109,13 +1109,13 @@ class MADRS(Screen):
 			box = BoxLayout(orientation='vertical')
 			popup1 = Popup(title='', content=box, size_hint=(None, None), size=(400, 400))
 			if self.summa < 13:
-				box.add_widget(Label(text='Your MADRS-score:%s\nYou probalbly do not have a depression.'%(self.summa)))
-			if self.summa => 13 and self.summa =< 19:
-				box.add_widget(Label(text='Your MADRS-score:%s\nYou probalbly have a mild depression.'%(self.summa)))
-			if self.summa => 20 and self.summa =< 34:
-				box.add_widget(Label(text='Your MADRS-score:%s\nYou probalbly have a moderate depression.'%(self.summa)))
-			if self.summa => 35 :
-				box.add_widget(Label(text='Your MADRS-score:%s\nYou probalbly have a svere depression.'%(self.summa)))
+				box.add_widget(Label(text='Your MADRS-score: %s\nYou probalbly do not have a depression.'%(self.summa)))
+			if self.summa >= 13 and self.summa <= 19:
+				box.add_widget(Label(text='Your MADRS-score: %s\nYou probalbly have a mild depression.'%(self.summa)))
+			if self.summa >= 20 and self.summa <= 34:
+				box.add_widget(Label(text='Your MADRS-score: %s\nYou probalbly have a moderate depression.'%(self.summa)))
+			if self.summa >= 35 :
+				box.add_widget(Label(text='Your MADRS-score: %s\nYou probalbly have a svere depression.'%(self.summa)))
 			store_btn = Button(text='OK')
 			store_btn.bind(on_press = lambda *args: popup1.dismiss())
 			box.add_widget(store_btn)
