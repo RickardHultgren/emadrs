@@ -17,18 +17,52 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.slider import Slider
-#from kivy.clock import Clock
+from kivy.graphics import Color, Rectangle
+from kivy.storage.jsonstore import JsonStore
+try:
+	from plyer import email
+except:
+	pass
+from kivy.utils import platform
 
-from kivy.core.window import Window
+#https://blog.kivy.org/2014/01/building-a-background-application-on-android-with-kivy/
 
+gnomedata = JsonStore('hello.json')
+#MADRSdata = JsonStore('hello.json')
+settingdata = JsonStore('hello.json')
+
+settingdata.put('email', address='')
+
+    
+    
 
 mngr = 'madrs'
 thedate = thedate=datetime.now().strftime("%Y%m%d")
 
 Builder.load_string('''
-<MADRS>:
-	name: 'madrs'
+<Gnome>:
+	name: 'gnome'
 	container:container
+    ActionBar:
+        background_color:0,191,255,0.5
+        pos_hint: {'top':1}
+        ActionView:
+            use_separator: True
+            ActionPrevious:
+                title: 'gnomie'
+                with_previous: False
+            ActionGroup:
+                mode: 'spinner'
+                text: 'Menu'
+                ActionButton:
+                    text: 'gnomie'
+                    on_release: app.root.current = 'gnome'
+                ActionButton:
+                    text: 'MADRS-S'
+                    on_release: app.root.current = 'madrs'
+                ActionButton:
+                    text: 'Settings'
+                    on_release: root.settings()
     ScrollView:
         pos_hint: {'x': 0, 'y': 0}
         size_hint: 1,.85
@@ -36,8 +70,46 @@ Builder.load_string('''
         #height: root.theheight
         #height: root.theheight
         StackLayout:
-            #padding: root.width * 0.02, root.height * 0.02
-            #spacing: root.width * 0.02, root.height * 0.02            
+            padding: root.width * 0.02, root.height * 0.02
+            spacing: root.width * 0.02, root.height * 0.02            
+            size_hint_y: None
+            size_hint_x: 1            
+            do_scroll_x: False
+            do_scroll_y: True
+            id: container
+
+<MADRS>:
+	name: 'madrs'
+	container:container
+    ActionBar:
+        background_color:0,191,255,0.5
+        pos_hint: {'top':1}
+        ActionView:
+            use_separator: True
+            ActionPrevious:
+                title: 'gnomie'
+                with_previous: False
+            ActionGroup:
+                mode: 'spinner'
+                text: 'Menu'
+                ActionButton:
+                    text: 'gnomie'
+                    on_release: app.root.current = 'gnome'
+                ActionButton:
+                    text: 'MADRS-S'
+                    on_release: app.root.current = 'madrs'
+                ActionButton:
+                    text: 'Settings'
+                    on_release: root.settings()
+    ScrollView:
+        pos_hint: {'x': 0, 'y': 0}
+        size_hint: 1,.85
+        size: self.size
+        #height: root.theheight
+        #height: root.theheight
+        StackLayout:
+            padding: root.width * 0.02, root.height * 0.02
+            spacing: root.width * 0.02, root.height * 0.02            
             size_hint_y: None
             size_hint_x: 1            
             do_scroll_x: False
@@ -45,12 +117,24 @@ Builder.load_string('''
             id: container
 ''')
 
-#https://stackoverflow.com/questions/18670687/how-i-can-adjust-variable-height-text-property-kivy
+class Gnome(Screen):
+	global mngr
+	mngr='gnome'
+	global thedate
+	global markedlines
+	theheight=NumericProperty()
+	summa = int()
+	def __init__ (self,**kwargs):
+		super(Gnome,self).__init__(**kwargs)
+		global mngr
+		global markedlines
+		global thedate
+###
 
-#https://www.psy-world.com/madrs.htm
-
+	
 class MADRS(Screen):
 	global mngr
+	mngr='madrs'
 	global thedate
 	global markedlines
 	theheight=NumericProperty()
@@ -72,7 +156,7 @@ class MADRS(Screen):
 		
 
 		a1text00 = Label(
-			text='Nothing marked                                       ',
+			text='Nothing marked                                             ',
 			size_hint_y=None)
 		a1text00.bind(width=lambda s, w:
 			   s.setter('text_size')(s, (.5*self.width, None)))
@@ -172,7 +256,7 @@ class MADRS(Screen):
 		
 
 		a2text00 = Label(
-			text='Nothing marked                                       ',
+			text='Nothing marked                                             ',
 			size_hint_y=None)
 		a2text00.bind(width=lambda s, w:
 			   s.setter('text_size')(s, (.5*self.width, None)))
@@ -271,7 +355,7 @@ class MADRS(Screen):
 		
 
 		a3text00 = Label(
-			text='Nothing marked                                       ',
+			text='Nothing marked                                             ',
 			size_hint_y=None)
 		a3text00.bind(width=lambda s, w:
 			   s.setter('text_size')(s, (.5*self.width, None)))
@@ -369,7 +453,7 @@ class MADRS(Screen):
 		
 
 		a4text00 = Label(
-			text='Nothing marked                                       ',
+			text='Nothing marked                                             ',
 			size_hint_y=None)
 		a4text00.bind(width=lambda s, w:
 			   s.setter('text_size')(s, (.5*self.width, None)))
@@ -467,7 +551,7 @@ class MADRS(Screen):
 		
 
 		a5text00 = Label(
-			text='Nothing marked                                       ',
+			text='Nothing marked                                             ',
 			size_hint_y=None)
 		a5text00.bind(width=lambda s, w:
 			   s.setter('text_size')(s, (.5*self.width, None)))
@@ -566,7 +650,7 @@ class MADRS(Screen):
 		
 
 		a6text00 = Label(
-			text='Nothing marked                                       ',
+			text='Nothing marked                                             ',
 			size_hint_y=None)
 		a6text00.bind(width=lambda s, w:
 			   s.setter('text_size')(s, (.5*self.width, None)))
@@ -664,7 +748,7 @@ class MADRS(Screen):
 		
 
 		a7text00 = Label(
-			text='Nothing marked                                       ',
+			text='Nothing marked                                             ',
 			size_hint_y=None)
 		a7text00.bind(width=lambda s, w:
 			   s.setter('text_size')(s, (.5*self.width, None)))
@@ -761,7 +845,7 @@ class MADRS(Screen):
 		
 
 		a8text00 = Label(
-			text='Nothing marked                                       ',
+			text='Nothing marked                                             ',
 			size_hint_y=None)
 		a8text00.bind(width=lambda s, w:
 			   s.setter('text_size')(s, (.5*self.width, None)))
@@ -859,7 +943,7 @@ class MADRS(Screen):
 		
 
 		a9text00 = Label(
-			text='Nothing marked                                       ',
+			text='Nothing marked                                             ',
 			size_hint_y=None)
 		a9text00.bind(width=lambda s, w:
 			   s.setter('text_size')(s, (.5*self.width, None)))
@@ -957,7 +1041,7 @@ class MADRS(Screen):
 		
 
 		a10text00 = Label(
-			text='Nothing marked                                       ',
+			text='Nothing marked                                             ',
 			size_hint_y=None)
 		a10text00.bind(width=lambda s, w:
 			   s.setter('text_size')(s, (.5*self.width, None)))
@@ -1036,7 +1120,7 @@ class MADRS(Screen):
 			value=-1,
 			id="a10slider",
 			orientation='vertical',
-			height= 7*(a10text00.height)
+			height= 6.5*(a10text00.height)
 			
 		)
 		a10text.bind(height=a10text.setter('self.minimum_height'))
@@ -1045,7 +1129,7 @@ class MADRS(Screen):
 
 ###
 
-		submit_btn=Button(text='Submit',size_hint=(1, None), pos_hint= {'x': 0, 'y': .9}, orientation='vertical', height='1dp')
+		submit_btn=Button(text='Submit',size_hint=(1, None), orientation='vertical', height=.66*q1.height, width=self.width)
 		self.theheight=a1slider.height+(.5 * q1.height)+q1.height+(.5 * q1.height)+a2slider.height+(.5 * q1.height)+q2.height+(.5 * q1.height)+a3slider.height+(.5 * q1.height)+q3.height+(.5 * q1.height)+a4slider.height+(.5 * q1.height)+q4.height+(.5 * q1.height)+a5slider.height+(.5 * q1.height)+q5.height+(.5 * q1.height)+a6slider.height+(.5 * q1.height)+q6.height+(.5 * q1.height)+a7slider.height+(.5 * q1.height)+q7.height+(.5 * q1.height)+a8slider.height+(.5 * q1.height)+q8.height+(.5 * q1.height)+a9slider.height+(.5 * q1.height)+q9.height+(.5 * q1.height)+a10slider.height+(.5 * q1.height)+q10.height+(.5 * q1.height)+submit_btn.height
 		self.container.height=self.theheight
 		
@@ -1088,10 +1172,9 @@ class MADRS(Screen):
 		self.container.add_widget(q10) 		
 		self.container.add_widget(a10slider)
 		self.container.add_widget(a10text)
-		
-		
-
-		
+				
+		self.container.add_widget(BoxLayout(orientation='vertical', height=.66*q1.height,width=self.width, size_hint=(None, None)))
+			
 		submit_btn.bind(on_press=lambda submit_btn: self.Submit(a1slider.value , a2slider.value , a3slider.value , a4slider.value , a5slider.value , a6slider.value , a7slider.value , a8slider.value , a9slider.value , a10slider.value))
 		self.container.add_widget(submit_btn)
 
@@ -1109,25 +1192,73 @@ class MADRS(Screen):
 			box = BoxLayout(orientation='vertical')
 			popup1 = Popup(title='', content=box, size_hint=(None, None), size=(400, 400))
 			if self.summa < 13:
-				box.add_widget(Label(text='Your MADRS-score: %s\nYou probalbly do not have a depression.'%(self.summa)))
+				themessage='Your MADRS-score: %s\nYou probalbly do not have a depression.'%(self.summa)
 			if self.summa >= 13 and self.summa <= 19:
-				box.add_widget(Label(text='Your MADRS-score: %s\nYou probalbly have a mild depression.'%(self.summa)))
+				themessage='Your MADRS-score: %s\nYou probalbly have a mild depression.'%(self.summa)
 			if self.summa >= 20 and self.summa <= 34:
-				box.add_widget(Label(text='Your MADRS-score: %s\nYou probalbly have a moderate depression.'%(self.summa)))
+				themessage='Your MADRS-score: %s\nYou probalbly have a moderate depression.'%(self.summa)
 			if self.summa >= 35 :
-				box.add_widget(Label(text='Your MADRS-score: %s\nYou probalbly have a svere depression.'%(self.summa)))
+				themessage='Your MADRS-score: %s\nYou probalbly have a severe depression.'%(self.summa)
+			box.add_widget(Label(text=themessage))	
 			store_btn = Button(text='OK')
-			store_btn.bind(on_press = lambda *args: popup1.dismiss())
+			store_btn.bind(on_press = lambda store_btn: self.send_mail(themessage, popup1))
 			box.add_widget(store_btn)
 			popup1.open()
+
+	def settings(self):
+		box = BoxLayout(orientation='vertical')
+		popup1 = Popup(title='Settings', content=box, size_hint=(None, None), size=(400, 400))
+		box.add_widget(Label(text='Email-setting:'))
+		inpt=TextInput(text=settingdata.get('email')['address'], multiline=False)
+		box.add_widget(inpt)
+		store_btn = Button(text='OK')
+		store_btn.bind(on_release=(lambda store_btn: self.change_mail(inpt.text, popup1)))
+		#store_btn.bind(on_press = lambda *args: popup1.dismiss())
+		box.add_widget(store_btn)
+		popup1.open()
+
+	
+	def change_mail(self, theaddress, popup1):
+		popup1.dismiss()
+		settingdata.put('email', address=theaddress)
+
+	def send_mail(self, themessage, popup1):
+		popup1.dismiss()
+		box = BoxLayout(orientation='vertical')
+		try:
+			passemail.send(recipient=StringProperty(settingdata.get('email')['address']),
+				subject=StringProperty('MADRS-S'),
+				text=StringProperty('%s'%themessage),
+				create_chooser=BooleanProperty())
+			box.add_widget(Label(text='Email sent to:%s'%settingdata.get('email')['address']))
+		except:
+			box.add_widget(Label(text='Couldn\'t send e-mail'))
+		
+		popup2 = Popup(title='Settings', content=box, size_hint=(None, None), size=(400, 400))
+		store_btn = Button(text='OK')
+		store_btn.bind(on_press = lambda *args: popup2.dismiss())
+		box.add_widget(store_btn)
+		popup2.open()
+
+		
 class gnomieApp(App):
 	global mngr
 	def build(self):
+		if platform == 'android':
+			from android import AndroidService
+			service = AndroidService('my pong service', 'running')
+			service.start('service started')
+			self.service = service		
 		global mngr
 		the_screenmanager = ScreenManager()
 		madrs = MADRS(name='madrs')
+		gnome = Gnome(name='gnome')
 		#Clock.schedule_interval(homescreen.update, 0.25)
 		if mngr=='madrs':
+			the_screenmanager.add_widget(madrs)
+			the_screenmanager.add_widget(gnome)
+		if mngr=='gnome':
+			the_screenmanager.add_widget(gnome)
 			the_screenmanager.add_widget(madrs)
 		return the_screenmanager
 		
