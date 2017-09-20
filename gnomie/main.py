@@ -23,7 +23,10 @@ try:
 	from plyer import email
 except:
 	pass
+from kivy.clock import Clock
 from kivy.utils import platform
+from kivy.lib import osc
+#platform = platform()
 
 #https://blog.kivy.org/2014/01/building-a-background-application-on-android-with-kivy/
 
@@ -129,6 +132,21 @@ class Gnome(Screen):
 		global mngr
 		global markedlines
 		global thedate
+
+	def settings(self):
+		box = BoxLayout(orientation='vertical')
+		popup1 = Popup(title='Settings', content=box, size_hint=(None, None), size=(400, 400))
+		box.add_widget(Label(text='Email-setting:'))
+		inpt=TextInput(text=settingdata.get('email')['address'], multiline=False)
+		box.add_widget(inpt)
+		store_btn = Button(text='OK')
+		store_btn.bind(on_release=(lambda store_btn: self.change_mail(inpt.text, popup1)))
+		#store_btn.bind(on_press = lambda *args: popup1.dismiss())
+		box.add_widget(store_btn)
+		popup1.open()
+
+
+
 ###
 
 	
@@ -1244,16 +1262,18 @@ class MADRS(Screen):
 class gnomieApp(App):
 	global mngr
 	def build(self):
-		if platform == 'android':
-			from android import AndroidService
-			service = AndroidService('my pong service', 'running')
-			service.start('service started')
-			self.service = service		
+		self.service = None
+		self.start_service()
+		osc.init()
+		oscid = osc.listen(port=3002)
+		#osc.bind(oscid, self.display_message, '/message')
+		#osc.bind(oscid, self.date, '/date')
+		#https://github.com/tshirtman/kivy_service_osc/blob/master/main.py
+		Clock.schedule_interval(lambda *x: osc.readQueue(oscid), 0)
 		global mngr
 		the_screenmanager = ScreenManager()
 		madrs = MADRS(name='madrs')
 		gnome = Gnome(name='gnome')
-		#Clock.schedule_interval(homescreen.update, 0.25)
 		if mngr=='madrs':
 			the_screenmanager.add_widget(madrs)
 			the_screenmanager.add_widget(gnome)
@@ -1261,7 +1281,26 @@ class gnomieApp(App):
 			the_screenmanager.add_widget(gnome)
 			the_screenmanager.add_widget(madrs)
 		return the_screenmanager
+
+	def start_service(self):
+		if platform == 'android':
+			from android import AndroidService
+			service = AndroidService('gnomie', 'gnomie is running')
+			service.start('service started')
+			self.service = service
 		
+
+	def stop_service(self):
+		if self.service:
+			self.service.stop()
+			self.service = None
+
+	def send(self, *args):
+		osc.sendMsg('/ping', [], port=3000)
+
+
+
+
 if __name__ == '__main__':
 	gnomieApp().run()
 
