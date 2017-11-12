@@ -1,14 +1,13 @@
 import kivy
-from datetime import datetime, timedelta
 
-kivy.require('1.7.2') # replace with your current kivy version !
+kivy.require('1.10.0') # replace with your current kivy version !
 
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
-from kivy.properties import ObjectProperty, StringProperty, NumericProperty
+from kivy.properties import BooleanProperty, ObjectProperty, StringProperty, NumericProperty
 from kivy.uix.button import Button
 from kivy.uix.gridlayout import GridLayout
-from functools import partial
+#from functools import partial
 from kivy.lang import Builder
 from kivy.uix.popup import Popup
 from kivy.uix.textinput import TextInput
@@ -25,62 +24,19 @@ except:
 	pass
 from kivy.clock import Clock
 from kivy.utils import platform
-from kivy.lib import osc
-#platform = platform()
-
+#from kivy.lib import osc
 #https://blog.kivy.org/2014/01/building-a-background-application-on-android-with-kivy/
 
 gnomedata = JsonStore('hello.json')
-#MADRSdata = JsonStore('hello.json')
 settingdata = JsonStore('hello.json')
 
-settingdata.put('email', address='')
+#settingdata.put('email', address='')
 
-    
-    
+#https://github.com/kivy/plyer/blob/master/examples/email/main.py    
 
 mngr = 'madrs'
-thedate = thedate=datetime.now().strftime("%Y%m%d")
 
 Builder.load_string('''
-<Gnome>:
-	name: 'gnome'
-	container:container
-    ActionBar:
-        background_color:0,191,255,0.5
-        pos_hint: {'top':1}
-        ActionView:
-            use_separator: True
-            ActionPrevious:
-                title: 'gnomie'
-                with_previous: False
-            ActionGroup:
-                mode: 'spinner'
-                text: 'Menu'
-                ActionButton:
-                    text: 'gnomie'
-                    on_release: app.root.current = 'gnome'
-                ActionButton:
-                    text: 'MADRS-S'
-                    on_release: app.root.current = 'madrs'
-                ActionButton:
-                    text: 'Settings'
-                    on_release: root.settings()
-    ScrollView:
-        pos_hint: {'x': 0, 'y': 0}
-        size_hint: 1,.85
-        size: self.size
-        #height: root.theheight
-        #height: root.theheight
-        StackLayout:
-            padding: root.width * 0.02, root.height * 0.02
-            spacing: root.width * 0.02, root.height * 0.02            
-            size_hint_y: None
-            size_hint_x: 1            
-            do_scroll_x: False
-            do_scroll_y: True
-            id: container
-
 <MADRS>:
 	name: 'madrs'
 	container:container
@@ -90,17 +46,11 @@ Builder.load_string('''
         ActionView:
             use_separator: True
             ActionPrevious:
-                title: 'gnomie'
+                title: 'eMADRS'
                 with_previous: False
             ActionGroup:
                 mode: 'spinner'
                 text: 'Menu'
-                ActionButton:
-                    text: 'gnomie'
-                    on_release: app.root.current = 'gnome'
-                ActionButton:
-                    text: 'MADRS-S'
-                    on_release: app.root.current = 'madrs'
                 ActionButton:
                     text: 'Settings'
                     on_release: root.settings()
@@ -120,40 +70,11 @@ Builder.load_string('''
             id: container
 ''')
 
-class Gnome(Screen):
-	global mngr
-	mngr='gnome'
-	global thedate
-	global markedlines
-	theheight=NumericProperty()
-	summa = int()
-	def __init__ (self,**kwargs):
-		super(Gnome,self).__init__(**kwargs)
-		global mngr
-		global markedlines
-		global thedate
-
-	def settings(self):
-		box = BoxLayout(orientation='vertical')
-		popup1 = Popup(title='Settings', content=box, size_hint=(None, None), size=(400, 400))
-		box.add_widget(Label(text='Email-setting:'))
-		inpt=TextInput(text=settingdata.get('email')['address'], multiline=False)
-		box.add_widget(inpt)
-		store_btn = Button(text='OK')
-		store_btn.bind(on_release=(lambda store_btn: self.change_mail(inpt.text, popup1)))
-		#store_btn.bind(on_press = lambda *args: popup1.dismiss())
-		box.add_widget(store_btn)
-		popup1.open()
-
-
-
-###
-
 	
 class MADRS(Screen):
 	global mngr
 	mngr='madrs'
-	global thedate
+	#global thedate
 	global markedlines
 	theheight=NumericProperty()
 	summa = int()
@@ -161,7 +82,7 @@ class MADRS(Screen):
 		super(MADRS,self).__init__(**kwargs)
 		global mngr
 		global markedlines
-		global thedate
+		
 ###
 
 		q1 = Label(
@@ -1244,10 +1165,11 @@ class MADRS(Screen):
 		popup1.dismiss()
 		box = BoxLayout(orientation='vertical')
 		try:
-			passemail.send(recipient=StringProperty(settingdata.get('email')['address']),
+			email.send(recipient=StringProperty(str(settingdata.get('email')['address'])),
 				subject=StringProperty('MADRS-S'),
-				text=StringProperty('%s'%themessage),
-				create_chooser=BooleanProperty())
+				text=StringProperty('%s'%themessage)
+				#,create_chooser=BooleanProperty()
+				)
 			box.add_widget(Label(text='Email sent to:%s'%settingdata.get('email')['address']))
 		except:
 			box.add_widget(Label(text='Couldn\'t send e-mail'))
@@ -1258,48 +1180,49 @@ class MADRS(Screen):
 		box.add_widget(store_btn)
 		popup2.open()
 
-		
+
+#activityport = 3001
+#serviceport = 3000
+
+#def some_api_callback(*args):
+#	if not screen_manager.current == 'madrs':
+#		global mngr
+#		the_screenmanager = ScreenManager()
+#		madrs = MADRS(name='madrs')
+#		if mngr=='madrs':
+#			the_screenmanager.add_widget(madrs)
+
+#		return the_screenmanager
+	
+
+
 class gnomieApp(App):
 	global mngr
+#	if mngr == 'exit':
+#		stop_service()
+		
 	def build(self):
-		self.service = None
-		self.start_service()
-		osc.init()
-		oscid = osc.listen(port=3002)
-		#osc.bind(oscid, self.display_message, '/message')
-		#osc.bind(oscid, self.date, '/date')
-		#https://github.com/tshirtman/kivy_service_osc/blob/master/main.py
-		Clock.schedule_interval(lambda *x: osc.readQueue(oscid), 0)
+
 		global mngr
 		the_screenmanager = ScreenManager()
 		madrs = MADRS(name='madrs')
-		gnome = Gnome(name='gnome')
 		if mngr=='madrs':
 			the_screenmanager.add_widget(madrs)
-			the_screenmanager.add_widget(gnome)
-		if mngr=='gnome':
-			the_screenmanager.add_widget(gnome)
-			the_screenmanager.add_widget(madrs)
-		return the_screenmanager
 
-	def start_service(self):
+
 		if platform == 'android':
 			from android import AndroidService
-			service = AndroidService('gnomie', 'gnomie is running')
+			service = AndroidService('my pong service', 'running')
 			service.start('service started')
 			self.service = service
-		
-
-	def stop_service(self):
-		if self.service:
-			self.service.stop()
-			self.service = None
-
-	def send(self, *args):
-		osc.sendMsg('/ping', [], port=3000)
+			#osc.init()
+		#oscid = osc.listen(ipAddr='127.0.0.1', port=activityport)
+		#osc.bind(oscid, some_api_callback, '/some_api')
+		#Clock.schedule_interval(lambda *x: osc.readQueue(oscid), 0)
 
 
 
+		return the_screenmanager
 
 if __name__ == '__main__':
 	gnomieApp().run()
