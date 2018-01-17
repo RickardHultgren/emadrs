@@ -18,7 +18,7 @@ from kivy.uix.label import Label
 #from kivy.clock import Clock
 from kivy.uix.progressbar import ProgressBar
 from kivy.storage.jsonstore import JsonStore
-#from kivy.uix.gridlayout import GridLayout
+from kivy.uix.gridlayout import GridLayout
 from functools import partial
 #from kivy.uix.treeview import TreeView, TreeViewNode
 #from kivy.uix.treeview import TreeViewLabel
@@ -34,11 +34,13 @@ statusdict = dict()
 
 Builder.load_string('''
 <MainScreen>:
+    name: 'mainscreen'
+    #bigbox:bigbox
+    #qbox:qbox
     GridLayout:
         row_default_height:root.height / 8
 		cols:1
         orientation: 'vertical'
-        name: 'mainscreen'
         ActionBar:
             width:root.width
             height:root.height / 8
@@ -55,40 +57,35 @@ Builder.load_string('''
                     ActionButton:
                         text: 'Settings'
                         on_release: root.settings()
-    
+        
         ScrollView:
-            width:root.width
-            height:root.height / 4
-            hint_size:1,1/4
-            pos_hint: {'x': 0, 'y': 0}
-            size_hint: 1,.85
+            #height:root.height / 4         
+            #pos_hint: {'x': 0, 'y': 0}
+            #size_hint: 1,.85
             size: self.size
-            #height: root.theheight
-            #height: root.theheight
             StackLayout:
+                padding: root.width * 0.02, root.height * 0.02
+                spacing: root.width * 0.02, root.height * 0.02
+                size_hint_y: None
+                size_hint_x: 1        
+                do_scroll_x: False
+                do_scroll_y: True
+                id: qbox    
+        ScrollView:
+            #height:root.height / 4  
+            #pos_hint: {'x': 0, 'y': 0}
+            #size_hint: 1,.85
+            size: self.size                  
+            StackLayout:
+                cols:2
+                row_default_width:root.width/2
                 padding: root.width * 0.02, root.height * 0.02
                 spacing: root.width * 0.02, root.height * 0.02            
                 size_hint_y: None
                 size_hint_x: 1            
                 do_scroll_x: False
                 do_scroll_y: True
-                id: qbox    
-        GridLayout:
-            orientation: 'vertical'
-            cols:1
-            width:root.width
-            height:root.height / 4            
-            ScrollView:
-                size: self.size
-                #height: root.theheight
-                BoxLayout:
-                    padding: root.width * 0.02, root.height * 0.02
-                    spacing: root.width * 0.02, root.height * 0.02            
-                    size_hint_y: 1
-                    size_hint_x: None            
-                    do_scroll_x: True
-                    do_scroll_y: False
-                    id: container
+                id: bigbox
         BoxLayout:
             width:root.width
             height:root.height / 8
@@ -112,10 +109,96 @@ class MainScreen(Screen):
 	"Frågan gäller hur du ser på din egen framtid och hur du uppfattar ditt eget värde. Tänk efter i vilken utsträckning du ger dig självförebråelser, om du plågas av skuldkänslor, och om du oroat dig oftare än vanligt för t ex din ekonomi eller din hälsa.",
 	"Frågan gäller din livslust, och om du känt livsleda. Har du tankar på självmord, och i så fall, i vilken utsträckning upplever du detta som en verklig utväg?"
 	)
+	dscrptn=(
+		(
+			"0 Jag kan känna mig glad eller ledsen, allt efter omständigheterna.",
+			"1",
+			"2 Jag känner mig nedstämd för det mesta, men ibland kan det kännas lättare.",
+			"3",
+			"4 Jag känner mig genomgående nedstämd och dyster. Jag kan inte glädja mig åt sådant som vanligen skulle göra mig glad.",
+			"5",
+			"6 Jag är totalt nedstämd och olycklig att jag inte kan tänka mig värre."
+		),
+		(
+			"0 Jag känner mig mestadels lugn.",
+			"1",
+			"2 Ibland har jag obehagliga känslor av inre oro.",
+			"3",
+			"4 Jag har ofta en känsla av inre oro som ibland kan bli mycket stark, och som jag måste anstränga mig för att bemästra.",
+			"5",
+			"6 Jag har fruktansvärda, långvariga eller outhärdliga ångestkänslor.",
+		),
+		(
+			"0 Jag sover lugnt och bra och tillräckligt länge för mina behov. Jag har inga särskilda svårigheter att somna.",
+			"1",
+			"2 Jag har vissa sömnsvårigheter. Ibland har jag svårt att somna eller sover ytligare eller oroligare än vanligt.",
+			"3",
+			"4 Jag sover minst två timmar mindre per natt än normalt. Jag vaknar ofta under natten, även om jag inte blir störd.",
+			"5",
+			"6 Jag sover mycket dåligt, inte mer än 2-3 timmar per natt."
+		),
+		(
+			"0 Min aptit är som den brukar vara.",
+			"1",
+			"2 Min aptit är sämre än vanligt.",
+			"3",
+			"4 Jag har påtagligt svårt att koncentrera mig på sådant som normalt inte kräver någon ansträngning från min sida (t ex läsning eller samtal med andra människor).",
+			"5",
+			"6 Jag kan överhuvudtaget inte koncentrera mig på någonting."
+		),
+		(
+			"0 Jag har inga koncentrationssvårigheter.",
+			"1",
+			"2 Jag har tillfälligt svårt att hålla tankarna samlade på sådant som normalt skulle fånga min uppmärksamhet (t ex läsning eller TV-tittande).",
+			"3",
+			"4 Jag har påtagligt svårt att koncentrera mig på sådant som normalt inte kräver någon ansträngning från min sida (t ex läsning eller samtal med andra människor).",
+			"5",
+			"6 Jag kan överhuvudtaget inte koncentrera mig på någonting."
+		),
+		(
+			"0 Jag har inga svårigheter med att ta itu med nya uppgifter.",
+			"1",
+			"2 När jag skall ta itu med något, tar det emot på ett sätt som inte är normalt för mig.",
+			"3",
+			"4 Det krävs en stor ansträngning för mig att ens komma igång med enkla uppgifter som jag vanligtvis utför mer eller mindre rutinmässigt.",
+			"5",
+			"6 Jag kan inte förmå mig att ta itu med de enklaste vardagssysslor."
+		),
+		(
+			"0 Jag är intresserad av omvärlden och engagerar mig i den, och det bereder mig både nöje och glädje.",
+			"1",
+			"2 Jag känner mindre starkt för sådant som brukar engagera mig. Jag har svårare än vanligt att bli glad eller svårare att bli arg när det är befogat.",
+			"3",
+			"4 Jag kan inte känna något intresse för omvärlden, inte ens för vänner och bekanta.",
+			"5",
+			"6 Jag har slutat uppleva några känslor. Jag känner mig smärtsamt likgiltig även för mina närmaste."
+		),
+		(
+			"0 Jag ser på framtiden med tillförsikt. Jag är på det hela taget ganska nöjd med mig själv.",
+			"1",
+			"2 Ibland klandrar jag mig själv och tycker att jag är mindre värd än andra.",
+			"3",
+			"4 Jag grubblar ofta över mina misslyckanden och känner mig mindervärdig eller dålig, även om andra tycker annorlunda.",
+			"5",
+			"6 Jag ser allting i svart och kan inte se någon ljusning. Det känns som om jag var en alltigenom dålig människa, och som om jag aldrig skulle kunna få någon förlåtelse för det hemska jag gjort."
+		),
+		(
+			"0 Jag har normal aptit på livet.",
+			"1",
+			"2 Livet känns inte särskilt meningsfullt men jag önskar ändå inte att jag vore död.",
+			"3",
+			"4 Jag tycker ofta det vore bättre att vara död, och trots att jag egentligen inte önskar det, kan självmord ibland kännas som en möjlig utväg.",
+			"5",
+			"6 Jag är egentligen övertygad om att min enda utväg är att dö, och jag tänker mycket på hur jag bäst skall gå tillväga för att ta mitt eget liv."
+		)
+	)
 	bttns=(0,0,0,0,0,0,0,0,0)
-
+	bigheight=NumericProperty()
+	qheight=NumericProperty()
 	def __init__ (self,**kwargs):
 		super (MainScreen, self).__init__(**kwargs)
+		#self.ids.bigbox.bind(minimum_height=self.ids.bigbox.setter('height'))
+		#self.ids.qbox.bind(minimum_height=self.ids.qbox.setter('height'))
 		self.planupdate()
 		
 	def planupdate(self):
@@ -123,23 +206,10 @@ class MainScreen(Screen):
 		try:
 			self.ids.checkboxes.clear_widgets()
 			self.ids.qbox.clear_widgets()
-			self.ids.container.clear_widgets()
+			self.ids.bigbox.clear_widgets()
+			#self.bigbox.clear_widgets()
 		except:
 			pass
-		bigbox=BoxLayout(
-			orientation='vertical'
-			)
-		for i in range(0,6):
-			smallbox=BoxLayout(orientation='horizontal')
-			chckbx=CheckBox(
-				padding=( '100pt', '100pt')
-				
-				)		
-			#???
-			smallbox.add_widget(chckbx)
-			smallbox.add_widget(Label(text='???'))
-			bigbox.add_widget(smallbox)
-		self.ids.container.add_widget(bigbox)
 		for i in range(0,9):
 			newq=Label(size_hint_y=None, size_hint_x=1)
 			newq.bind(width=lambda s, w:
@@ -156,13 +226,34 @@ class MainScreen(Screen):
 			if i==self.nownr:
 				newbox.background_color= (1.0, 0.0, 0.0, 1.0)
 				newq.text=str(self.qlist[i])
+				self.qheight=newq.height
+				self.ids.qbox.height=self.qheight				
 				self.ids.qbox.add_widget(newq)
+
+				for j in range(0,5):
+					chckbx=CheckBox(
+						padding=( '100pt', '100pt')
+						
+						)		
+					#???
+					smallbox=BoxLayout(width=self.width)
+					#self.ids.bigbox.add_widget(chckbx)
+					smallbox.add_widget(chckbx)
+					
+					smallLabel=Label(text=self.dscrptn[i][j],size_hint_y=None, size_hint_x=1)
+					smallLabel.bind(width=lambda s, w:
+						s.setter('text_size')(s, (self.width, None)))
+					smallLabel.bind(height=smallLabel.setter('texture_size[1]'))
+					smallLabel.bind(height=smallLabel.setter('self.minimum_height'))			
+					#self.ids.bigbox.add_widget(smallLabel)
+					smallbox.add_widget(smallLabel)
+					self.ids.bigbox.add_widget(smallbox)
+					#self.bigbox.add_widget(smallbox)
+					self.bigheight=self.bigheight+smallbox.height
 			newbox.bind(on_release=partial(self.chng_bttn, i))
 			self.ids.checkboxes.add_widget(newbox)
-		#	exec('Gvar%s.loop=True'%(str(i)))
-		#	exec('Cvar%s.loop=True'%(str(i)))
-		#	exec('Dvar%s.loop=True'%(str(i)))
-		pass
+		self.ids.bigbox.height=self.bigheight
+		
 	def chng_bttn(self,number, *args):
 		self.nownr=number
 		self.planupdate()
