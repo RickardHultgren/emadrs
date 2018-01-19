@@ -34,6 +34,8 @@ version = 1
 # (list) Application requirements
 # comma seperated e.g. requirements = sqlite3,kivy
 requirements = plyer,kivy
+###
+#requirements = python3crystax,plyer,kivy
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -78,7 +80,8 @@ fullscreen = 1
 #android.private_storage = True
 
 # (str) Android NDK directory (if empty, it will be automatically downloaded.)
-#android.ndk_path =
+###
+#android.ndk_path = ~/.buildozer/android/platform/android-ndk-r9c
 
 # (str) Android SDK directory (if empty, it will be automatically downloaded.)
 #android.sdk_path =
