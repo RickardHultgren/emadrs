@@ -14,6 +14,7 @@ from kivy.lang import Builder
 from kivy.uix.popup import Popup
 from kivy.uix.textinput import TextInput
 from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.stacklayout import StackLayout
 from kivy.uix.label import Label
 #from kivy.clock import Clock
 from kivy.uix.progressbar import ProgressBar
@@ -29,14 +30,10 @@ except:
 	pass
 #Declaration of global variables:
 settingdata = JsonStore('settingdata.json')
-statuscpy = dict(JsonStore('statusdata.json'))
-statusdict = dict()
 
 Builder.load_string('''
 <MainScreen>:
     name: 'mainscreen'
-    #bigbox:bigbox
-    #qbox:qbox
     GridLayout:
         row_default_height:root.height / 8
 		cols:1
@@ -72,12 +69,9 @@ Builder.load_string('''
                 do_scroll_y: True
                 id: qbox    
         ScrollView:
-            #height:root.height / 4  
-            #pos_hint: {'x': 0, 'y': 0}
-            #size_hint: 1,.85
-            size: self.size                  
-            StackLayout:
-                cols:2
+            size_hint: 1,.85
+            GridLayout:
+                cols:1
                 row_default_width:root.width/2
                 padding: root.width * 0.02, root.height * 0.02
                 spacing: root.width * 0.02, root.height * 0.02            
@@ -192,22 +186,20 @@ class MainScreen(Screen):
 			"6 Jag är egentligen övertygad om att min enda utväg är att dö, och jag tänker mycket på hur jag bäst skall gå tillväga för att ta mitt eget liv."
 		)
 	)
+	valuetuple=(0,0,0,0,0,0,0,0,0)
 	bttns=(0,0,0,0,0,0,0,0,0)
 	bigheight=NumericProperty()
 	qheight=NumericProperty()
 	def __init__ (self,**kwargs):
 		super (MainScreen, self).__init__(**kwargs)
-		#self.ids.bigbox.bind(minimum_height=self.ids.bigbox.setter('height'))
-		#self.ids.qbox.bind(minimum_height=self.ids.qbox.setter('height'))
 		self.planupdate()
 		
 	def planupdate(self):
-		#for the buttons:
+		self.bigheight=0
 		try:
 			self.ids.checkboxes.clear_widgets()
 			self.ids.qbox.clear_widgets()
 			self.ids.bigbox.clear_widgets()
-			#self.bigbox.clear_widgets()
 		except:
 			pass
 		for i in range(0,9):
@@ -230,29 +222,44 @@ class MainScreen(Screen):
 				self.ids.qbox.height=self.qheight				
 				self.ids.qbox.add_widget(newq)
 
-				for j in range(0,5):
-					chckbx=CheckBox(
-						padding=( '100pt', '100pt')
-						
-						)		
-					#???
-					smallbox=BoxLayout(width=self.width)
-					#self.ids.bigbox.add_widget(chckbx)
-					smallbox.add_widget(chckbx)
-					
-					smallLabel=Label(text=self.dscrptn[i][j],size_hint_y=None, size_hint_x=1)
+				for j in range(0,7):
+					chckbx=CheckBox(id="chckbx%set%s"%(str(i),str(j)), size_hint=(.0, 0.15))
+					chckbx.group=('group%s'%str(i))
+					chckbx.bind(on_press=partial(self.radiobox, i, j))
+					if self.valuetuple[i] == j and self.bttns[i]==1:
+						chckbx.active = True
+					else:
+						chckbx.active = False
+					chckbx.id=('group%s'%str(i))
+					smallLabel=Label(text=self.dscrptn[i][j],size_hint=(.7,None))
 					smallLabel.bind(width=lambda s, w:
-						s.setter('text_size')(s, (self.width, None)))
+						s.setter('text_size')(s, (self.width-100, None)))
 					smallLabel.bind(height=smallLabel.setter('texture_size[1]'))
-					smallLabel.bind(height=smallLabel.setter('self.minimum_height'))			
-					#self.ids.bigbox.add_widget(smallLabel)
+					smallLabel.bind(height=smallLabel.setter('self.minimum_height'))
+					smallbox=GridLayout(cols=2,size_x=self.width, padding=0, spacing=100)
+					smallbox.add_widget(chckbx)
 					smallbox.add_widget(smallLabel)
 					self.ids.bigbox.add_widget(smallbox)
-					#self.bigbox.add_widget(smallbox)
-					self.bigheight=self.bigheight+smallbox.height
+					self.bigheight=self.bigheight+smallLabel.height
+		
 			newbox.bind(on_release=partial(self.chng_bttn, i))
 			self.ids.checkboxes.add_widget(newbox)
+					
 		self.ids.bigbox.height=self.bigheight
+		sendbox=Button(id="sendbox", text=">>")
+		sendbox.bind(on_release=(lambda store_btn: self.Submit()))
+		self.ids.checkboxes.add_widget(sendbox)
+		
+	def	radiobox(self, i,j,*args):
+		listV = list(self.valuetuple)
+		listV[i]=j
+		listB = list(self.bttns)
+		listB[i]=1
+		#self.ids.eval("chckbx%set%s"%(str(i),str(j)))
+		#myCheckBox1.value = True
+		self.valuetuple = tuple(listV)
+		self.bttns = tuple(listB)
+		self.planupdate()
 		
 	def chng_bttn(self,number, *args):
 		self.nownr=number
@@ -261,7 +268,10 @@ class MainScreen(Screen):
 		box = BoxLayout(orientation='vertical')
 		popup1 = Popup(title='Settings', content=box, size_hint=(None, None), size=(400, 400))
 		box.add_widget(Label(text='Email-setting:'))
-		inpt=TextInput(text=settingdata.get('email')['address'], multiline=False)
+		try:
+			inpt=TextInput(text=settingdata.get('email')['address'], multiline=False)
+		except:
+			inpt=TextInput(text="")
 		box.add_widget(inpt)
 		store_btn = Button(text='OK')
 		store_btn.bind(on_release=(lambda store_btn: self.change_mail(inpt.text, popup1)))
@@ -269,6 +279,36 @@ class MainScreen(Screen):
 		box.add_widget(store_btn)
 		popup1.open()
 
+	def Submit(self):
+		filled = 1
+		for i in self.bttns :
+			if i == 0 :
+				filled=0
+		if filled==0 :
+			box = BoxLayout(orientation='vertical')
+			popup1 = Popup(title='', content=box, size_hint=(None, None), size=(400, 400))
+			box.add_widget(Label(text='Please fill in all the forms'))
+			store_btn = Button(text='OK')
+			store_btn.bind(on_press = lambda *args: popup1.dismiss())
+			box.add_widget(store_btn)
+			popup1.open()
+		else:
+			summa=sum(self.valuetuple)
+			box = BoxLayout(orientation='vertical')
+			popup1 = Popup(title='', content=box, size_hint=(None, None), size=(400, 400))
+			if summa < 13:
+				themessage='Your MADRS-score: %s\nYou probalbly do not have a depression.'%(summa)
+			if summa >= 13 and summa <= 19:
+				themessage='Your MADRS-score: %s\nYou probalbly have a mild depression.'%(summa)
+			if summa >= 20 and summa <= 34:
+				themessage='Your MADRS-score: %s\nYou probalbly have a moderate depression.'%(summa)
+			if summa >= 35 :
+				themessage='Your MADRS-score: %s\nYou probalbly have a severe depression.'%(summa)
+			box.add_widget(Label(text=themessage))	
+			store_btn = Button(text='OK')
+			store_btn.bind(on_press = lambda store_btn: self.send_mail(themessage, popup1))
+			box.add_widget(store_btn)
+			popup1.open()
 	
 	def change_mail(self, theaddress, popup1):
 		popup1.dismiss()
