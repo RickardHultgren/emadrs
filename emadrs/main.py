@@ -25,7 +25,7 @@ from functools import partial
 #from kivy.uix.treeview import TreeViewLabel
 #from kivy.uix.scrollview import ScrollView
 try:
-	from plyer import email
+	from plyer import sms
 except:
 	pass
 #Declaration of global variables:
@@ -318,14 +318,17 @@ class MainScreen(Screen):
 		popup1.dismiss()
 		box = BoxLayout(orientation='vertical')
 		try:
-			email.send(recipient=StringProperty(str(settingdata.get('email')['address'])),
-				subject=StringProperty('MADRS-S'),
-				text=StringProperty('%s'%themessage)
+			sms.send(recipient=StringProperty(str(settingdata.get('email')['address'])), message=('%s'%themessage))
+#			email.send(recipient=StringProperty(str(settingdata.get('email')['address'])),
+#				subject=StringProperty('MADRS-S'),
+#				text=StringProperty('%s'%themessage)
 				#,create_chooser=BooleanProperty()
-				)
-			box.add_widget(Label(text='Email sent to:%s'%settingdata.get('email')['address']))
+#				)
+			box.add_widget(Label(text='SMS sent to:%s'%settingdata.get('email')['address']))
+			#box.add_widget(Label(text='Email sent to:%s'%settingdata.get('email')['address']))
 		except:
-			box.add_widget(Label(text='Couldn\'t send e-mail'))
+			#box.add_widget(Label(text='Couldn\'t send e-mail'))
+			box.add_widget(Label(text='Couldn\'t send SMS'))
 		
 		popup2 = Popup(title='Settings', content=box, size_hint=(None, None), size=(400, 400))
 		store_btn = Button(text='OK')
