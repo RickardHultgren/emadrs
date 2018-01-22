@@ -177,23 +177,26 @@ class MainScreen(Screen):
 	valuetuple=(0,0,0,0,0,0,0,0,0)
 	bttns=(0,0,0,0,0,0,0,0,0)
 	bigheight=NumericProperty()
+	fontheight=18
+	linelen=30
 	def __init__ (self,**kwargs):
 		super (MainScreen, self).__init__(**kwargs)
 		self.planupdate()
 		
 	def planupdate(self):
 		self.bigheight=0
+		#self.linelen=self.ids.bigbox.width/sp(self.fontheight)
 		try:
 			self.ids.checkboxes.clear_widgets()
 			self.ids.bigbox.clear_widgets()
 		except:
 			pass
 		for i in range(0,9):
-			if 24*(len(self.qlist[i])/40) > 48 :
-				qheight=24*(len(self.qlist[i])/40)
+			if self.fontheight*(len(self.qlist[i])/self.linelen) > 3*self.fontheight :
+				qheight=2*self.fontheight+self.fontheight*(len(self.qlist[i])/self.linelen)
 			else:
-				qheight=48
-			newq=Label(size_hint_y=None, size_hint_x=1, size=(self.ids.bigbox.width, qheight))
+				qheight=fontheihgt
+			newq=Label(size_hint_y=None, size_hint_x=1, size=(self.ids.bigbox.width, "%ssp"%str(qheight)), font_size=self.fontheight)
 			newq.bind(width=lambda s, w:
 				   s.setter('text_size')(s, (self.width, None)))
 			newq.bind(height=newq.setter('texture_size[1]')) 
@@ -211,11 +214,11 @@ class MainScreen(Screen):
 				self.bigheight=self.bigheight+2*newq.height
 				self.ids.bigbox.add_widget(newq)
 				for j in range(0,7):
-					if 24*(len(self.dscrptn[i][j])/40) > 24 :
-						bttnheight=24*(len(self.dscrptn[i][j])/40)
+					if self.fontheight*(len(self.dscrptn[i][j])/self.linelen) > 3*self.fontheight :
+						bttnheight=2*self.fontheight+self.fontheight*(len(self.dscrptn[i][j])/self.linelen)
 					else:
-						bttnheight=24
-					smallLabel=Button(text="%s"%self.dscrptn[i][j],size_hint=(1,None), height=bttnheight)
+						bttnheight=3*self.fontheight
+					smallLabel=Button(text="%s"%self.dscrptn[i][j],size_hint=(1,None), height="%ssp"%str(bttnheight), font_size=self.fontheight)
 					smallLabel.bind(width=lambda s, w:
 						s.setter('text_size')(s, (self.width-100, None)))
 					smallLabel.bind(height=smallLabel.setter('texture_size[1]'))
