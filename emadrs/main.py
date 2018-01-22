@@ -177,7 +177,7 @@ class MainScreen(Screen):
 	valuetuple=(0,0,0,0,0,0,0,0,0)
 	bttns=(0,0,0,0,0,0,0,0,0)
 	bigheight=NumericProperty()
-	fontheight=18
+	fontheight=15
 	linelen=30
 	def __init__ (self,**kwargs):
 		super (MainScreen, self).__init__(**kwargs)
@@ -192,11 +192,11 @@ class MainScreen(Screen):
 		except:
 			pass
 		for i in range(0,9):
-			if self.fontheight*(len(self.qlist[i])/self.linelen) > 3*self.fontheight :
-				qheight=2*self.fontheight+self.fontheight*(len(self.qlist[i])/self.linelen)
+			if self.fontheight*(len(self.qlist[i])/self.linelen) > self.fontheight :
+				qheight=0*self.fontheight+self.fontheight*(len(self.qlist[i])/self.linelen)
 			else:
 				qheight=fontheihgt
-			newq=Label(size_hint_y=None, size_hint_x=1, size=(self.ids.bigbox.width, "%ssp"%str(qheight)), font_size=self.fontheight)
+			newq=Label(size_hint_y=None, size_hint_x=1, size=(self.ids.bigbox.width, "%ssp"%str(qheight)))#, font_size=self.fontheight)
 			newq.bind(width=lambda s, w:
 				   s.setter('text_size')(s, (self.width, None)))
 			newq.bind(height=newq.setter('texture_size[1]')) 
@@ -218,7 +218,7 @@ class MainScreen(Screen):
 						bttnheight=2*self.fontheight+self.fontheight*(len(self.dscrptn[i][j])/self.linelen)
 					else:
 						bttnheight=3*self.fontheight
-					smallLabel=Button(text="%s"%self.dscrptn[i][j],size_hint=(1,None), height="%ssp"%str(bttnheight), font_size=self.fontheight)
+					smallLabel=Button(text="%s"%self.dscrptn[i][j],size_hint=(1,None), height="%ssp"%str(bttnheight))#, font_size=self.fontheight)
 					smallLabel.bind(width=lambda s, w:
 						s.setter('text_size')(s, (self.width-100, None)))
 					smallLabel.bind(height=smallLabel.setter('texture_size[1]'))
