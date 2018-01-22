@@ -50,29 +50,17 @@ Builder.load_string('''
                     with_previous: False
                 ActionGroup:
                     mode: 'spinner'
-                    text: 'Menu'
+                    text: 'Meny'
                     ActionButton:
-                        text: 'Settings'
+                        text: 'SMS-nr'
                         on_release: root.settings()
-        
         ScrollView:
-            #height:root.height / 4         
-            #pos_hint: {'x': 0, 'y': 0}
-            #size_hint: 1,.85
             size: self.size
-            StackLayout:
-                padding: root.width * 0.02, root.height * 0.02
-                spacing: root.width * 0.02, root.height * 0.02
-                size_hint_y: None
-                size_hint_x: 1        
-                do_scroll_x: False
-                do_scroll_y: True
-                id: qbox    
-        ScrollView:
-            size_hint: 1,.85
             GridLayout:
                 cols:1
-                row_default_width:root.width/2
+                orientation:'vertical'
+                #height:self.minimum_height
+                #height:root.bigheight
                 padding: root.width * 0.02, root.height * 0.02
                 spacing: root.width * 0.02, root.height * 0.02            
                 size_hint_y: None
@@ -81,11 +69,11 @@ Builder.load_string('''
                 do_scroll_y: True
                 id: bigbox
         BoxLayout:
-            width:root.width
-            height:root.height / 8
+            #width:root.width
+            #height:root.height / 8
             orientation: 'horizontal'
-            size_hint: 1, 0.10
-            pos_hint: {'x': 0, 'y': 0}
+            size_hint: None,None
+            size:root.width, .1*root.height
             id:checkboxes
 ''')  
 
@@ -189,7 +177,6 @@ class MainScreen(Screen):
 	valuetuple=(0,0,0,0,0,0,0,0,0)
 	bttns=(0,0,0,0,0,0,0,0,0)
 	bigheight=NumericProperty()
-	qheight=NumericProperty()
 	def __init__ (self,**kwargs):
 		super (MainScreen, self).__init__(**kwargs)
 		self.planupdate()
@@ -198,16 +185,19 @@ class MainScreen(Screen):
 		self.bigheight=0
 		try:
 			self.ids.checkboxes.clear_widgets()
-			self.ids.qbox.clear_widgets()
 			self.ids.bigbox.clear_widgets()
 		except:
 			pass
 		for i in range(0,9):
-			newq=Label(size_hint_y=None, size_hint_x=1)
+			if 24*(len(self.qlist[i])/40) > 48 :
+				qheight=24*(len(self.qlist[i])/40)
+			else:
+				qheight=48
+			newq=Label(size_hint_y=None, size_hint_x=1, size=(self.ids.bigbox.width, qheight))
 			newq.bind(width=lambda s, w:
 				   s.setter('text_size')(s, (self.width, None)))
-			newq.bind(height=newq.setter('texture_size[1]'))
-			newq.bind(height=newq.setter('self.minimum_height'))			
+			newq.bind(height=newq.setter('texture_size[1]')) 
+			newq.bind(height=newq.setter('self.minimum_height'))	
 			newbox=Button(id="box%s"%str(i))
 			txt=''
 			if self.bttns[i]==1:
@@ -216,36 +206,33 @@ class MainScreen(Screen):
 				txt="O"
 			newbox.text=txt
 			if i==self.nownr:
-				newbox.background_color= (1.0, 0.0, 0.0, 1.0)
-				newq.text=str(self.qlist[i])
-				self.qheight=newq.height
-				self.ids.qbox.height=self.qheight				
-				self.ids.qbox.add_widget(newq)
-
+				newbox.background_color= (0.0, 1.0, 1.0, 1.0)
+				newq.text=str("%s"%self.qlist[i])
+				self.bigheight=self.bigheight+2*newq.height
+				self.ids.bigbox.add_widget(newq)
 				for j in range(0,7):
-					chckbx=CheckBox(id="chckbx%set%s"%(str(i),str(j)), size_hint=(.0, 0.15))
-					chckbx.group=('group%s'%str(i))
-					chckbx.bind(on_press=partial(self.radiobox, i, j))
-					if self.valuetuple[i] == j and self.bttns[i]==1:
-						chckbx.active = True
+					if 24*(len(self.dscrptn[i][j])/40) > 24 :
+						bttnheight=24*(len(self.dscrptn[i][j])/40)
 					else:
-						chckbx.active = False
-					chckbx.id=('group%s'%str(i))
-					smallLabel=Label(text=self.dscrptn[i][j],size_hint=(.7,None))
+						bttnheight=24
+					smallLabel=Button(text="%s"%self.dscrptn[i][j],size_hint=(1,None), height=bttnheight)
 					smallLabel.bind(width=lambda s, w:
 						s.setter('text_size')(s, (self.width-100, None)))
 					smallLabel.bind(height=smallLabel.setter('texture_size[1]'))
 					smallLabel.bind(height=smallLabel.setter('self.minimum_height'))
-					smallbox=GridLayout(cols=2,size_x=self.width, padding=0, spacing=100)
-					smallbox.add_widget(chckbx)
-					smallbox.add_widget(smallLabel)
-					self.ids.bigbox.add_widget(smallbox)
+					smallLabel.bind(on_press=partial(self.radiobox, i, j))
+					if self.valuetuple[i] == j and self.bttns[i]==1:
+						smallLabel.background_color = (0.0, 1.0, 1.0, 1.0)
+					else:
+						smallLabel.background_color = (1.0, 1.0, 1.0, 1.0)
+					self.ids.bigbox.add_widget(smallLabel)
 					self.bigheight=self.bigheight+smallLabel.height
 		
 			newbox.bind(on_release=partial(self.chng_bttn, i))
 			self.ids.checkboxes.add_widget(newbox)
-					
+		
 		self.ids.bigbox.height=self.bigheight
+				
 		sendbox=Button(id="sendbox", text=">>")
 		sendbox.bind(on_release=(lambda store_btn: self.Submit()))
 		self.ids.checkboxes.add_widget(sendbox)
@@ -266,8 +253,8 @@ class MainScreen(Screen):
 		self.planupdate()
 	def settings(self):
 		box = BoxLayout(orientation='vertical')
-		popup1 = Popup(title='Settings', content=box, size_hint=(None, None), size=(400, 400))
-		box.add_widget(Label(text='Email-setting:'))
+		popup1 = Popup(title='SMS-nr', content=box, size_hint=(.75, .75))
+		box.add_widget(Label(text='SMS-mottagarens nummer:'))
 		try:
 			inpt=TextInput(text=settingdata.get('email')['address'], multiline=False)
 		except:
@@ -286,8 +273,8 @@ class MainScreen(Screen):
 				filled=0
 		if filled==0 :
 			box = BoxLayout(orientation='vertical')
-			popup1 = Popup(title='', content=box, size_hint=(None, None), size=(400, 400))
-			box.add_widget(Label(text='Please fill in all the forms'))
+			popup1 = Popup(title='', content=box, size_hint=(.75, .75))
+			box.add_widget(Label(text='Var god och svara på alla frågor.'))
 			store_btn = Button(text='OK')
 			store_btn.bind(on_press = lambda *args: popup1.dismiss())
 			box.add_widget(store_btn)
@@ -295,15 +282,15 @@ class MainScreen(Screen):
 		else:
 			summa=sum(self.valuetuple)
 			box = BoxLayout(orientation='vertical')
-			popup1 = Popup(title='', content=box, size_hint=(None, None), size=(400, 400))
+			popup1 = Popup(title='', content=box, size_hint=(.75, .75))
 			if summa < 13:
-				themessage='Your MADRS-score: %s\nYou probalbly do not have a depression.'%(summa)
+				themessage='MADRS-S-score: %s\nIngen eller mycket lätt depression.'%(summa)
 			if summa >= 13 and summa <= 19:
-				themessage='Your MADRS-score: %s\nYou probalbly have a mild depression.'%(summa)
+				themessage='MADRS-S-score: %s\nLätt depression.'%(summa)
 			if summa >= 20 and summa <= 34:
-				themessage='Your MADRS-score: %s\nYou probalbly have a moderate depression.'%(summa)
+				themessage='Your MADRS-score: %s\nMåttlig depression.'%(summa)
 			if summa >= 35 :
-				themessage='Your MADRS-score: %s\nYou probalbly have a severe depression.'%(summa)
+				themessage='Your MADRS-score: %s\nSvår depression.'%(summa)
 			box.add_widget(Label(text=themessage))	
 			store_btn = Button(text='OK')
 			store_btn.bind(on_press = lambda store_btn: self.send_mail(themessage, popup1))
@@ -324,13 +311,13 @@ class MainScreen(Screen):
 #				text=StringProperty('%s'%themessage)
 				#,create_chooser=BooleanProperty()
 #				)
-			box.add_widget(Label(text='SMS sent to:%s'%settingdata.get('email')['address']))
+			box.add_widget(Label(text='SMS skickat till: %s'%settingdata.get('email')['address']))
 			#box.add_widget(Label(text='Email sent to:%s'%settingdata.get('email')['address']))
 		except:
 			#box.add_widget(Label(text='Couldn\'t send e-mail'))
-			box.add_widget(Label(text='Couldn\'t send SMS'))
+			box.add_widget(Label(text='Kunde inte skicka SMS'))
 		
-		popup2 = Popup(title='Settings', content=box, size_hint=(None, None), size=(400, 400))
+		popup2 = Popup(title='Settings', content=box, size_hint=(.75, .75))
 		store_btn = Button(text='OK')
 		store_btn.bind(on_press = lambda *args: popup2.dismiss())
 		box.add_widget(store_btn)
