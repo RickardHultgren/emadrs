@@ -7,7 +7,7 @@ title = emadrs
 package.name = emadrs
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.test
+package.domain = RickardVerner.Hultgren
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -29,7 +29,7 @@ source.include_exts = py,png,jpg,kv,atlas,json
 #version.filename = %(source.dir)s/main.py
 
 # (str) Application versioning (method 2)
-version = 1
+version = 1.1
 
 # (list) Application requirements
 # comma seperated e.g. requirements = sqlite3,kivy
@@ -48,7 +48,7 @@ requirements = plyer,kivy
 #presplash.filename = %(source.dir)s/data/presplash.png
 
 # (str) Icon of the application
-#icon.filename = %(source.dir)s/data/icon.png
+icon.filename = logo.png
 
 # (str) Supported orientation (one of landscape, portrait or all)
 orientation = landscape
