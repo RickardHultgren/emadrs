@@ -46,7 +46,8 @@ Builder.load_string('''
             ActionView:
                 use_separator: True
                 ActionPrevious:
-                    title: 'eMADRS'
+                    app_icon: 'emadrs.png'
+                    title: ''
                     with_previous: False
                 ActionGroup:
                     mode: 'spinner'
@@ -195,7 +196,7 @@ class MainScreen(Screen):
 			if self.fontheight*(len(self.qlist[i])/self.linelen) > self.fontheight :
 				qheight=0*self.fontheight+self.fontheight*(len(self.qlist[i])/self.linelen)
 			else:
-				qheight=fontheihgt
+				qheight=self.fontheight
 			newq=Label(size_hint_y=None, size_hint_x=1, size=(self.ids.bigbox.width, "%ssp"%str(qheight)))#, font_size=self.fontheight)
 			newq.bind(width=lambda s, w:
 				   s.setter('text_size')(s, (self.width, None)))
@@ -205,8 +206,10 @@ class MainScreen(Screen):
 			txt=''
 			if self.bttns[i]==1:
 				txt="Ø"
+				newbox.color=(1,1,1,1)
 			elif self.bttns[i]==0:
 				txt="O"
+				newbox.color=(0,0,0,1)
 			newbox.text=txt
 			if i==self.nownr:
 				newbox.background_color= (0.0, 1.0, 1.0, 1.0)
@@ -291,9 +294,9 @@ class MainScreen(Screen):
 			if summa >= 13 and summa <= 19:
 				themessage='MADRS-S-score: %s\nLätt depression.'%(summa)
 			if summa >= 20 and summa <= 34:
-				themessage='Your MADRS-score: %s\nMåttlig depression.'%(summa)
+				themessage='MADRS-S-score: %s\nMåttlig depression.'%(summa)
 			if summa >= 35 :
-				themessage='Your MADRS-score: %s\nSvår depression.'%(summa)
+				themessage='MADRS-S-score: %s\nSvår depression.'%(summa)
 			box.add_widget(Label(text=themessage))	
 			store_btn = Button(text='OK')
 			store_btn.bind(on_press = lambda store_btn: self.send_mail(themessage, popup1))
