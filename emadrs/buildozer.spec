@@ -29,7 +29,7 @@ source.include_exts = py,png,jpg,kv,atlas,json
 #version.filename = %(source.dir)s/main.py
 
 # (str) Application versioning (method 2)
-version = 1.1
+version = 1.2
 
 # (list) Application requirements
 # comma seperated e.g. requirements = sqlite3,kivy
@@ -63,7 +63,7 @@ fullscreen = 1
 
 # (list) Permissions
 #android.permissions = INTERNET
-android.permissions = android.permissions = SEND_SMS
+android.permissions = SEND_SMS
 
 # (int) Android API to use
 #android.api = 19
