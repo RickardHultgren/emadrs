@@ -285,16 +285,19 @@ class MainScreen(Screen):
 		
 	def settings(self):
 		box = BoxLayout(orientation='vertical')
-		popup1 = Popup(title='SMS-nr', content=box, size_hint=(.75, .75))
-		box.add_widget(Label(text='SMS-mottagarens nummer:'))
+		popup1 = Popup(title='SMS-nr', content=box, size_hint=(.90, .90))
+		biggerbox=BoxLayout(orientation='horizontal')
+		biggerbox.add_widget(Label(text='SMS-mottagarens nummer:'))
 		try:
 			inpt=TextInput(text=settingdata.get('email')['address'], multiline=False)
 		except:
 			inpt=TextInput(text="")
-		box.add_widget(inpt)
+		biggerbox.add_widget(inpt)
 		store_btn = Button(text='OK')
 		store_btn.bind(on_release=(lambda store_btn: self.change_mail(inpt.text, popup1)))
 		#store_btn.bind(on_press = lambda *args: popup1.dismiss())
+		
+		box.add_widget(biggerbox)
 		box.add_widget(store_btn)
 		popup1.open()
 
@@ -338,8 +341,8 @@ class MainScreen(Screen):
 		box = BoxLayout(orientation='vertical')
 		tried=0
 		try:
-			to_nr = StringProperty(str(settingdata.get('email')['address']))
-			mess = StringProperty(str(themessage))
+			to_nr = str(settingdata.get('email')['address'])
+			mess = str(themessage)
 			sms.send(recipient=to_nr, message=mess)
 #			email.send(recipient=StringProperty(str(settingdata.get('email')['address'])),
 #				subject=StringProperty('MADRS-S'),
