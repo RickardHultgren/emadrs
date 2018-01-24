@@ -23,7 +23,7 @@ from kivy.uix.gridlayout import GridLayout
 from functools import partial
 #from kivy.uix.treeview import TreeView, TreeViewNode
 #from kivy.uix.treeview import TreeViewLabel
-#from kivy.uix.scrollview import ScrollView
+from kivy.uix.scrollview import ScrollView
 try:
 	from plyer import sms
 except:
@@ -62,20 +62,9 @@ Builder.load_string('''
                     ActionButton:
                         text: 'SMS-nr'
                         on_release: root.settings()
-        ScrollView:
-            size: self.size
-            GridLayout:
-                cols:1
-                orientation:'vertical'
-                #height:self.minimum_height
-                #height:root.bigheight
-                padding: root.width * 0.02, root.height * 0.02
-                spacing: root.width * 0.02, root.height * 0.02            
-                size_hint_y: None
-                size_hint_x: 1            
-                do_scroll_x: False
-                do_scroll_y: True
-                id: bigbox
+        GridLayout:
+			cols:1
+			id: megabox
         BoxLayout:
             #width:root.width
             #height:root.height / 8
@@ -192,10 +181,23 @@ class MainScreen(Screen):
 		
 	def planupdate(self):
 		self.bigheight=0
+		thescroll=ScrollView(size= self.size, bar_pos_x="top")
+		bigbox=GridLayout(
+                cols=1,
+                orientation='vertical',
+                #height=self.minimum_height,
+                #height=root.bigheight,
+                padding= (thescroll.width * 0.02, thescroll.height * 0.02),
+                spacing= (thescroll.width * 0.02, thescroll.height * 0.02),
+                size_hint_y= None,
+                size_hint_x= 1,
+                do_scroll_x= False,
+                do_scroll_y= True,
+                )
 		#self.linelen=self.ids.bigbox.width/sp(self.fontheight)
 		try:
 			self.ids.checkboxes.clear_widgets()
-			self.ids.bigbox.clear_widgets()
+			self.ids.megabox.clear_widgets()
 		except:
 			pass
 		for i in range(0,9):
@@ -203,7 +205,7 @@ class MainScreen(Screen):
 				qheight=0*self.fontheight+self.fontheight*(len(self.qlist[i])/self.linelen)
 			else:
 				qheight=self.fontheight
-			newq=Label(color=(0,0,0,1), size_hint_y=None, size_hint_x=1, size=(self.ids.bigbox.width, "%ssp"%str(qheight)))#, font_size=self.fontheight)
+			newq=Label(color=(0,0,0,1), size_hint_y=None, size_hint_x=1, size=(bigbox.width, "%ssp"%str(qheight)))#, font_size=self.fontheight)
 			newq.bind(width=lambda s, w:
 				   s.setter('text_size')(s, (self.width, None)))
 			newq.bind(height=newq.setter('texture_size[1]')) 
@@ -221,7 +223,7 @@ class MainScreen(Screen):
 				newbox.background_color= (.25, .75, 1.0, 1.0)
 				newq.text=str("%s"%self.qlist[i])
 				self.bigheight=self.bigheight+2*newq.height
-				self.ids.bigbox.add_widget(newq)
+				bigbox.add_widget(newq)
 				for j in range(0,7):
 					if self.fontheight*(len(self.dscrptn[i][j])/self.linelen) > 3*self.fontheight :
 						bttnheight=2*self.fontheight+self.fontheight*(len(self.dscrptn[i][j])/self.linelen)
@@ -237,15 +239,18 @@ class MainScreen(Screen):
 						smallLabel.background_color = (.25, .75, 1.0, 1.0)
 					else:
 						smallLabel.background_color = (1.0, 1.0, 1.0, 1.0)
-					self.ids.bigbox.add_widget(smallLabel)
+					bigbox.add_widget(smallLabel)
 					self.bigheight=self.bigheight+smallLabel.height
 		
 			newbox.bind(on_release=partial(self.chng_bttn, i))
 			self.ids.checkboxes.add_widget(newbox)
 		
-		self.ids.bigbox.height=self.bigheight
-		self.ids.bigbox.bar_pos_x="top"
-				
+		bigbox.height=self.bigheight
+		
+		thescroll.bar_pos_x="top"
+		thescroll.add_widget(bigbox)
+		self.ids.megabox.add_widget(thescroll)
+		
 		sendbox=Button(id="sendbox", text=">>")
 		sendbox.bind(on_release=(lambda store_btn: self.Submit()))
 		self.ids.checkboxes.add_widget(sendbox)
@@ -268,6 +273,7 @@ class MainScreen(Screen):
 			if number == len(self.bttns)-1:
 				number=0
 			if loops==maxloops:
+				self.nownr=i
 				break
 			number += 1
 			self.nownr=number
