@@ -187,8 +187,8 @@ class MainScreen(Screen):
                 orientation='vertical',
                 #height=self.minimum_height,
                 #height=root.bigheight,
-                padding= (thescroll.width * 0.02, thescroll.height * 0.02),
-                spacing= (thescroll.width * 0.02, thescroll.height * 0.02),
+                #padding= (thescroll.width * 0.02, thescroll.height * 0.02),
+                #spacing= (thescroll.width * 0.02, thescroll.height * 0.02),
                 size_hint_y= None,
                 size_hint_x= 1,
                 do_scroll_x= False,
@@ -213,7 +213,7 @@ class MainScreen(Screen):
 			newbox=Button(id="box%s"%str(i))
 			txt=''
 			if self.bttns[i]==1:
-				txt="*"
+				txt=str(self.valuetuple[i])
 				newbox.color=(1,1,1,1)
 			elif self.bttns[i]==0:
 				txt="*"
@@ -336,8 +336,11 @@ class MainScreen(Screen):
 	def send_mail(self, themessage, popup1):
 		popup1.dismiss()
 		box = BoxLayout(orientation='vertical')
+		tried=0
 		try:
-			sms.send(recipient=int(settingdata.get('email')['address']), message=str('%s'%themessage))
+			to_nr = StringProperty(str(settingdata.get('email')['address']))
+			mess = StringProperty(str(themessage))
+			sms.send(recipient=to_nr, message=mess)
 #			email.send(recipient=StringProperty(str(settingdata.get('email')['address'])),
 #				subject=StringProperty('MADRS-S'),
 #				text=StringProperty('%s'%themessage)
@@ -345,6 +348,7 @@ class MainScreen(Screen):
 #				)
 			box.add_widget(Label(text='SMS skickat till: %s'%settingdata.get('email')['address']))
 			#box.add_widget(Label(text='Email sent to:%s'%settingdata.get('email')['address']))
+			tried=1
 		except:
 			#box.add_widget(Label(text='Couldn\'t send e-mail'))
 			box.add_widget(Label(text='Kunde inte skicka SMS'))
