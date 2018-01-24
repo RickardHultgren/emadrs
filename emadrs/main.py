@@ -34,6 +34,12 @@ settingdata = JsonStore('settingdata.json')
 Builder.load_string('''
 <MainScreen>:
     name: 'mainscreen'
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
     GridLayout:
         row_default_height:root.height / 8
 		cols:1
@@ -41,7 +47,7 @@ Builder.load_string('''
         ActionBar:
             width:root.width
             height:root.height / 8
-            background_color:50,125,255,.6
+            background_color:125,125,125,1,1
             pos_hint: {'top':1}
             ActionView:
                 use_separator: True
@@ -52,6 +58,7 @@ Builder.load_string('''
                 ActionGroup:
                     mode: 'spinner'
                     text: 'Meny'
+                    #color: 0,0,0,1
                     ActionButton:
                         text: 'SMS-nr'
                         on_release: root.settings()
@@ -80,7 +87,6 @@ Builder.load_string('''
 
 class MainScreen(Screen):
 	nownr=0
-	currentnr = NumericProperty(nownr)
 	qlist=(
 	"Här ber vi dig beskriva din sinnesstämning, om du känner dig ledsen, tungsint eller dyster till mods. Tänk efter hur du har känt dig de senaste tre dagarna, om du har skiftat i humöret eller om det har varit i stort sett detsamma hela tiden, och försök särskilt komma ihåg om du har känt dig lättare till sinnes om det har hänt något positivt.",
 	"Här ber vi dig markera i vilken utsträckning du haft känslor av inre spänning, olust och ångest eller odefinierad rädsla under de senaste tre dagarna. Tänk särskilt på hur intensiva känslorna varit, och om de kommit och gått eller funnits hela tiden.",
@@ -197,7 +203,7 @@ class MainScreen(Screen):
 				qheight=0*self.fontheight+self.fontheight*(len(self.qlist[i])/self.linelen)
 			else:
 				qheight=self.fontheight
-			newq=Label(size_hint_y=None, size_hint_x=1, size=(self.ids.bigbox.width, "%ssp"%str(qheight)))#, font_size=self.fontheight)
+			newq=Label(color=(0,0,0,1), size_hint_y=None, size_hint_x=1, size=(self.ids.bigbox.width, "%ssp"%str(qheight)))#, font_size=self.fontheight)
 			newq.bind(width=lambda s, w:
 				   s.setter('text_size')(s, (self.width, None)))
 			newq.bind(height=newq.setter('texture_size[1]')) 
@@ -205,14 +211,14 @@ class MainScreen(Screen):
 			newbox=Button(id="box%s"%str(i))
 			txt=''
 			if self.bttns[i]==1:
-				txt="Ø"
+				txt="*"
 				newbox.color=(1,1,1,1)
 			elif self.bttns[i]==0:
-				txt="O"
+				txt="*"
 				newbox.color=(0,0,0,1)
 			newbox.text=txt
 			if i==self.nownr:
-				newbox.background_color= (0.0, 1.0, 1.0, 1.0)
+				newbox.background_color= (.25, .75, 1.0, 1.0)
 				newq.text=str("%s"%self.qlist[i])
 				self.bigheight=self.bigheight+2*newq.height
 				self.ids.bigbox.add_widget(newq)
@@ -228,7 +234,7 @@ class MainScreen(Screen):
 					smallLabel.bind(height=smallLabel.setter('self.minimum_height'))
 					smallLabel.bind(on_press=partial(self.radiobox, i, j))
 					if self.valuetuple[i] == j and self.bttns[i]==1:
-						smallLabel.background_color = (0.0, 1.0, 1.0, 1.0)
+						smallLabel.background_color = (.25, .75, 1.0, 1.0)
 					else:
 						smallLabel.background_color = (1.0, 1.0, 1.0, 1.0)
 					self.ids.bigbox.add_widget(smallLabel)
@@ -238,10 +244,12 @@ class MainScreen(Screen):
 			self.ids.checkboxes.add_widget(newbox)
 		
 		self.ids.bigbox.height=self.bigheight
+		self.ids.bigbox.bar_pos_x="top"
 				
 		sendbox=Button(id="sendbox", text=">>")
 		sendbox.bind(on_release=(lambda store_btn: self.Submit()))
 		self.ids.checkboxes.add_widget(sendbox)
+		
 		
 	def	radiobox(self, i,j,*args):
 		listV = list(self.valuetuple)
@@ -252,11 +260,23 @@ class MainScreen(Screen):
 		#myCheckBox1.value = True
 		self.valuetuple = tuple(listV)
 		self.bttns = tuple(listB)
+		maxloops=2*len(self.bttns)-1
+		loops=0
+		number=i
+		while self.bttns[number] == 1 :
+			loops += 1
+			if number == len(self.bttns)-1:
+				number=0
+			if loops==maxloops:
+				break
+			number += 1
+			self.nownr=number
 		self.planupdate()
 		
 	def chng_bttn(self,number, *args):
 		self.nownr=number
 		self.planupdate()
+		
 	def settings(self):
 		box = BoxLayout(orientation='vertical')
 		popup1 = Popup(title='SMS-nr', content=box, size_hint=(.75, .75))
@@ -311,7 +331,7 @@ class MainScreen(Screen):
 		popup1.dismiss()
 		box = BoxLayout(orientation='vertical')
 		try:
-			sms.send(recipient=StringProperty(str(settingdata.get('email')['address'])), message=('%s'%themessage))
+			sms.send(recipient=int(settingdata.get('email')['address']), message=str('%s'%themessage))
 #			email.send(recipient=StringProperty(str(settingdata.get('email')['address'])),
 #				subject=StringProperty('MADRS-S'),
 #				text=StringProperty('%s'%themessage)
