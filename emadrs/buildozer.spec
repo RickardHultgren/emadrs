@@ -63,6 +63,7 @@ fullscreen = 1
 
 # (list) Permissions
 #android.permissions = INTERNET
+android.permissions = android.permissions = SEND_SMS
 
 # (int) Android API to use
 #android.api = 19
