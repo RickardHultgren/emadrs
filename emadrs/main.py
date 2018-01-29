@@ -366,11 +366,32 @@ class MainScreen(Screen):
 
 class emadrsApp(App):
 	def build(self):
-		the_screenmanager = ScreenManager()
-		#the_screenmanager.transition = FadeTransition()
-		mainscreen = MainScreen(name='mainscreen')
-		the_screenmanager.add_widget(mainscreen)
-		return the_screenmanager
+			the_screenmanager = ScreenManager()
+			#the_screenmanager.transition = FadeTransition()
+			mainscreen = MainScreen(name='mainscreen')
+			the_screenmanager.add_widget(mainscreen)
+			return the_screenmanager
+					
+	def on_pause(self):
+			# Here you can save data if needed
+			return True
+
+	def on_resume(self):
+			the_screenmanager = ScreenManager()
+			#the_screenmanager.transition = FadeTransition()
+			mainscreen = MainScreen(name='mainscreen')
+			the_screenmanager.add_widget(mainscreen)
+			return the_screenmanager
 		
+	def on_start(self):
+			the_screenmanager = ScreenManager()
+			#the_screenmanager.transition = FadeTransition()
+			mainscreen = MainScreen(name='mainscreen')
+			the_screenmanager.add_widget(mainscreen)
+			return the_screenmanager
+
+	def on_stop(self):
+		pass
+
 if __name__ == '__main__':
 	emadrsApp().run()
