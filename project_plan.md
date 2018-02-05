@@ -11,6 +11,7 @@ Guidelines for the treatment and follow-up of depression exist, but the increase
 Interviews with at least two focus groups, consisting of about 5-7 people from different categories of staff involved in the treatment of unipolar disorder. Personnel categories concerned are primarily doctors, nurses and paraprofessional. Other occupational groups, such as curators and psychologists may come into question. The interviews are then analyzed using qualitative content analysis. The project is planned to be done in Region Jämtland-Härjedalen.
 
 *Specific goal/Expected significance*
+...
 
 *Medical or clinical relevance of the project.*
 If significant benefits and potentials were to be identified, then eMADRs could be a complement in the follow-up of depression patients.
