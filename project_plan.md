@@ -1,7 +1,3 @@
-First author:
-Rickard Hultgren
-rihu0003@student.umu.se
-
 **Staff attitudes towards follow-up of depression treatment via the patient's mobile phone.**
 
 *Background and purpose of the study*
