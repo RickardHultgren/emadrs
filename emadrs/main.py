@@ -288,10 +288,11 @@ class MainScreen(Screen):
 		popup1 = Popup(title='SMS-nr', content=box, size_hint=(.90, .90))
 		biggerbox=BoxLayout(orientation='horizontal')
 		biggerbox.add_widget(Label(text='SMS-mottagarens nummer:'))
+		inpt=TextInput(multiline=False,input_type='number')
 		try:
-			inpt=TextInput(text=settingdata.get('email')['address'], multiline=False)
+			inpt.text=settingdata.get('email')['address'],
 		except:
-			inpt=TextInput(text="")
+			inpt.text="",
 		biggerbox.add_widget(inpt)
 		store_btn = Button(text='OK')
 		store_btn.bind(on_release=(lambda store_btn: self.change_mail(inpt.text, popup1)))
