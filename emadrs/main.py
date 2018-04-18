@@ -288,11 +288,11 @@ class MainScreen(Screen):
 		popup1 = Popup(title='SMS-nr', content=box, size_hint=(.90, .90))
 		biggerbox=BoxLayout(orientation='horizontal')
 		biggerbox.add_widget(Label(text='SMS-mottagarens nummer:'))
-		inpt=TextInput(multiline=False,input_type='number')
+		#inpt=TextInput(multiline=False,input_type='number')
 		try:
-			inpt.text=settingdata.get('email')['address'],
+			inpt=TextInput(multiline=False,input_type='number',text=settingdata.get('email')['address'])
 		except:
-			inpt.text="",
+			inpt=TextInput(multiline=False,input_type='number',text="")
 		biggerbox.add_widget(inpt)
 		store_btn = Button(text='OK')
 		store_btn.bind(on_release=(lambda store_btn: self.change_mail(inpt.text, popup1)))
@@ -320,13 +320,13 @@ class MainScreen(Screen):
 			box = BoxLayout(orientation='vertical')
 			popup1 = Popup(title='', content=box, size_hint=(.75, .75))
 			if summa < 13:
-				themessage='MADRS-S-score: %s\nIngen eller mycket lätt depression.'%(summa)
+				themessage='MADRS-S-score visar symptom som kan tyda på: %s\nIngen eller mycket lätt depression.'%(summa)
 			if summa >= 13 and summa <= 19:
-				themessage='MADRS-S-score: %s\nLätt depression.'%(summa)
+				themessage='MADRS-S-score visar symptom som kan tyda på: %s\nLätt depression.'%(summa)
 			if summa >= 20 and summa <= 34:
-				themessage='MADRS-S-score: %s\nMåttlig depression.'%(summa)
+				themessage='MADRS-S-score visar symptom som kan tyda på: %s\nMåttlig depression.'%(summa)
 			if summa >= 35 :
-				themessage='MADRS-S-score: %s\nSvår depression.'%(summa)
+				themessage='MADRS-S-score visar symptom som kan tyda på: %s\nSvår depression.'%(summa)
 			box.add_widget(Label(text=themessage))	
 			store_btn = Button(text='OK')
 			store_btn.bind(on_press = lambda store_btn: self.send_mail(themessage, popup1))
