@@ -1,0 +1,357 @@
+\documentclass[english]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[math]{iwona}
+\setcounter{tocdepth}{1}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\renewcommand{\oldstylenums}[1]{{\fontfamily{pplj}\selectfont #1}}
+
+%\date{October 3--4, 2009}
+
+\usetheme{Boadilla}
+\useoutertheme{infolines}
+\setbeamerfont{section in head/foot}{family=\sffamily}
+\setbeamerfont{subsection in head/foot}{family=\sffamily}
+\setbeamerfont{title in head/foot}{family=\sffamily}
+\setbeamerfont{author in head/foot}{family=\sffamily}
+\setbeamerfont{date in head/foot}{family=\sffamily}
+\setbeamerfont{institute in head/foot}{family=\sffamily, size=\tiny}
+\setbeamerfont{block title}{family=\sffamily}
+\setbeamerfont{block title alerted}{family=\sffamily}
+\setbeamerfont{block title example}{family=\sffamily}
+%\renewcommand{\familydefault}{\rmdefault}
+\usepackage{xcolor}
+\definecolor{darkgreen}{HTML}{008800}
+\definecolor{lila}{HTML}{aa00aa}
+
+\begin{document}
+
+\title{Personalens attityd till screening och uppföljning av depressionsbehandling via patientens mobiltelefon.}
+%\author[ABC]{ABC\\[5mm]{\footnotesize \textbf{Supervisors:}\\Prof. QWERTY\\Prof. DEF GHI\\Prof. Jklmno Pqrst\\}}
+\author[]{Första författare: Rickard Hultgren\newline Handledare: Mikael Sandlund\newline Bihandledare: Heljä Pihkala}
+%\url{http://slackware.com/~alien/}\\
+%\texttt{alien@slackware.com}
+
+\institute{\\
+Umeå universitet\\
+%\url{http://umu.se/}
+}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\section{Introduction}
+\begin{frame}
+	\frametitle{}
+	\frametitle{}
+	\fbox{\parbox{\textwidth}{{\it Sjukvårdslagen;} Målet för hälso- och sjukvården är en god hälsa och en vård på lika villkor för hela befolkningen.}}\\
+	De senaste åren har landstingens utgifter ökat med ca. 5\% per år.\\
+	Korrigerat för inflation blir det ca. 3\% per år.\\
+	Vi har snart inte råd med god hälsa.\\
+	\pause
+	\textcolor{lila}{Men vilka är villkoren för vården? Låt oss använda modellen SMART och göra en brainstorm på följande tema:\\Vilka villkor ställer vården på dig som del i personalen när det kommer till:}\\
+	\begin{itemize}
+		\item \textcolor{lila}{Specific:}
+		\item\textcolor{lila}{Measurable:}
+		\item\textcolor{lila}{Achievable:}
+		\item\textcolor{lila}{Relevant:}
+		\item\textcolor{lila}{Time-bound:}
+	\end{itemize}
+\end{frame}
+
+
+%\section{Introduction}
+%\begin{frame}
+%\frametitle{Sjukvårdsarbetets villkor}
+%\colorbox{black!20}{\parbox{0.45\textwidth}{
+%	Traditionella villkor\\\ \\\ 
+%	\small
+%	\pause
+%	\begin{itemize}
+%		\item Individuellt bemötande av patienten.\\ 
+%		\textcolor{red}{{\bf Failed} Ett vanligt klagomål är dåligt bemötande.}\\\ \\\ \\\ \\
+%		\pause
+%		\item Individuellt bemötande av patientens behov.\\
+%		\textcolor{red}{{\bf Failed} Vården har oftast inte tid att se hur olika behov påverkar varandra.}\\\ \\
+%	\end{itemize}
+%	\pause
+%}}\hspace{1em}\colorbox{black!20}{\parbox{0.45\textwidth}{
+%	Med digitala verktyg kan alternativa villkor göras\\
+%	\small
+%	\pause
+%	\begin{itemize}
+%		\item Objektivt bedömning av patientens data.\\
+%		\textcolor{darkgreen}{Genom att fokusera mer på insamling och automatisk processering av data blir patienten screenad inför ett första möte.}\\
+%		\pause
+%		\item Ta reda på patientens behov.\\
+%		\textcolor{darkgreen}{Genom datainsamling tas patienternas behov in i kalkyleringen. Både landsting och kommuner kan fra nytta av detta.}\\\vspace{.33em}
+%	\end{itemize}
+%	}}\\
+	%\pause
+%\end{frame}
+
+\begin{frame}
+\frametitle{Kan en digital/elektronisk lösning hjälpa?}
+	Vad för grupp av patologier ska en sådan lösning fokusera på?
+	%Vilka kriterier har en sådan lösning?\\
+	Kriterier för att få så stor effekt som möjligt för så lite nedlagt arbete som möjligt:
+	%\pause
+	\begin{itemize}
+	\item patologin ska vara väldigt vanlig;
+	%\pause
+	\item som sjukvården är dålig på att upptäcka;
+	%\pause
+	\item och som är viktig att upptäcka, då den kan vara orsakad av andra patologier;
+	%\pause
+	\item allvarliga följder om ej behandlad;
+	\end{itemize}
+	\pause
+	Depression borde vara en rimlig patologi att fokusera på.
+\end{frame}
+
+\begin{frame}
+\textcolor{lila}{Beskriv med ett ord vad du upplever då en patient verkar vara deprimerad, även om hen söker för nåt annat?}
+\end{frame}
+
+\begin{frame}
+	Punktprevalens för depression anses vara 5\% -- folkhälsoproblem.\\
+	%\pause
+	Svårt få fram bra statistik för depression: %\pause förrutom vid suicid.
+	\begin{itemize}
+	\item Stort mörkertal?
+	\item Upptäcks ej alltid i sjukvård
+	\end{itemize}
+	%\pause
+	%Svårt få fram bra statistik för depression... %\pause förrutom vid suicid.
+	Men enligt statistiken vi kan få fram:
+	%\pause
+	\begin{itemize}
+	\item 50--80\% av suicid anses bero på depression.
+	%\pause
+	\item Suicid är den ledande dödsorsaken bland män mellan 15 och 44 år i Sverige.
+	%\pause
+	\item Drygt 2/3 av alla suicidfall uppskattas nyligen ha varit i kontakt med sjukvården. Bara hälften av dessa har kontakt med psykiatrisk klinik.
+	\end{itemize}
+	\pause
+	{\textit{Brister i informationsöverföring mellan patient och sjukvård?}}
+%	\pause
+%	\textit{Hur kan en app komma till nytta i informationsöverföringen mellan patient och sjukvård?}
+
+\end{frame}
+
+\begin{frame}
+Tänk dig att flertalet patienter regelbundet fyller i MADRS-S en gång i veckan...\\\ \\
+\pause
+\textcolor{lila}{Hur kan MADRS-S-score komma till användning i dina arbetsuppgifter?}\\
+\pause
+\textcolor{lila}{Vad skulle det betyda för arbetskvaliteten?}\\
+\pause
+\textcolor{lila}{Vad skulle det betyda för arbetskvantiteten?}\\
+\pause
+\textcolor{lila}{Hur skulle din arbetssituation förändras?}\\\ \\
+\pause
+\textit{Kanske bristerna i informationsöverföring mellan patient och vård kan lösas med en mobiltelefonapp?}
+\end{frame}
+
+
+\subsection{}
+\begin{frame}
+	\frametitle{\center{eMADRS\\\small prototyp-app för android}}
+{\center{Digital form av formuläret MADRS-S.\\
+\includegraphics[scale=0.4]{emadrs1.png}
+\\\ \\
+}}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\center{eMADRS\\\small prototyp-app för android}}
+{\center{MADRS-S mäter graden av depressions-symptom.\\
+\includegraphics[scale=0.4]{emadrs2.png}
+\\\ \\
+}}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\center{eMADRS\\\small prototyp-app för android}}
+{\center{MADRS-S ger ej diagnos.\\
+\includegraphics[scale=0.4]{emadrs3.png}
+\\\ \\
+}}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\center{eMADRS\\\small prototyp-app för android}}
+{\center{
+\includegraphics[scale=0.4]{emadrs4.png}
+\\\ \\
+}}
+\end{frame}
+
+\begin{frame}
+Open source BSD2-licens\\
+Källkod:\\
+\href{https://github.com/RickardHultgren/emadrs}{\url{https://github.com/RickardHultgren/emadrs}}\\
+Nedladdning:\\
+\href{https://play.google.com/store/apps/details?id=rickardverner.hultgren.emadrs}{\url{https://play.google.com/store/apps/details?id=rickardverner.hultgren.emadrs}}
+\end{frame}
+
+\begin{frame}
+\frametitle{Hur kan data från MADRS-S användas?}
+	\begin{itemize}
+	\item  {Automatisk tidbokning}\\
+		\begin{itemize}
+		\item  {Nybokning?}
+		\item  {Uppföljning?}
+		\end{itemize}
+	%\pause
+	\item  {Inför ett besök kan automatisk bokning av lab-prover göras utifrån riskbedömning för ålder, kön, läkemedel etc. Riskkalkylering kan göras genom programmeringsspråket {\textcolor{blue}{\href{https://github.com/RickardHultgren/lympha}{{\sc lympha}}}} eller kanske Office {\sc{365}}}.\vspace{-1em}
+		\begin{itemize}
+		\item  {hormonella orsaker, t.ex. hypotyreos}
+		\item  {autoimmuna orsaker, t.ex. {\sc sle}}.
+		\end{itemize}
+	%\pause
+	\item  {Om patienten även har möjlighet att samtidigt skicka {\sc madrs-s}-resulatet till kommunen:}\\
+		\begin{itemize}
+		\item kan det gagna samarbete med kommunala institutioner som t.ex. beroendeenhet
+		\end{itemize}
+	%\pause	
+	%\item  {automatisk tidbokning}\\
+	\end{itemize}
+	\pause	
+{\textcolor{lila}{\center{Hur skulle detta påverka ditt jobb?}\\\ \\}}
+
+\end{frame}
+
+
+
+\begin{frame}
+\ --Är prototypen för eMADRS användbar för vården?\\
+%\pause
+\ --Inte som det ser ut nu...\\
+%\pause
+\ --Men vad behövs mer?\\
+\pause
+\ --Identitets-skyddad informationsöverföring = plugin kopplat till BankId\\
+Så här ser möjligheterna ut för vidareutveckling:
+\end{frame}
+
+\begin{frame}
+\frametitle{\center{Vidare planer för eMADRS}}
+{\small
+\parbox{0.35\textwidth}{
+Core app\\
+\colorbox{black!20}{\parbox{0.35\textwidth}{
+	\begin{itemize}
+	\item  {
+		\fcolorbox{black!20}{black!20}{
+		\fcolorbox{black}{black!20}{\textcolor{blue}{emergency call}}}\\
+		} ringa-112-funktion\\\ 
+	\item	{
+		\fcolorbox{black!20}{black!20}{
+		\fcolorbox{black}{black!20}{\textcolor{blue}{\includegraphics[scale=0.70]{A.pdf}}}}\\
+		} språkval
+	\end{itemize}
+}}}\hspace{1em}$\xrightarrow[]{\text{data}}$\hspace{1em}\parbox{0.5\textwidth}{
+BankId-skyddade plug-ins skickar data till databas i sjukvården\\
+\colorbox{black!20}{\parbox{0.5\textwidth}{
+	1177 plug-in\\\ \\
+	Aktuella funktioner:
+	\begin{itemize}
+		\item {\bf Tidbokning} via internet
+	\end{itemize}
+}}\\\ \\
+\colorbox{black!20}{\parbox{0.5\textwidth}{
+	Plug-in skickar till Office 365 databas eller Citrix eller liknande\\\ \\
+	Aktuella funktioner:
+	\begin{itemize}
+		\item {\bf Uppföljning}; Ta emot SMS data från enbart godkända patienter
+	\end{itemize}
+}}}}\\
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Vad innebär detta i praktiken?}
+	\begin{block}{Kontaktorsak} 
+	\scriptsize{
+	 Två veckors anamnes på MADRS-S mellan 15 (lätt depression) och 25 (måttlig depression).\\
+	}
+	\end{block}
+	Förslag på kriterier för att skicka tidbokning till 1177:
+	\begin{itemize}
+		\item Patienten fyller i eMADRS under två veckor, minst var tredje dag.
+		\item Om resultaten konstant visar över ett vissta värde så görs en tidsbokning automatiskt
+	\end{itemize}
+	\textcolor{lila}{Hur fungerar detta som:}\\
+	\textcolor{lila}{\ --som uppföljning?}\\
+	\textcolor{lila}{\ --som nybesök?}
+\end{frame}
+
+\begin{frame}
+\frametitle{Vad innebär detta i praktiken?}
+	\begin{block}{Kontaktorsak} 
+	\scriptsize{
+	 Uppföljning. 2018-02-15 MADRS-S: 15 (lätt depression).\\
+	}
+	\end{block}
+	Förslag på kriterier för att skicka tidbokning RegionJH Office 365 databasen:
+	\begin{itemize}
+		\item Bara uppföljningspatienter kommer att tillåtas behörighet till databasen.
+	\end{itemize}
+	\textcolor{lila}{Hur fungerar detta som:}\\
+	\textcolor{lila}{\ --som uppföljning?}\\
+\end{frame}
+
+\begin{frame}
+\frametitle{SWOT-analys angående eMADRS.}
+
+\textcolor{lila}{Vad fick ni upp ögonen för?}
+
+         \begin{tabular}{|p{.33\textwidth}|p{.33\textwidth}|}
+             \hline \bfseries Styrkor &\bfseries Svagheter  \\\hline 
+             {\parbox{0.2\textwidth}{
+                 \begin{itemize}                    
+                     \item \  
+                     \item \  
+                     \item \               
+                     \end{itemize} }}
+                     &              {\parbox{0.2\textwidth}{
+                 \begin{itemize}                    
+                     \item \  
+                     \item \  
+                     \item \               
+                     \end{itemize} }}
+ \\\hline
+             \hline \bfseries Möjligheter &\bfseries Hot  \\\hline 
+             {\parbox{0.2\textwidth}{
+                 \begin{itemize}                    
+                     \item \  
+                     \item \  
+                     \item \               
+                     \end{itemize} }}
+                     &              {\parbox{0.2\textwidth}{
+                 \begin{itemize}                    
+                     \item \  
+                     \item \  
+                     \item \               
+                     \end{itemize} }}
+ \\\hline                     
+        \end{tabular}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{1 ord}
+	\textcolor{lila}{Beskriv med ett vad du tycker om eMADRS.}\\
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+	Tack så mycket för deltagandet!\\
+\end{frame}
+
+\end{document}
