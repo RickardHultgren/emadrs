@@ -39,7 +39,9 @@ ToDo list
           - http://www.youtube.com/watch?v=iL7Ww5kpnIM
           - http://www.youtube.com/watch?v=DRL4PF2u9XA
   
- 
+find / -name Sweave.sty
+/usr/lib/R/share/texmf/tex/latex/Sweave.sty
+
  
 
 
