@@ -25,6 +25,7 @@ ToDo list
           5. Codes: One or two words summary (coding) of each paragraph
           6. Categorize codes
           7. Import the project.rqda in LATEX
+              - http://www.youtube.com/watch?v=CNJ3ygl_xa0
               - http://www.youtube.com/watch?v=jVJ48w7eVzA
           6. Theme the codes int the LATEX article
           7. Compare categories and cases
