@@ -16,7 +16,7 @@ ToDo list
   - Analysis
       - Stages inductive approach
           1. mkdir emadrsRQDA
-          - New project as emadrsRQDA/emadrsProject.rqda
+          2. New project as emadrsRQDA/emadrsProject.rqda
           3. File import inteview1.txt
           4. Select cases for the file
               - http://www.youtube.com/watch?v=5Z81O_nYWDs
