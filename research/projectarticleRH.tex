@@ -2,8 +2,10 @@
 \newcommand{\latex}{\LaTeX\xspace}
 \usepackage{textcomp}
 \usepackage{tabularx}
+\usepackage[table]{xcolor}% http://ctan.org/pkg/xcolo
 \usepackage[latin1]{inputenc}
 %\usepackage[swedish]{babel}
+\usepackage{Sweave}
 \usepackage[T1]{fontenc}
 \usepackage[math]{iwona}
 %\usepackage[swedish]{babel}
@@ -49,7 +51,7 @@
 \\\vspace{-.4cm}
 \resizebox{1\hsize}{!}{{\fontfamily{iwona}\selectfont\small download address: {\textbf{\emph{\href{https://drive.google.com/open?id=1y0DQy-q_4lnFiUrLyjs9XTB1LWZ3SvbS}{\url{https://drive.google.com/open?id=1y0DQy-q_4lnFiUrLyjs9XTB1LWZ3SvbS}}}}}}}
 \\\vspace{-.4cm}
-\resizebox{1\hsize}{!}{{\fontfamily{iwona}\selectfont\small\cc This work by Rickard Hultgren is licensed under a Creative Commons Attribution {\sc 3.0} Unported License.}}
+\resizebox{1\hsize}{!}{{\fontfamily{iwona}\selectfont\small\cc This work by Rickard Hultgren is licensed under a Creative Commons Attribution {\sc 4.0} Unported License.}}
 \\\vspace{-.3cm}
 %{\fontsize{15pt}{15pt}{\fontfamily{ptm}\selectfont{Project title:}}\\\fontsize{18pt}{18pt}{\fontfamily{ptm}\selectfont{Staff attitudes towards follow-up of depression treatment via the patient's mobile phone.}}}\\
 %\vspace{0.2cm}\fontfamily{iwona}\selectfont
@@ -141,22 +143,36 @@ Psychotherapists & 0\\
 %\item {\bfseries{\scshape{Swot}} analysis} about e{\sc madrs}.
 %\item {\bf One word exercise}: Each participant describes e{\sc madrs} with one word.
 %\end{itemize}
-The interviews are then analyzed using qualitative content analysis\cite{analysis1}. From the recordings, codes are derived and categorized. The categories are then grouped into themes.
+The interviews are then analyzed using qualitative content analysis\cite{analysis1}. From the recordings, causation codes are derived and categorized. The work was done with the help of the programming language {\sc r} and its library {\sc rqda}.
 
 \section*{Results}
-From the recordings, the following codes and  were derived and categorized as well as themed:\\
-\begin{tabular}{r|l|l}
-Code & Category & Theme\\
+From the recordings, the following codes and  were derived and categorized:\\
+
+<<>>=
+library("RQDA")
+openProject("/home/rickard/USB/latex/rqda/emadrs.rqda")
+getCodingTable()
+summaryCodings()
+@
+
+\begin{tabular}{r|l}
+Code & Category\\
 \hline
-Administrators/secretaries & \multirow{ 2}{*}{1} & \multirow{ 3}{*}{1}\\
+Administrators/secretaries & \multirow{ 2}{*}{Work quality}\\\cline{1-1}
 Nurse students \\
-Nurses & 0\\
-Podiatrists \& foot therapists & 0 & X\\
 \hline
-\end{tabular}\\\ \\
+Administrators/secretaries & \multirow{ 2}{*}{Work quantity}\\\cline{1-1}
+Nurse students \\
+\hline
+Nurses & 0 \\
+\hline
+\end{tabular}
+
+\ \\
+The project shows XYZ qualitative and quantitative benefits from e{\sc madrs} as a compliment in the follow-up and screening for depressed patients.
+
 The depressed patient is often locked in a state of not being able to manage the worsening of the depression. The faster the staff knows about a deepening of depression, the faster the staff can intervene. The faster the intervention starts, the better is the prognosis. From the patient's perspective, the new ways of communication through a mobile app could be very beneficial. The key question is how the new possibilities should be handled by the healthcare professionals. Currently, the outward patient doesn't have a frequent contact with health care professionals, and the interventions have to be powerful in order to stop the progression of the depression. In those interventions, the beneficence model is often applied and the patient's integrity and feeling of autonomy are often hurt \cite{ethics1}. If, on the other hand, the patient's condition was to be analyzed more frequently, then perhaps it would be possible to handle the depression in a cost effective and better way. The new ways of managing the patient's health could respect the autonomy of the patient. The patient's health could be managed together with the patient\cite{leader1}. 
 
-The project shows XYZ qualitative and quantitative benefits from e{\sc madrs} as a compliment in the follow-up and screening for depressed patients.
 
 \section*{Discussion}
 %yAccording to the Swedish law: ''The goal of the health care is a good health and care on equal terms for the entire population''\cite{law}. 
