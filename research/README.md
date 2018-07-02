@@ -23,6 +23,8 @@ ToDo list
               - http://www.youtube.com/watch?v=HVk15IDjG44
               - http://www.youtube.com/watch?v=z4HqP870Urw
           5. Codes: One or two words summary (coding) of each paragraph
+              5.1. What work task is each code about?
+              5.2. Compare  work tasks with emadrs.
           6. Categorize codes
           7. Import the project.rqda in LATEX
               - http://www.youtube.com/watch?v=CNJ3ygl_xa0
