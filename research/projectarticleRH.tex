@@ -24,7 +24,7 @@
 \def\mydate{\leavevmode\hbox{\the\year-\twodigits\month-\twodigits\day}}
 \def\twodigits#1{\ifnum#1<10 0\fi\the#1}
 \usepackage[round,comma]{natbib}
-
+\usepackage{enumitem}
 \usepackage{titlesec}
 \titleformat*{\section}{\normalsize\bfseries\vspace{0.25cm}}
 %\titleformat*{\subsection}{\Large\bfseries}
@@ -47,9 +47,9 @@
 \begin{document}
 \title{
 \vspace{-3.9cm}
-\resizebox{1\hsize}{!}{{\sc\mydate}\ Project article for {\sc t10} scientific work at the medical programme, UmeÃ¥ university}
+\resizebox{1\hsize}{!}{{\sc\mydate}\ Project article for {\sc t10} scientific work at the medical programme, Umeå university}
 \\\vspace{-.4cm}
-\resizebox{1\hsize}{!}{{\fontfamily{iwona}\selectfont\small Download address: {\textbf{\emph{\href{https://github.com/RickardHultgren/emadrs/blob/master/research/projectarticleRH.pdf}}}}}}
+\resizebox{1\hsize}{!}{{\fontfamily{iwona}\selectfont\small Download address: {\textbf\emph{\href{https://github.com/RickardHultgren/emadrs/blob/master/research/projectarticleRH.pdf}{\url{https://github.com/RickardHultgren/emadrs/blob/master/research/projectarticleRH.pdf}}}}}}
 \\\vspace{-.4cm}
 \resizebox{1\hsize}{!}{{\fontfamily{iwona}\selectfont\small\cc This work by Rickard Hultgren is licensed under a Creative Commons Attribution {\sc 4.0} Unported License.}}
 \\\vspace{-.3cm}
@@ -60,9 +60,9 @@
 \fontsize{12pt}{12pt}{\fontfamily{iwona}\selectfont
 }}
 %\author{{\small First author} {\small \bf Rickard Hultgren:} {\small \it rihu0003@student.umu.se}\vspace{.25cm}\\
-% {\small Inst f klinisk vetenskap/psykiatri; UmeÃ¥ universitet; 901 85 UmeÃ¥}\\
+% {\small Inst f klinisk vetenskap/psykiatri; Umeå universitet; 901 85 Umeå}\\
 % {\small Supervisor:} {\small \bf Mikael Sandlund} {\small \it mikael.sandlund@umu.se}\\
-% {\small Assistant supervisor:} {\small \bf HeljÃ¤ Pihkala} {\small \it heljÃ¤.p@hotmail.com}}
+% {\small Assistant supervisor:} {\small \bf Heljä Pihkala} {\small \it heljä.p@hotmail.com}}
 \date{}
 \maketitle
 \vspace{-0.9cm}
@@ -71,10 +71,10 @@
 \ \\
 {\small First author:} {\small \bf Rickard Hultgren} {\small \it rihu0003@student.umu.se}\vspace{.25cm}\\
  {\small Supervisor:} {\small \bf Mikael Sandlund} {\small \it mikael.sandlund@umu.se}\\
- {\small\it Inst f klinisk vetenskap/psykiatri; UmeÃ¥ universitet; 901 85 UmeÃ¥}\vspace{.25cm}\\
-% {\small Assistant supervisor:} {\small \bf HeljÃ¤ Pihkala} {\small \it heljÃ¤.p@hotmail.com}\\
- {\small Assistant supervisor:} {\small \bf HeljÃ¤ Pihkala} {\small \it helja.pihkala@umu.se}\\
- {\small\it Inst f klinisk vetenskap/psykiatri; UmeÃ¥ universitet; 901 85 UmeÃ¥}\vspace{.5cm}\\
+ {\small\it Inst f klinisk vetenskap/psykiatri; Umeå universitet; 901 85 Umeå}\vspace{.25cm}\\
+% {\small Assistant supervisor:} {\small \bf Heljä Pihkala} {\small \it heljä.p@hotmail.com}\\
+ {\small Assistant supervisor:} {\small \bf Heljä Pihkala} {\small \it helja.pihkala@umu.se}\\
+ {\small\it Inst f klinisk vetenskap/psykiatri; Umeå universitet; 901 85 Umeå}\vspace{.5cm}\\
 {\fontsize{15pt}{15pt}{\fontfamily{ptm}\selectfont{Project title:}}\\\fontsize{18pt}{18pt}{\fontfamily{ptm}\selectfont{ Staff attitudes towards follow-up and screening via the patient's mobile phone, exemplified by depression.}}}\\
 \hrule
 \ \\
@@ -94,7 +94,7 @@ In Sweden, the lifetime prevalence of depression is estimated to be 13.2\% among
 Thus solving the difficult situation require new ways of dealing with depression. Perhaps cell phones can be used to fight depression? Some cell phone apps have been developed for the purpose of benefiting the health care of depressed patients. The apps could be categorized into two groups depending on what end-user they are meant for. If the end-user is a patient, then the app helps the patient track and understand the symptoms through a mood diary\cite{app1}. If the app is meant to be used by healthcare staff, then the app is constructed around different questionnaires\cite{app2}. Both approaches may result in somewhat better results for the patient, but by focusing on either the patient or the staff a key aspect is neglected. In order for the healthcare staff to help the patient as good and effective as possible, it is necessary to focus on the communication between both parties.
 
 \section*{Purpose}
-In order for the healthcare staff to give the depressed patient adequate help, the staff needs adequate information about the patient. In investigations of somatic pathologies, adequate laboratory tests are usually done before an appointment. What if the patient's mood could be measured in a similar way before an appointment? With the purpose of enhancing the communication between the patient and healthcare staff an app prototype (e{\sc madrs}) for android cell phones has been developed by the first author\cite{emadrs1, emadrs2}. The app consists of a {\sc madrs-s} form where the result is sent to a phone number, preferred by the patient as an {\sc sms} text message. {\sc Madrs-s} is a verified tool commonly used for screening and follow-up of depression\cite{madrs2,madrs3}. It consists of nine questions where the patient answers with a rating from zero to siz. The score is categorized as follows:\\
+In order for the healthcare staff to give the depressed patient adequate help, the staff needs adequate information about the patient. In investigations of somatic pathologies, adequate laboratory tests are usually done before an appointment. What if the patient's mood could be measured in a similar way before an appointment? With the purpose of enhancing the communication between the patient and healthcare staff an app prototype (e{\sc madrs}) for android cell phones has been developed by the first author\cite{emadrs1, emadrs2}. The app consists of a {\sc madrs-s} form where the result is sent to a phone number, preferred by the patient as an {\sc sms} text message. {\sc Madrs-s} is a verified tool commonly used for screening and follow-up of depression\cite{madrs2,madrs3}. It consists of nine questions where the patient answers with a rating from zero to six. The score is categorized as follows:\\
 
 \begin{tabular}{r|l}
 {\bf score} & {\bf severity of depression}\\
@@ -108,33 +108,30 @@ The research question is: What advantages and disadvantages are identified from 
 
 \section*{Materials and Methods}
 %Interviews with at least {\sc 2} focus groups, consisting of about {\sc 5--7} primary care unit employees from different staff categories that are involved in the treatment of depression. The staff categories concerned are primarily physicians, nurses and members from the so-called psycho-social teams (e.g. psychologists)\cite{goal1}. Each group will consist of as few staff categories as possible. This would be beneficial for the interviews since it would minimize the risk of hierarchical group dynamics.
-Interviews were performed with {\sc 2} focus groups, consisting of {\sc 5} primary care unit employees from different staff categories that are directly or indirectly involved in the treatment of depression at Hagfors Primary Care Centre in Sweden. In order to get a holistic picture of how a primary care unit would be effected by e{\sc madrs}, as many staff categories as possible were interviewed\cite{goal1}. Each group consisted of as few staff categories as possible. This would be beneficial for the interviews since it would minimize the risk of hierarchical group dynamics. The following table is a summary of the group members:\\\\
-{\bf group 1}\\
-\begin{tabular}{r|l}
-Work title & Number of participants\\
+Two 30-minutes long interviews were performed with two focus groups, consisting of seven respective six primary care unit employees from different staff categories that are directly or indirectly involved in the treatment of depression at Hagfors Primary Care Centre in Sweden. In order to get a holistic picture of how a primary care unit would be effected by e{\sc madrs}, as many staff categories as possible were interviewed\cite{goal1}. The following table is a summary of the group members:\\\\
+{\bf Group A}\\
+\begin{tabular}{p{10em}|l|l}
+Work title & Interview 1 & Interview 2 \\
 \hline
-Administrators/secretaries & 0\\
-Nurse students & 0\\
-Nurses & 0\\
-Podiatrists \& foot therapists & 0\\
-Physician assistants & 0\\
-Physicians & 0\\
-Psychotherapists & 0\\
+Administrators & 1 & 1 \\
+Nurses & 3 & 3 \\
+Foot therapists & 1 & 0\\
+Physicians & 0 & 1\\
+Psychotherapists & 1 & 1\\
 \hline
-\end{tabular}\\\ \\
-{\bf group 2}\\
-\begin{tabular}{r|l}
-Work title & Number of participants\\
+\end{tabular}\\\ \\\ \\
+{\bf Group B}\\
+\begin{tabular}{p{10em}|l|l}
+Work title & Interview 1 & Interview 2 \\
 \hline
-Administrators/secretaries & 0\\
-Nurse students & 0\\
-Nurses & 0\\
-Podiatrists \& foot therapists & 0\\
-Physician assistants & 0\\
-Physicians & 0\\
-Psychotherapists & 0\\
+Administrators & 1 & 1 \\
+Auxillary nurses & 1 & 2 \\
+Nurses & 0 & 1 \\
+Foot therapists & 0 & 0\\
+Physician assistants & 1 & 1\\
+Psychotherapists & 1 & 1\\
 \hline
-\end{tabular}\\
+\end{tabular}\\ \ \\ \ \\
 %The interviews will have the following structure:
 %\begin{itemize}
 %\item {\bf One word exercise}: Each participant describes handling a depressed patient with one word. 
@@ -144,30 +141,28 @@ Psychotherapists & 0\\
 %\item {\bfseries{\scshape{Swot}} analysis} about e{\sc madrs}.
 %\item {\bf One word exercise}: Each participant describes e{\sc madrs} with one word.
 %\end{itemize}
-The interviews are then analyzed using qualitative content analysis\cite{analysis1}. From the recordings, causation codes are derived and categorized. The work was done with the help of the programming language {\sc r} and its library {\sc rqda}.
+The interviews were then analyzed using qualitative content analysis\cite{analysis1}. From the recordings, causation codes were derived and categorized. The work was done with the help of the programming language {\sc r} and its library {\sc rqda} \cite{rqda}.
 
 \section*{Results}
+During the interviews the following topics were discussed:
+\begin{enumerate}[label=\Alph*]
+%\item {\bf Questions}: How would your work situation change if you would get a mood evaluation from almost every of the patient before getting in touch with the patient? What would it mean for the work quality? What would it mean for the work quantity?
+%\item {\bf Presentation}: What is the app e{\sc madrs}?
+%\item {\bf Presentation}: Problems and solutions that the developer can see.
+\item {\bf} What is specific, measurable and achievable in your work?
+%\item {\bf One word exercise}: Each participant describes e{\sc madrs} with one word.
+\item {\bf} Describe your feelings when a patient complains about something that is not related to depression, but the patient seem to be in a very sad mood? 
+\item {\bf} ?
+\end{enumerate}
 From the recordings, the following codes and  were derived and categorized:\\
 
 <<>>=
 library("RQDA")
-openProject("/home/rickard/USB/latex/rqda/emadrs.rqda")
+openProject("/home/rickard/work/emadrs.rqda")
 getCodingTable()
 summaryCodings()
 @
 
-\begin{tabular}{r|l}
-Code & Category\\
-\hline
-Administrators/secretaries & \multirow{ 2}{*}{Work quality}\\\cline{1-1}
-Nurse students \\
-\hline
-Administrators/secretaries & \multirow{ 2}{*}{Work quantity}\\\cline{1-1}
-Nurse students \\
-\hline
-Nurses & 0 \\
-\hline
-\end{tabular}
 
 \ \\
 The project shows XYZ qualitative and quantitative benefits from e{\sc madrs} as a compliment in the follow-up and screening for depressed patients.
@@ -200,28 +195,28 @@ The project's character is developmental work within the clinic. Therefore it is
 
 \begin{thebibliography}{11}
 \bibitem{numbers0}Kendler KS, Gatz M, Gardner CO, Pedersen NL\emph{A Swedish national twin study of lifetime major depression.}; Am J Psychiatry. 2006 Jan; 163(1):109-14.\\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/16390897/}{\url{https://www.ncbi.nlm.nih.gov/pubmed/16390897/}}}}
-\bibitem{numbers1} \emph{UtvÃ¤rdering 2013 -- vÃ¥rd och insatser vid depression, Ã¥ngest och schizofreni. Indikatorer och underlag fÃ¶r bedÃ¶mningar.}; Socialstyrelsen\\\textbf{\emph{\href{http://www.socialstyrelsen.se/publikationer2013/2013-6-7}{\url{http://www.socialstyrelsen.se/publikationer2013/2013-6-7}}}}
+\bibitem{numbers1} \emph{Utvärdering 2013 -- vård och insatser vid depression, ångest och schizofreni. Indikatorer och underlag för bedömningar.}; Socialstyrelsen\\\textbf{\emph{\href{http://www.socialstyrelsen.se/publikationer2013/2013-6-7}{\url{http://www.socialstyrelsen.se/publikationer2013/2013-6-7}}}}
 \bibitem{numbers1.1} Kasper S1, Schindler S, Neumeister A.; \emph{Risk of suicide in depression and its implication for psychopharmacological treatment.}; Int Clin Psychopharmacol. 1996 Jun;11(2):71-9.\\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/8803644}{\url{https://www.ncbi.nlm.nih.gov/pubmed/8803644}}}}
-\bibitem{numbers2} \emph{SjÃ¤lvmord i anslutning till vÃ¥rd Socialstyrelsen};\\\textbf{\emph{\href{http://www.socialstyrelsen.se/patientsakerhet/riskomraden/suicid}{\url{http://www.socialstyrelsen.se/patientsakerhet/riskomraden/suicid
+\bibitem{numbers2} \emph{Självmord i anslutning till vård Socialstyrelsen};\\\textbf{\emph{\href{http://www.socialstyrelsen.se/patientsakerhet/riskomraden/suicid}{\url{http://www.socialstyrelsen.se/patientsakerhet/riskomraden/suicid
 }}}}
 \bibitem{numbers3.0.1}\emph{Statistics on causes of death 2015 - Socialstyrelsen}; Socialstyrelsen;
 \\\textbf{\emph{\href{https://www.socialstyrelsen.se/Lists/Artikelkatalog/Attachments/20291/2016-8-4.pdf}{\url{
 https://www.socialstyrelsen.se/Lists/Artikelkatalog/Attachments/20291/2016-8-4.pdf}}}}
-\bibitem{numbers3.1} \emph{ResultatrÃ¤kning fÃ¶r landsting Ã¥r 2010--2014}; SCB;\\\textbf{\emph{\href{ http://www.scb.se/hitta-statistik/statistik-efter-amne/offentlig-ekonomi/finanser-for-den-kommunala-sektorn/rakenskapssammandrag-for-kommuner-och-landsting/pong/tabell-och-diagram/kommun--och-landstingssektorn-2014/resultatrakning-for-landsting-ar-20102014/}{\url{http://www.scb.se/hitta-statistik/statistik-efter-amne/offentlig-ekonomi/finanser-for-den-kommunala-sektorn/rakenskapssammandrag-for-kommuner-och-landsting/pong/tabell-och-diagram/kommun--och-landstingssektorn-2014/resultatrakning-for-landsting-ar-20102014/}}}}
-\bibitem{numbers3.2} \emph{ResultatrÃ¤kning fÃ¶r landsting Ã¥r 2012--2016}; SCB;\\\textbf{\emph{\href{
+\bibitem{numbers3.1} \emph{Resultaträkning för landsting år 2010--2014}; SCB;\\\textbf{\emph{\href{ http://www.scb.se/hitta-statistik/statistik-efter-amne/offentlig-ekonomi/finanser-for-den-kommunala-sektorn/rakenskapssammandrag-for-kommuner-och-landsting/pong/tabell-och-diagram/kommun--och-landstingssektorn-2014/resultatrakning-for-landsting-ar-20102014/}{\url{http://www.scb.se/hitta-statistik/statistik-efter-amne/offentlig-ekonomi/finanser-for-den-kommunala-sektorn/rakenskapssammandrag-for-kommuner-och-landsting/pong/tabell-och-diagram/kommun--och-landstingssektorn-2014/resultatrakning-for-landsting-ar-20102014/}}}}
+\bibitem{numbers3.2} \emph{Resultaträkning för landsting år 2012--2016}; SCB;\\\textbf{\emph{\href{
 http://www.scb.se/hitta-statistik/statistik-efter-amne/offentlig-ekonomi/finanser-for-den-kommunala-sektorn/rakenskapssammandrag-for-kommuner-och-landsting/pong/tabell-och-diagram/kommun--och-landstingssektorn-2016/resultatrakning-for-landsting-ar-2012-2016/}{\url{http://www.scb.se/hitta-statistik/statistik-efter-amne/offentlig-ekonomi/finanser-for-den-kommunala-sektorn/rakenskapssammandrag-for-kommuner-och-landsting/pong/tabell-och-diagram/kommun--och-landstingssektorn-2016/resultatrakning-for-landsting-ar-2012-2016/}}}}
 \bibitem{app1}\emph{Appen Uppskatta}; Google Play\\\textbf{\emph{\href https://play.google.com/store/apps/details?id=com.akerlund.uppskattadindag}{\url{{https://play.google.com/store/apps/details?id=com.akerlund.uppskattadindag}}}}
 \bibitem{app2}\emph{Appen PsykTools}; Google Play\\\textbf{\emph{\href https://play.google.com/store/apps/details?id=no.sonat.honos}{\url{{https://play.google.com/store/apps/details?id=no.sonat.honos}}}}
 %\bibitem{madrs1}Zimmerman, Chelminski, Posternak \emph{The Montgomery Asberg Depression Rating Scale in bipolar II and unipolar out-patients: a 405-patient case study.}; Int Clin Psychopharmacol. 2004 Jan;19(1):1-7; \\\textbf{\emph{\href{http://www.ncbi.nlm.nih.gov/pubmed/15101563}{\url{http://www.ncbi.nlm.nih.gov/pubmed/15101563}}}}
-\bibitem{madrs2}Svanborg, P; Ã…sberg, M; \emph{A comparison between the Beck Depression Inventory (BDI) and the self-rating version of the Montgomery Ã…sberg Depression Rating Scale (MADRS)}; J. Affective Disorders. 64 (2-3): 203--216. doi:10.1016/S0165-0327(00)00242-1.\\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/11313087}{\url{https://www.ncbi.nlm.nih.gov/pubmed/11313087}}}}
-\bibitem{madrs3}\emph{Tolkning av MADRS-S}; Region JÃ¶nkÃ¶pings lÃ¤n\\\textbf{\emph{\href{http://plus.rjl.se/info_files/infosida39803/madrs_s_tolkning.pdf}{\url{http://plus.rjl.se/info_files/infosida39803/madrs_s_tolkning.pdf}}}}
+\bibitem{madrs2}Svanborg, P; Åsberg, M; \emph{A comparison between the Beck Depression Inventory (BDI) and the self-rating version of the Montgomery Åsberg Depression Rating Scale (MADRS)}; J. Affective Disorders. 64 (2-3): 203--216. doi:10.1016/S0165-0327(00)00242-1.\\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/11313087}{\url{https://www.ncbi.nlm.nih.gov/pubmed/11313087}}}}
+\bibitem{madrs3}\emph{Tolkning av MADRS-S}; Region Jönköpings län\\\textbf{\emph{\href{http://plus.rjl.se/info_files/infosida39803/madrs_s_tolkning.pdf}{\url{http://plus.rjl.se/info_files/infosida39803/madrs_s_tolkning.pdf}}}}
 \bibitem{emadrs1}Rickard Hultgren; \emph{eMADRS source code}; github.com; \\\textbf{\emph{\href{https://github.com/RickardHultgren/emadrs}{\url{https://github.com/RickardHultgren/emadrs}}}}
 \bibitem{emadrs2}Rickard Hultgren; \emph{eMADRS compiled}; play.google.com; \\\textbf{\emph{\href{https://play.google.com/store/apps/details?id=rickardverner.hultgren.emadrs}{\url{https://play.google.com/store/apps/details?id=rickardverner.hultgren.emadrs}}}}
-%\bibitem{goal0}Birgitta Lindelius; \emph{Ã–ppna jÃ¤mfÃ¶relser och utvÃ¤rdering 2010 -- Psykiatrisk vÃ¥rd}; socialstyrelsen.se; \\\textbf{\emph{\href{http://www.socialstyrelsen.se/publikationer2010/2010-6-6}{\url{http://www.socialstyrelsen.se/publikationer2010/2010-6-6}}}}
+%\bibitem{goal0}Birgitta Lindelius; \emph{Öppna jämförelser och utvärdering 2010 -- Psykiatrisk vård}; socialstyrelsen.se; \\\textbf{\emph{\href{http://www.socialstyrelsen.se/publikationer2010/2010-6-6}{\url{http://www.socialstyrelsen.se/publikationer2010/2010-6-6}}}}
 \bibitem{goal1}Tracy R.G. Gladstone, William R. Beardslee, Erin E. O'Connor; \emph{The Prevention of Adolescent Depression}; Psychiatr Clin North Am. 2011 Mar; 34(1): 35--52. \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3072710/}{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3072710/}}}}
 %\bibitem{goal2}Maryann Davis, Michael T. Abrams, Lawrence S. Wissow, Eric P. Slade; \emph{Identifying young adults at risk of Medicaid enrollment lapses after inpatient mental health treatment}; Psychiatr Serv. 2014 Apr 1; 65(4): 461--468.doi:  10.1176/appi.ps.201300199 \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3972275/}{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3972275/}}}}
-\bibitem{guide1}Riitta Sorsa; \emph{Nationella riktlinjer -- MÃ¥lnivÃ¥er -- VÃ¥rd vid depression och Ã¥ngestsyndrom -- MÃ¥lnivÃ¥er fÃ¶r indikatorer}; socialstyrelsen.se december 2017\\\textbf{\emph{\href{http://www.socialstyrelsen.se/publikationer2017/2017-12-1}{\url{http://www.socialstyrelsen.se/publikationer2017/2017-12-1}}}}
-\bibitem{regionjh1}Majvor EnstrÃ¶m; \emph{Granskning av Psykiatrin 2014 Region JÃ¤mtland-HÃ¤rjedalen}\\\textbf{\emph{\href{https://www.regionjh.se/download/18.61342ea415bcfb51720c5fd7}{\url{https://www.regionjh.se/download/18.61342ea415bcfb51720c5fd7}}}}
+\bibitem{guide1}Riitta Sorsa; \emph{Nationella riktlinjer -- Målnivåer -- Vård vid depression och ångestsyndrom -- Målnivåer för indikatorer}; socialstyrelsen.se december 2017\\\textbf{\emph{\href{http://www.socialstyrelsen.se/publikationer2017/2017-12-1}{\url{http://www.socialstyrelsen.se/publikationer2017/2017-12-1}}}}
+\bibitem{regionjh1}Majvor Enström; \emph{Granskning av Psykiatrin 2014 Region Jämtland-Härjedalen}\\\textbf{\emph{\href{https://www.regionjh.se/download/18.61342ea415bcfb51720c5fd7}{\url{https://www.regionjh.se/download/18.61342ea415bcfb51720c5fd7}}}}
 %\bibitem{style0}Vakhtang Tchantchaleishvili, Jan D Schmitto; \emph{Preparing a scientific manuscript in Linux: Today's possibilities and limitations.}; BMC Res Notes. 2011; 4: 434. \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3227619/}{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3227619/}}}}
 \bibitem{style1}\emph{Style Guide for Authors} \\\textbf{\emph{\href{https://academic.oup.com/cdj/pages/Style_Guide}{\url{https://academic.oup.com/cdj/pages/Style_Guide}}}}
 \bibitem{style2}Barbara J. Hoogenboom, Robert C. Manske; \emph{How to write a scientific article.} Int J Sports Phys Ther. 2012 Oct; 7(5): 512--517. \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3474301/}{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3474301/}}}}
@@ -231,8 +226,9 @@ http://www.scb.se/hitta-statistik/statistik-efter-amne/offentlig-ekonomi/finanse
 
 \bibitem{analysis1}Granheim, Lundman \emph{Qualitative content analysis in nursing research concepts, procedures and measures to achieve trustworthiness.} Nurse Educ Today. 2004 Feb;24(2):105-12 \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/14769454}{\url{https://www.ncbi.nlm.nih.gov/pubmed/14769454}}}}
 
-%\bibitem{law}HÃ¤lso- och sjukvÃ¥rdslag (1982:763)\\\textbf{\emph{\href{http://www.notisum.se/rnp/sls/lag/19820763.htm}{\url{http://www.notisum.se/rnp/sls/lag/19820763.htm}}}}
+%\bibitem{law}Hälso- och sjukvårdslag (1982:763)\\\textbf{\emph{\href{http://www.notisum.se/rnp/sls/lag/19820763.htm}{\url{http://www.notisum.se/rnp/sls/lag/19820763.htm}}}}
 
+\bibitem{rqda}Ronggui Huang; \\\textbf{\emph{\href{http://rqda.r-forge.r-project.org/}{\url{http://rqda.r-forge.r-project.org/}}}}
 
 \end{thebibliography} 
  
