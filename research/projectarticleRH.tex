@@ -16,7 +16,7 @@
 \renewcommand{\oldstylenums}[1]{{\fontfamily{pplj}\selectfont #1}}
 %\usepackage[textwidth=11cm]{geometry}
 %\newcommand{\blob}{\rule[-.2\unitlength]{2\unitlength}{.5\unitlength}}
-\renewcommand{\_}{\hspace{0.1cm}}
+%\renewcommand{\_}{\hspace{0.1cm}}
 \usepackage{bold-extra}
 \usepackage{multirow}
 %\urlstyle{same}
@@ -60,9 +60,9 @@
 \fontsize{12pt}{12pt}{\fontfamily{iwona}\selectfont
 }}
 %\author{{\small First author} {\small \bf Rickard Hultgren:} {\small \it rihu0003@student.umu.se}\vspace{.25cm}\\
-% {\small Inst f klinisk vetenskap/psykiatri; Umeå universitet; 901 85 Umeå}\\
+% {\small Inst f klinisk vetenskap/psykiatri; Ume\r{a} universitet; 901 85 Ume\r{a}}\\
 % {\small Supervisor:} {\small \bf Mikael Sandlund} {\small \it mikael.sandlund@umu.se}\\
-% {\small Assistant supervisor:} {\small \bf Heljä Pihkala} {\small \it heljä.p@hotmail.com}}
+% {\small Assistant supervisor:} {\small \bf Helj{\"a} Pihkala} {\small \it helj{\"a}.p@hotmail.com}}
 \date{}
 \maketitle
 \vspace{-0.9cm}
@@ -72,7 +72,7 @@
 {\small First author:} {\small \bf Rickard Hultgren} {\small \it rihu0003@student.umu.se}\vspace{.25cm}\\
  {\small Supervisor:} {\small \bf Mikael Sandlund} {\small \it mikael.sandlund@umu.se}\\
  {\small\it Inst f klinisk vetenskap/psykiatri; Ume\r{a} universitet; 901 85 Ume\r{a}}\vspace{.25cm}\\
-% {\small Assistant supervisor:} {\small \bf Heljä Pihkala} {\small \it heljä.p@hotmail.com}\\
+% {\small Assistant supervisor:} {\small \bf Helj{\"a} Pihkala} {\small \it helj{\"a}.p@hotmail.com}\\
  {\small Assistant supervisor:} {\small \bf Helj{\"a} Pihkala} {\small \it helja.pihkala@umu.se}\\
  {\small\it Inst f klinisk vetenskap/psykiatri; Ume\r{a} universitet; 901 85 Ume\r{a}}\vspace{.5cm}\\
 {\fontsize{15pt}{15pt}{\fontfamily{ptm}\selectfont{Project title:}}\\\fontsize{18pt}{18pt}{\fontfamily{ptm}\selectfont{ Staff attitudes towards follow-up and screening via the patient's smartphone, exemplified by a questionnaire for self-rating symptoms of depression.}}}\\
@@ -131,7 +131,7 @@ Foot therapists & 0 & 0\\
 Physician assistants & 1 & 1\\
 Psychotherapists & 1 & 1\\
 \hline
-\end{tabular}\\ \ 
+\end{tabular}\\ \\\ \\\ 
 Two 30-minutes long interviews were performed with each group. In order to get a holistic picture of how a primary care unit would be affected by e{\sc madrs}, as many staff categories as possible were interviewed\cite{goal1}. During the interviews the following topics were discussed:\\\ \\
 Interview 1
 \begin{enumerate}[label=\bf \Alph*.]
@@ -164,45 +164,111 @@ Interview 2
 The interviews were then analysed using qualitative content analysis\cite{analysis1}. From the recordings, causation codes were derived and categorized. The work was done with the help of the programming language {\sc r} and its library {\sc rqda} \cite{rqda}.
 
 \section*{Results}
-
-From the recordings, the following codes were derived:\vspace{-1em}
-<<>>=
-library("RQDA")
-openProject("/home/rickard/work/emadrs.rqda")
-print(summaryCodings(byFile=FALSE))
-@
-%NumOfCoding <- table(Codings$codename,...)
-%print(x$NumOfCoding)
-%summaryCodings(byFile=TRUE)
-%summaryCodings()
-
-The codes on page 4 stands for the followin statements:
-
+Around the example e{madrs} following potentials, strengths and weaknesses were identified:\\\ \\
+The codes on page 4 stands for the followin statements:\\\ \\
 {\bf emadrs\_in\_dev\_only\_follow\_up}\\
-E{\sc madrs} could be very useful for following up patients that are at risk of relapse of depression.
-
+E{\sc madrs} could be very useful for following up patients that are at risk of relapse of depression.\\\ \\
 {\bf emadrs\_in\_dev\_screening\_follow\_up}\\
-There is a need for digital tools with validated questionnaires for a broader spectrum of pathologies.
-
+There is a need for digital tools with validated questionnaires for a broader spectrum of pathologies.\\\ \\
 {\bf emadrs\_in\_dev\_controll}\\
-These questionnaires (in previous code) should be connected with each other in a controlled way.
-
+These questionnaires (in previous code) should be connected with each other in a controlled way.\\\ \\
 {\bf emadrs\_already\_(+)\_less\_paper\_work}\\
-E{\sc madrs} could reduce the work load of the administrators
-
+E{\sc madrs} could reduce the work load of the administrators\\\ \\
 {\bf emadrs\_already\_(+)\_possebility\_to\_check}\\
-Important that someone should be responsible and accountable for the incoming questionnaire results.
-
+Important that someone should be responsible and accountable for the incoming questionnaire results.\\\ \\
 {\bf emadrs\_not\_in\_dev\_everybody\_diagnostic}\\
-E{\sc madrs} should not be used in the process of diagnosing depression.
-
+E{\sc madrs} should not be used in the process of diagnosing depression.\\\ \\
 {\bf emadrs\_not\_in\_dev\_everybody\_too\_many}\\
 E{\sc madrs} should not be possible to use by everyone in order to send the results to the healthcare provider.
 
 \ \\
 %There should be some kind of flow control for those questionnaires.
+In an effective organisation the managing process is distinguished from the leadership \cite{leader1}. Below is a table describing what different staff categories are managing or leading during in their work:
+\\\ 
+leadership\_contact\_patient \\
+\begin{itemize}
+{ \item assistant\_physician [ 165: 202] }%</font></b><br><br>Och att patienten och jag är överens.<br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
+{ \item assistant\_physician [ 362: 445] }%</font></b><br><br>om det är något psykiatriskt då får man känna efter mer. Man får vara mer förljsam.<br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
+{ \item auxiliary\_nurse\_2 [ 168: 240] }%</font></b><br><br>Man försöker ju göra sitt bästa, men det kan vara frustrerande att t.ex.<br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
+{ \item foot\_therapist [  11: 739] }%</font></b><br><br>Eller när patienten sitter i stolen hos mig Då börjar dom att prata och det har hänt några gånger också till läkaren till kallats speciellt att de var min mat psykiskt dåligt. Det har till exempel hänt att en patient har uttryckt vilja att gå till det mesta livet så att säga, och då har jag tillkallat läkare. det är alltså inte bara fötter utan mycket prat om annat också. alltså när dom sitter så sitter dom i med fotbad och slappnar av och då börjar de dom prata. Man är lite halvt en dietist då. Det är mycket annat. Ibland känns det som att jag inte kan ge bra svar på frågorna, men ibland kan jag ge bra svar. Ibland vill patienterna veta mer om resultat från undersökningar. Ibland vill de veta mer om diabetes och mat. <br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
+{ \item nurse\_1 [  11:  38] }%</font></b><br><br>Tillgodose patientens behov<br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
+{ \item nurse\_1 [ 183: 263] }%</font></b><br><br>och inte göra patienten alltför förbannad. Försöker linda bort aggressiviteten.<p><br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
+{ \item nurse\_COPD [ 238: 479] }%</font></b><br><br>Ibland vill du inte komma på grund av att de inte vill veta att det är så dåligt som det kanske är. Sen så har vi då de som kommer på årskontroller som har sin diagnos och då har vi problem med att de kanske isolerar sig och har det jobbigt.<br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
+{ \item nurse\_COPD [1096:1144] }%</font></b><br><br>Känna av. Märka vad det är som har hänt just nu.<br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
+{ \item nurse\_DM [1010:1034] }%</font></b><br><br>Vad är det som har hänt?<br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
+{ \item nurse\_geriatric [  11: 290] }%</font></b><br><br>Vi har ju allt. Det beror ju på att äldre har inte bara en sjukdom. Det är ju diabetes, KOL. Det är alla saker och vad gäller psykisk ohälsa så är det mest anhöriga som har besvär. Patienter och anhöriga ska kunna kontakta direkt. Oftast är det anhöriga som behöver samtalsstöd. <br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
+{ \item nurse\_geriatric [ 554: 580] }%</font></b><br><br>Patientens behov i centrum<br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
+{ \item physician [ 202: 344] }%</font></b><br><br>Sen får man känna av vad det handlar om till exempel suicidrisk. Visa att vården finns där för sådana besvär, för det är svårt att söka själv.<br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
+{ \item psychotherapist2 [ 425: 470] }%</font></b><br><br>Det finns alltså en dialog runt behandlingen.<br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><hr><p align='center'><b><font color='blue' size='+2'>1 Coding of 
+\end{itemize}
+{leadership\_empathy}
+\begin{itemize}
+{ \item administrator1 [643:649] }%</font></b><br><br>Empati<br><a href='#leadership\_empathy+b'>Back<a><br><br><hr><p align='center'><b><font color='blue' size='+2'>6 Codings of 
+\end{itemize}
+{management\_contact\_patient}
+\begin{itemize}
+{ \item administrator1 [160: 182] }%</font></b><br><br>a och boka in patiente<br><a href='#management\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
+{ \item administrator2 [ 47:  92] }%</font></b><br><br>Man kan ju få journalkopior och tider av oss.<br><a href='#management\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
+{ \item administrator2 [229: 306] }%</font></b><br><br>Det är väl att vi har ju mycket tidböcöker -- Vi ska ju kunna erbjuda tider. <br><a href='#management\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
+{ \item nurse\_1 [ 56: 107] }%</font></b><br><br>Nu kommer ju telefonsamtalen fram. Det känner vi av<br><a href='#management\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
+{ \item nurse\_1 [122: 181] }%</font></b><br><br>Sitter mest i telefonrådgivningen, och vill få jobbet gjort<br><a href='#management\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
+{ \item psychotherapist2 [882:1013] }%</font></b><br><br><p>De flesta vill träffa samtalsterapeut personligen, men i brist på det går det per telefon. Finns väl formulärtjänst via internet. <br><a href='#management\_contact\_patient+b'>Back<a><br><br><hr><p align='center'><b><font color='blue' size='+2'>1 Coding of 
+\end{itemize}
+{management\_contact\_staff}
+\begin{itemize}
+{ \item foot\_therapist [844:881] }%</font></b><br><br>Pratar med doktorn om mål i diabetes.<br><a href='#management\_contact\_staff+b'>Back<a><br><br><hr><p align='center'><b><font color='blue' size='+2'>5 Codings of 
+\end{itemize}
+{management\_financial}% files.</b></font><hr><p align='left'><b><font color='red'>
+\begin{itemize}
+{ \item administrator1 [528:555] }%</font></b><br><br>ACG ska spegla verkligheten<br><a href='#management\_financial+b'>Back<a><br><br><b><font color='red'>
+{ \item administrator1 [242:375] }%</font></b><br><br>Ibland kan det vara diagnoskoder som vi letar efter som man inte stöter på ofta. Och vi letar efter kroniska ICD koder sedan tidigare<br><a href='#management\_financial+b'>Back<a><br><br><b><font color='red'>
+{ \item administrator1 [389:511] }%</font></b><br><br>Det är ju ACG. Med diagnoser ser vi hur vi ligger till. Sedan vi har börjat  koda alla kroniska diagnoser så gick vi upp. <br><a href='#management\_financial+b'>Back<a><br><br><b><font color='red'>
+{ \item administrator2 [151:216] }%</font></b><br><br>Vi gör sammanställningar varje vecka för hela verskamhetsområdet.<br><a href='#management\_financial+b'>Back<a><br><br><b><font color='red'>
+{ \item administrator2 [438:502] }%</font></b><br><br>Man måste ju vara säker på att ICD-koder om nedstämdhet gäller. <br><a href='#management\_financial+b'>Back<a><br><br><hr><p align='center'><b><font color='blue' size='+2'>3 Codings of 
+\end{itemize}
+{management\_medical\_practice\_patient\_part}% files.</b></font><hr><p align='left'><b><font color='red'>
+\begin{itemize}
+{ \item foot\_therapist [752: 832] }%</font></b><br><br>Man kan se  resultatet av egenvård,  om t.ex. Om de smörjt i fötterna varje dag.<br><a href='#management\_medical\_practice\_patient\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item nurse\_COPD [890:1005] }%</font></b><br><br>Sluta röka. Om de slutar så kan de ju faktiskt må bättre. Gångtest kan göras men görs sällan på grund av tidsbrist.<br><a href='#management\_medical\_practice\_patient\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item nurse\_DM [804: 922] }%</font></b><br><br>Och de har viktnedgångsmål så klart. De har en del krav på sig vad gäller mål för att få fortsätta en viss behandling.<br><a href='#management\_medical\_practice\_patient\_part+b'>Back<a><br><br><hr><p align='center'><b><font color='blue' size='+2'>26 Codings of 
+\end{itemize}
+{management\_medical\_practice\_staff\_part}% files.</b></font><hr><p align='left'><b><font color='red'>
+\begin{itemize}
+{ \item assistant\_physician [  11:  36] }%</font></b><br><br>Diagnostik och behandling<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item assistant\_physician [  51:  86] }%</font></b><br><br>Labblistor. Används lite som facit.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item assistant\_physician [  99: 165] }%</font></b><br><br>Oftast symptomlindring, och att värden rätt sida referensvärdena. <br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item assistant\_physician [ 291: 356] }%</font></b><br><br>Om det är somatiskt rätt fram så gör man på samma sätt varje gång<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item auxiliary\_nurse\_1 [  82: 122] }%</font></b><br><br>Jag försöker hjälpa till så gott jag kan<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item auxiliary\_nurse\_2 [  28:  36] }%</font></b><br><br>Hälsan. <br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item auxiliary\_nurse\_2 [  54: 154] }%</font></b><br><br>Vi håller på mycket med sår. Såren minskar ju. De mäter med längd och olika cirklar. Görs månadsvis.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item auxiliary\_nurse\_2 [ 241: 372] }%</font></b><br><br>Undersöka sår som går fram och tillbaka. Det är inte så mycket som jag kan påverka. Jag gör ju det jag kan efter min bästa förmåga.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item auxiliary\_nurse\_2 [ 462: 492] }%</font></b><br><br>Det är mitt jobb att fixa det.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item nurse\_COPD [  11: 237] }%</font></b><br><br>Det är i regel en del i utredningen man gör spirometri. Man har i regel varit hos läkaren och fått reda på att man ska göra spirometri. Ibland säger de att de misstänker KOL. Ibland vet de ju det själva då de har varit rökare.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item nurse\_COPD [ 480: 815] }%</font></b><br><br>Då får man ju också erbjuda någon att prata mer med för att de ska kunna må bättre. Vi har även ett frågeformulär kring psykosocialt. Det handlar mycket om hur patienten kan klara av sin vardag. Det är ju det som egentligen är behandlingen. Det finns ju egentligen inte så mycket annat att göra än att spara på energin och röra på sig.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item nurse\_COPD [ 829: 877] }%</font></b><br><br>Det är ju självskattningsformulär och spirometri<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item nurse\_DM [  11: 680] }%</font></b><br><br>Jag måste ju stå i telefonen och göra en bedömning utan att se personen. Jag måste ju lyssna in på kort tid. Det är tidsbegränsat också. Och göra en korrekt bedömning. Var den hör hemma och hur snabbt de måste in. Jag är inte alltid bombarderad av data, men det ringer nån och mår väldigt dåligt och då måste jag veta vad jag ska fråga om. Och det är inte alltid så enkelt Speciellt som jag inte har den specifika utbildningen men det gäller inte diabetes, men även där måste jag veta vilka patienter som kanske behöver gå till annat område… och få ett fjärde ben att stå på i diabetes-behandlingen, så därför har vi börjat erbjuda samtalsterapi för diabetes patienter.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item nurse\_DM [ 693: 751] }%</font></b><br><br>Vid diabetes kan man se förändring i vikt eller blodsocker<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item nurse\_DM [ 773: 803] }%</font></b><br><br>Tydliga mål enligt riktlinjer.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item nurse\_geriatric [ 302: 359] }%</font></b><br><br>Klocktest, olika frågeformulär, bl.a. skatta hur man mår.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item nurse\_geriatric [ 371: 464] }%</font></b><br><br>Att få så gott som möjligt för patienterna och se i kvalitetsregister hur vi ligger över lag.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item physician [  82: 201] }%</font></b><br><br>Det de söker för måste ju åtgärdas. Jag tycker det är oerhört viktigt Se till att uppföljning på den andra biten sker. <br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item psychotherapist1 [  11: 655] }%</font></b><br><br>Det är ju en svår fråga. Jag tänker om vi utgår från samtalsmottagningen här på vårdcentralen, så är det väl mycket bedömning först och främst. Göra bedömningar av patienters psykiska mående och sedan i den bedömningen ingår där ju att göra bedömning om de kan få hjälp - om det är hälso- och sjukvård, för det första. Kan ju också vara någonting som är ganska normalt, vanlig ångest som alla har. Och om det är det, så är det något som ska till primärvården eller om vi ska på remittera vidare. Och sen är det att hålla i behandling när man väl har fått patienter till primärvården. Så tänker man att man kan hjälpa dem må bättre genom samtal.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item psychotherapist1 [ 667:1025] }%</font></b><br><br>Vi mäter ju med skattningsskalor. Objektivt? Det är ju patienten själv som ska skatta. Ii början av en behandling och sen ser man att symptom sjunker och att de kommit rätt och vi använder Ossr ssr. Och vi skattar patientens tillfredsställelse och tänker att den ska bli bättre. De uppskattar tillfredsställelse på fyra olika områden för att ge oss feedback.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item psychotherapist1 [1036:1125] }%</font></b><br><br>De brukar ha en tydlighet att de vill klara av saker som att till exempel gå och handla .<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item psychotherapist1 [1217:1443] }%</font></b><br><br>Det beror på hur mycket information sköterskorna har fått eller hur mycket information läkarna har tagit ibland kan det vara svårt för vissa situationer. Ibland kan du ta med dig imorgon förmiddag.<p>Utredande. Känna in känslor.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item psychotherapist2 [  11:  52] }%</font></b><br><br>Ja du. Symptomlindring. Funktionsökning. <br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item psychotherapist2 [  66: 424] }%</font></b><br><br>Vi mäter ju med formulär. Nästan varje patient fyller före varjesamtal i en symptomskattning. Efter samtalen fyller de en skala som mäter hur nöjda de har varit med innehållet i just det samtalet. Hos många finns också specifika skalor för deras problem. Om man mäter symptom och livskvalitet -- så tar man upp det under samtalet och adresserar förändringar.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item psychotherapist2 [ 484: 868] }%</font></b><br><br>Dialogen avgör om man har mål eller inte. Patienten kanske tycker det är rimligt att de inte kommer ha stöttning från oss och ska kunna fungera -- Klara av sitt jobb eller familjesituation. Så den är ju ofta ganska tydlig. Vi har ju ganska ofta en tidssatt målbild -- Det där ska vi uppnå inom 8 samtal t.ex. Sen lyckas man ju inte alltid det. Men sen får man se hur långt man kommit.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
+{ \item psychotherapist2 [1102:1199] }%</font></b><br><br>Det ingår ju alltid att man bedömer depression. Det gör vi på alla nya patienter. Det är jobbet. <br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><hr><p align='center'><b><font color='blue' size='+2'>3 Codings of 
+\end{itemize}
+{management\_medical\_record}% files.</b></font><hr><p align='left'><b><font color='red'>
+\begin{itemize}
+{ \item administrator1 [187:201] }%</font></b><br><br> skriva diktat<br><a href='#management\_medical\_record+b'>Back<a><br><br><b><font color='red'>
+{ \item administrator2 [306:350] }%</font></b><br><br>Diktaten ska skrivas, och remisser ska iväg.<br><a href='#management\_medical\_record+b'>Back<a><br><br><b><font color='red'>
+{ \item administrator2 [106:149] }%</font></b><br><br>Vid mäter hur mycket diktat vi ligger efter<br><a href='#management\_medical\_record+b'>Back<a><br><br>
+\end{itemize}
 
-Digital questionnaires would effect the {\it managing of communication with the patient}. According to the codes on page 5 the staff categories that are working with that task are: nurses, administrators and psychotherapists.
+Digital questionnaires would effect the {\it managing of communication with the patient}. According to the table above, the staff categories that are working with that task are: nurses, administrators and psychotherapists.
 %The project shows XYZ qualitative and quantitative benefits from e{\sc madrs} as a compliment in the follow-up and screening for depressed patients.
 In order to foresee shifts in work load that the new digital tools could lead to, further scientific work has to be done. This is important since economic benefits could only be gained if the work tasks would change, since the finances are a mirroring of what work is acuallty done.
 
@@ -234,29 +300,29 @@ The project's character is developmental work within the clinic. Therefore it is
 
 \begin{thebibliography}{11}
 \bibitem{numbers0}Kendler KS, Gatz M, Gardner CO, Pedersen NL\emph{A Swedish national twin study of lifetime major depression.}; Am J Psychiatry. 2006 Jan; 163(1):109-14.\\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/16390897/}{\url{https://www.ncbi.nlm.nih.gov/pubmed/16390897/}}}}
-\bibitem{numbers1} \emph{Utvärdering 2013 -- vård och insatser vid depression, ångest och schizofreni. Indikatorer och underlag för bedömningar.}; Socialstyrelsen\\\textbf{\emph{\href{http://www.socialstyrelsen.se/publikationer2013/2013-6-7}{\url{http://www.socialstyrelsen.se/publikationer2013/2013-6-7}}}}
+\bibitem{numbers1} \emph{Utv{\"a}rdering 2013 -- v\r{a}rd och insatser vid depression, \r{a}ngest och schizofreni. Indikatorer och underlag f{\"o}r bed{\"o}mningar.}; Socialstyrelsen\\\textbf{\emph{\href{http://www.socialstyrelsen.se/publikationer2013/2013-6-7}{\url{http://www.socialstyrelsen.se/publikationer2013/2013-6-7}}}}
 \bibitem{numbers1.1} Kasper S1, Schindler S, Neumeister A.; \emph{Risk of suicide in depression and its implication for psychopharmacological treatment.}; Int Clin Psychopharmacol. 1996 Jun;11(2):71-9.\\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/8803644}{\url{https://www.ncbi.nlm.nih.gov/pubmed/8803644}}}}
-\bibitem{numbers2} \emph{Självmord i anslutning till vård Socialstyrelsen};\\\textbf{\emph{\href{http://www.socialstyrelsen.se/patientsakerhet/riskomraden/suicid}{\url{http://www.socialstyrelsen.se/patientsakerhet/riskomraden/suicid
+\bibitem{numbers2} \emph{Sj{\"a}lvmord i anslutning till v\r{a}rd Socialstyrelsen};\\\textbf{\emph{\href{http://www.socialstyrelsen.se/patientsakerhet/riskomraden/suicid}{\url{http://www.socialstyrelsen.se/patientsakerhet/riskomraden/suicid
 }}}}
 \bibitem{numbers3.0.1}\emph{Statistics on causes of death 2015 - Socialstyrelsen}; Socialstyrelsen;
 \\\textbf{\emph{\href{https://www.socialstyrelsen.se/Lists/Artikelkatalog/Attachments/20291/2016-8-4.pdf}{\url{
 https://www.socialstyrelsen.se/Lists/Artikelkatalog/Attachments/20291/2016-8-4.pdf}}}}
-\bibitem{numbers3.1} \emph{Resultaträkning för landsting år 2010--2014}; SCB;\\\textbf{\emph{\href{ http://www.scb.se/hitta-statistik/statistik-efter-amne/offentlig-ekonomi/finanser-for-den-kommunala-sektorn/rakenskapssammandrag-for-kommuner-och-landsting/pong/tabell-och-diagram/kommun--och-landstingssektorn-2014/resultatrakning-for-landsting-ar-20102014/}{\url{http://www.scb.se/hitta-statistik/statistik-efter-amne/offentlig-ekonomi/finanser-for-den-kommunala-sektorn/rakenskapssammandrag-for-kommuner-och-landsting/pong/tabell-och-diagram/kommun--och-landstingssektorn-2014/resultatrakning-for-landsting-ar-20102014/}}}}
-\bibitem{numbers3.2} \emph{Resultaträkning för landsting år 2012--2016}; SCB;\\\textbf{\emph{\href{
+\bibitem{numbers3.1} \emph{Resultatr{\"a}kning f{\"o}r landsting \r{a}r 2010--2014}; SCB;\\\textbf{\emph{\href{ http://www.scb.se/hitta-statistik/statistik-efter-amne/offentlig-ekonomi/finanser-for-den-kommunala-sektorn/rakenskapssammandrag-for-kommuner-och-landsting/pong/tabell-och-diagram/kommun--och-landstingssektorn-2014/resultatrakning-for-landsting-ar-20102014/}{\url{http://www.scb.se/hitta-statistik/statistik-efter-amne/offentlig-ekonomi/finanser-for-den-kommunala-sektorn/rakenskapssammandrag-for-kommuner-och-landsting/pong/tabell-och-diagram/kommun--och-landstingssektorn-2014/resultatrakning-for-landsting-ar-20102014/}}}}
+\bibitem{numbers3.2} \emph{Resultatr{\"a}kning f{\"o}r landsting \r{a}r 2012--2016}; SCB;\\\textbf{\emph{\href{
 http://www.scb.se/hitta-statistik/statistik-efter-amne/offentlig-ekonomi/finanser-for-den-kommunala-sektorn/rakenskapssammandrag-for-kommuner-och-landsting/pong/tabell-och-diagram/kommun--och-landstingssektorn-2016/resultatrakning-for-landsting-ar-2012-2016/}{\url{http://www.scb.se/hitta-statistik/statistik-efter-amne/offentlig-ekonomi/finanser-for-den-kommunala-sektorn/rakenskapssammandrag-for-kommuner-och-landsting/pong/tabell-och-diagram/kommun--och-landstingssektorn-2016/resultatrakning-for-landsting-ar-2012-2016/}}}}
 \bibitem{app1}\emph{Appen Uppskatta}; Google Play\\\textbf{\emph{\href https://play.google.com/store/apps/details?id=com.akerlund.uppskattadindag}{\url{{https://play.google.com/store/apps/details?id=com.akerlund.uppskattadindag}}}}
 \bibitem{app2}\emph{Appen PsykTools}; Google Play\\\textbf{\emph{\href https://play.google.com/store/apps/details?id=no.sonat.honos}{\url{{https://play.google.com/store/apps/details?id=no.sonat.honos}}}}
 %\bibitem{madrs1}Zimmerman, Chelminski, Posternak \emph{The Montgomery Asberg Depression Rating Scale in bipolar II and unipolar out-patients: a 405-patient case study.}; Int Clin Psychopharmacol. 2004 Jan;19(1):1-7; \\\textbf{\emph{\href{http://www.ncbi.nlm.nih.gov/pubmed/15101563}{\url{http://www.ncbi.nlm.nih.gov/pubmed/15101563}}}}
-%\bibitem{madrs2}Svanborg, P; Åsberg, M; \emph{A comparison between the Beck Depression Inventory (BDI) and the self-rating version of the Montgomery Åsberg Depression Rating Scale (MADRS)}; J. Affective Disorders. 64 (2-3): 203--216. doi:10.1016/S0165-0327(00)00242-1.\\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/11313087}{\url{https://www.ncbi.nlm.nih.gov/pubmed/11313087}}}}
+%\bibitem{madrs2}Svanborg, P; \r{A}sberg, M; \emph{A comparison between the Beck Depression Inventory (BDI) and the self-rating version of the Montgomery {\"A}\r{A}sberg Depression Rating Scale (MADRS)}; J. Affective Disorders. 64 (2-3): 203--216. doi:10.1016/S0165-0327(00)00242-1.\\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/11313087}{\url{https://www.ncbi.nlm.nih.gov/pubmed/11313087}}}}
 \bibitem{madrs2}Svanborg, P; \r{A}sberg, M; \emph{A comparison between the Beck Depression Inventory (BDI) and the self-rating version of the Montgomery \r{A}sberg Depression Rating Scale (MADRS)}; J. Affective Disorders. 64 (2-3): 203--216. doi:10.1016/S0165-0327(00)00242-1.\\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/11313087}{\url{https://www.ncbi.nlm.nih.gov/pubmed/11313087}}}}
-\bibitem{madrs3}\emph{Tolkning av MADRS-S}; Region Jönköpings län\\\textbf{\emph{\href{http://plus.rjl.se/info_files/infosida39803/madrs_s_tolkning.pdf}{\url{http://plus.rjl.se/info_files/infosida39803/madrs_s_tolkning.pdf}}}}
+\bibitem{madrs3}\emph{Tolkning av MADRS-S}; Region J{\"o}nk{\"o}pings l{\"a}n\\\textbf{\emph{\href{http://plus.rjl.se/info_files/infosida39803/madrs_s_tolkning.pdf}{\url{http://plus.rjl.se/info_files/infosida39803/madrs_s_tolkning.pdf}}}}
 \bibitem{emadrs1}Rickard Hultgren; \emph{eMADRS source code}; github.com; \\\textbf{\emph{\href{https://github.com/RickardHultgren/emadrs}{\url{https://github.com/RickardHultgren/emadrs}}}}
 \bibitem{emadrs2}Rickard Hultgren; \emph{eMADRS compiled}; play.google.com; \\\textbf{\emph{\href{https://play.google.com/store/apps/details?id=rickardverner.hultgren.emadrs}{\url{https://play.google.com/store/apps/details?id=rickardverner.hultgren.emadrs}}}}
-%\bibitem{goal0}Birgitta Lindelius; \emph{Öppna jämförelser och utvärdering 2010 -- Psykiatrisk vård}; socialstyrelsen.se; \\\textbf{\emph{\href{http://www.socialstyrelsen.se/publikationer2010/2010-6-6}{\url{http://www.socialstyrelsen.se/publikationer2010/2010-6-6}}}}
+%\bibitem{goal0}Birgitta Lindelius; \emph{{\"O}ppna j{\"a}mf{\"o}relser och utv{\"a}rdering 2010 -- Psykiatrisk v\r{a}rd}; socialstyrelsen.se; \\\textbf{\emph{\href{http://www.socialstyrelsen.se/publikationer2010/2010-6-6}{\url{http://www.socialstyrelsen.se/publikationer2010/2010-6-6}}}}
 \bibitem{goal1}Tracy R.G. Gladstone, William R. Beardslee, Erin E. O'Connor; \emph{The Prevention of Adolescent Depression}; Psychiatr Clin North Am. 2011 Mar; 34(1): 35--52. \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3072710/}{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3072710/}}}}
 %\bibitem{goal2}Maryann Davis, Michael T. Abrams, Lawrence S. Wissow, Eric P. Slade; \emph{Identifying young adults at risk of Medicaid enrollment lapses after inpatient mental health treatment}; Psychiatr Serv. 2014 Apr 1; 65(4): 461--468.doi:  10.1176/appi.ps.201300199 \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3972275/}{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3972275/}}}}
-\bibitem{guide1}Riitta Sorsa; \emph{Nationella riktlinjer -- Målnivåer -- Vård vid depression och ångestsyndrom -- Målnivåer för indikatorer}; socialstyrelsen.se december 2017\\\textbf{\emph{\href{http://www.socialstyrelsen.se/publikationer2017/2017-12-1}{\url{http://www.socialstyrelsen.se/publikationer2017/2017-12-1}}}}
-\bibitem{regionjh1}Majvor Enström; \emph{Granskning av Psykiatrin 2014 Region Jämtland-Härjedalen}\\\textbf{\emph{\href{https://www.regionjh.se/download/18.61342ea415bcfb51720c5fd7}{\url{https://www.regionjh.se/download/18.61342ea415bcfb51720c5fd7}}}}
+\bibitem{guide1}Riitta Sorsa; \emph{Nationella riktlinjer -- M\r{a}lniv\r{a}er -- V\r{a}rd vid depression och \r{a}ngestsyndrom -- M\r{a}lniv\r{a}er f{\"o}r indikatorer}; socialstyrelsen.se december 2017\\\textbf{\emph{\href{http://www.socialstyrelsen.se/publikationer2017/2017-12-1}{\url{http://www.socialstyrelsen.se/publikationer2017/2017-12-1}}}}
+\bibitem{regionjh1}Majvor Enstr{\"o}m; \emph{Granskning av Psykiatrin 2014 Region J{\"a}mtland-H{\"a}rjedalen}\\\textbf{\emph{\href{https://www.regionjh.se/download/18.61342ea415bcfb51720c5fd7}{\url{https://www.regionjh.se/download/18.61342ea415bcfb51720c5fd7}}}}
 %\bibitem{style0}Vakhtang Tchantchaleishvili, Jan D Schmitto; \emph{Preparing a scientific manuscript in Linux: Today's possibilities and limitations.}; BMC Res Notes. 2011; 4: 434. \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3227619/}{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3227619/}}}}
 \bibitem{style1}\emph{Style Guide for Authors} \\\textbf{\emph{\href{https://academic.oup.com/cdj/pages/Style_Guide}{\url{https://academic.oup.com/cdj/pages/Style_Guide}}}}
 \bibitem{style2}Barbara J. Hoogenboom, Robert C. Manske; \emph{How to write a scientific article.} Int J Sports Phys Ther. 2012 Oct; 7(5): 512--517. \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3474301/}{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3474301/}}}}
@@ -266,7 +332,7 @@ http://www.scb.se/hitta-statistik/statistik-efter-amne/offentlig-ekonomi/finanse
 
 \bibitem{analysis1}Granheim, Lundman \emph{Qualitative content analysis in nursing research concepts, procedures and measures to achieve trustworthiness.} Nurse Educ Today. 2004 Feb;24(2):105-12 \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/14769454}{\url{https://www.ncbi.nlm.nih.gov/pubmed/14769454}}}}
 
-%\bibitem{law}Hälso- och sjukvårdslag (1982:763)\\\textbf{\emph{\href{http://www.notisum.se/rnp/sls/lag/19820763.htm}{\url{http://www.notisum.se/rnp/sls/lag/19820763.htm}}}}
+%\bibitem{law}H{\"a}lso- och sjukv\r{a}rdslag (1982:763)\\\textbf{\emph{\href{http://www.notisum.se/rnp/sls/lag/19820763.htm}{\url{http://www.notisum.se/rnp/sls/lag/19820763.htm}}}}
 
 \bibitem{rqda}Ronggui Huang; \\\textbf{\emph{\href{http://rqda.r-forge.r-project.org/}{\url{http://rqda.r-forge.r-project.org/}}}}
 
