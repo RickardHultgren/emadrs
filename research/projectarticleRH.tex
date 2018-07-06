@@ -1,54 +1,4 @@
-\documentclass[12pt,a4paper,oneside]{article}\usepackage[]{graphicx}\usepackage[]{color}
-%% maxwidth is the original width if it is less than linewidth
-%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
-\makeatletter
-\def\maxwidth{ %
-  \ifdim\Gin@nat@width>\linewidth
-    \linewidth
-  \else
-    \Gin@nat@width
-  \fi
-}
-\makeatother
-
-\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
-\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
-\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
-\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
-\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
-\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
-\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
-\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
-\let\hlipl\hlkwb
-
-\usepackage{framed}
-\makeatletter
-\newenvironment{kframe}{%
- \def\at@end@of@kframe{}%
- \ifinner\ifhmode%
-  \def\at@end@of@kframe{\end{minipage}}%
-  \begin{minipage}{\columnwidth}%
- \fi\fi%
- \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
- \colorbox{shadecolor}{##1}\hskip-\fboxsep
-     % There is no \\@totalrightmargin, so:
-     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
- \MakeFramed {\advance\hsize-\width
-   \@totalleftmargin\z@ \linewidth\hsize
-   \@setminipage}}%
- {\par\unskip\endMakeFramed%
- \at@end@of@kframe}
-\makeatother
-
-\definecolor{shadecolor}{rgb}{.97, .97, .97}
-\definecolor{messagecolor}{rgb}{0, 0, 0}
-\definecolor{warningcolor}{rgb}{1, 0, 1}
-\definecolor{errorcolor}{rgb}{1, 0, 0}
-\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
-
-\usepackage{alltt}
+\documentclass[12pt,a4paper,oneside]{article}
 \newcommand{\latex}{\LaTeX\xspace}
 \usepackage{textcomp}
 \usepackage{tabularx}
@@ -94,7 +44,6 @@
 
 %\bibliography{test}
 %\usepackage[sort, numbers]{natbib}
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 \title{
 \vspace{-3.9cm}
@@ -122,11 +71,11 @@
 \ \\
 {\small First author:} {\small \bf Rickard Hultgren} {\small \it rihu0003@student.umu.se}\vspace{.25cm}\\
  {\small Supervisor:} {\small \bf Mikael Sandlund} {\small \it mikael.sandlund@umu.se}\\
- {\small\it Inst f klinisk vetenskap/psykiatri; Ume\r{a} universitet; 901 85 \r{a}}\vspace{.25cm}\\
+ {\small\it Inst f klinisk vetenskap/psykiatri; Ume\r{a} universitet; 901 85 Ume\r{a}}\vspace{.25cm}\\
 % {\small Assistant supervisor:} {\small \bf Heljä Pihkala} {\small \it heljä.p@hotmail.com}\\
  {\small Assistant supervisor:} {\small \bf Helj{\"a} Pihkala} {\small \it helja.pihkala@umu.se}\\
- {\small\it Inst f klinisk vetenskap/psykiatri; Ume\r{a} universitet; 901 85 \r{a}}\vspace{.5cm}\\
-{\fontsize{15pt}{15pt}{\fontfamily{ptm}\selectfont{Project title:}}\\\fontsize{18pt}{18pt}{\fontfamily{ptm}\selectfont{ Staff attitudes towards follow-up and screening via the patient's mobile phone, exemplified by depression.}}}\\
+ {\small\it Inst f klinisk vetenskap/psykiatri; Ume\r{a} universitet; 901 85 Ume\r{a}}\vspace{.5cm}\\
+{\fontsize{15pt}{15pt}{\fontfamily{ptm}\selectfont{Project title:}}\\\fontsize{18pt}{18pt}{\fontfamily{ptm}\selectfont{ Staff attitudes towards follow-up and screening via the patient's smartphone, exemplified by a questionnaire for self-rating symptoms of depression.}}}\\
 \hrule
 \ \\
 \fontfamily{iwona}\selectfont
@@ -135,17 +84,17 @@
 \ \\\vspace{-2em}\ \\
 %\emph{
 \bfseries{
-The health care system is in need of new good and cost-effective tools in order to cope with common diseases as depression. How would the health care be effected if the primary care units would resieve questionaur results from the patient smart phone? Interviews about this topic were performed with focus groups containing of primary health care staff at Hagfors Primary Care Centre in Sweden. The recordings were analyzed with qualitative content analysis. The project shows that digital questionairs can benefite quality and quantity of follow-up and screening. This would effect all staff categories in the primary health care.
+The health care system is in need of new cost-effective tools. How would the health care be affected if the primary care units would receive questionnaire results from the patient's smartphone? Interviews on this topic were performed with focus groups containing primary health care staff at Hagfors Primary Care Centre in Sweden. The recordings were examined using qualitative content analysis. The project shows that digital questionnaires has potentials in screening and follow up.
 }
 \end{abstract}
 
 \section*{Background}
 In Sweden, the lifetime prevalence of depression is estimated to be 13.2\% among men and 25.1\% among women\cite{numbers0}. There is a well-established relationship between suicide and mood disorders\cite{numbers1.1}. It has been estimated that 50--80\% of completed suicides are associated with mood disorders\cite{numbers1.1}. Suicide is the leading cause of death among men between the ages of 15 and 44 in Sweden\cite{numbers3.0.1}. Nevertheless, it is estimated that just over \nicefrac{2}{3} of all suicide cases had recently been in touch with the healthcare. Only \nicefrac{1}{3} of all suicide cases had contact with a psychiatric clinic\cite{numbers2}. In many cases, the suicide could have been prevented if adequate efforts had been made\cite{numbers1}. Guidelines for the treatment and follow-up of depression exist, but the increase in mental problems among young people poses a major challenge\cite{guide1, regionjh1}.
 
-Thus solving the difficult situation require new ways of dealing with depression. Perhaps cell phones can be used to fight depression? Some cell phone apps have been developed for the purpose of benefiting the health care of depressed patients. The apps could be categorized into two groups depending on what end-user they are meant for. If the end-user is a patient, then the app helps the patient track and understand the symptoms through a mood diary\cite{app1}. If the app is meant to be used by healthcare staff, then the app is constructed around different questionnaires\cite{app2}. Both approaches may result in somewhat better results for the patient, but by focusing on either the patient or the staff a key aspect is neglected. In order for the healthcare staff to help the patient as good and effective as possible, it is necessary to focus on the communication between both parties.
+Thus solving the difficult situation require new ways of dealing with depression. Perhaps smartphones can be used to fight depression? Some smartphone apps have been developed for the purpose of benefiting the health care of depressed patients. The apps could be categorized into two groups depending on what end-user they are meant for. If the end-user is a patient, then the app helps the patient track and understand the symptoms through a mood diary\cite{app1}. If the app is meant to be used by healthcare staff, then the app is constructed around different questionnaires\cite{app2}. Both approaches may result in somewhat better results for the patient, but by focusing on either the patient or the staff a key aspect is neglected. In order for the healthcare staff to help the patient as good and effective as possible, it is necessary to focus on the communication between both parties.
 
 \section*{Purpose}
-In order for the healthcare staff to give the depressed patient adequate help, the staff needs adequate information about the patient. In investigations of somatic pathologies, adequate laboratory tests are usually done before an appointment. What if the patient's mood could be measured in a similar way before an appointment? With the purpose of enhancing the communication between the patient and healthcare staff an app prototype (e{\sc madrs}) for android cell phones has been developed by the first author\cite{emadrs1, emadrs2}. The app consists of a {\sc madrs-s} form where the result is sent to a phone number, preferred by the patient as an {\sc sms} text message. {\sc Madrs-s} is a verified tool commonly used for screening and follow-up of depression\cite{madrs2,madrs3}. It consists of nine questions where the patient answers with a rating from zero to six. The score is categorized as follows:\\
+In order for the healthcare staff to give the depressed patient adequate help, the staff needs adequate information about the patient. In investigations of somatic pathologies, adequate laboratory tests are usually done before an appointment. What if the patient's mood could be measured in a similar way before an appointment? With the purpose of enhancing the communication between the patient and healthcare staff an app prototype (e{\sc madrs}) for android smartphones has been developed by the first author\cite{emadrs1, emadrs2}. The app consists of a {\sc madrs-s} form where the result is sent to a phone number, preferred by the patient as an {\sc sms} text message. {\sc Madrs-s} is a verified tool commonly used for screening and follow-up of depression\cite{madrs2,madrs3}. It consists of nine questions where the patient answers with a rating from zero to six. The score is categorized as follows:\\
 
 \begin{tabular}{r|l}
 {\bf score} & {\bf severity of depression}\\
@@ -159,28 +108,7 @@ The research question is: What advantages and disadvantages are identified from 
 
 \section*{Materials and Methods}
 %Interviews with at least {\sc 2} focus groups, consisting of about {\sc 5--7} primary care unit employees from different staff categories that are involved in the treatment of depression. The staff categories concerned are primarily physicians, nurses and members from the so-called psycho-social teams (e.g. psychologists)\cite{goal1}. Each group will consist of as few staff categories as possible. This would be beneficial for the interviews since it would minimize the risk of hierarchical group dynamics.
-Two focus groups were formed , consisting of seven respectively six primary care unit employees from different staff categories that are directly or indirectly involved in the treatment of depression at Hagfors Primary Care Centre in Sweden. Two 30-minutes long interviews were performed with each group. In order to get a holistic picture of how a primary care unit would be effected by e{\sc madrs}, as many staff categories as possible were interviewed\cite{goal1}. During the interviews the following topics were discussed:\\\ \\
-Interview 1
-\begin{enumerate}[label=\bf \Alph*.]
-%\item {\bf Questions}: How would your work situation change if you would get a mood evaluation from almost every of the patient before getting in touch with the patient? What would it mean for the work quality? What would it mean for the work quantity?
-%\item {\bf Presentation}: What is the app e{\sc madrs}?
-%\item {\bf Presentation}: Problems and solutions that the developer can see.
-\item {\bf} What is specific, measurable and achievable in your work?
-%\item {\bf One word exercise}: Each participant describes e{\sc madrs} with one word.
-\end{enumerate}
-Interview 2
-\begin{enumerate}[label=\bf \Alph*.]\setcounter{enumi}{1}
-\item {\bf} Describe your feelings when a patient major issue is not related to depression, but the patient seem to be in a very sad mood? 
-\item {\bf} Scenarious are discussed:
-\begin{itemize}
-\item {\bf} What if e{\sc madrs} only could be used by follow-up patients?
-\item {\bf} What if e{\sc madrs} could be used by everyone?
-\item {\bf} What if e{\sc madrs} could 
-\end{itemize}
-\end{enumerate}
-From the recordings, the following codes and  were derived and categorized:\\
-
-The following table is a compilation of the group members:\\\\
+Two focus groups were formed, consisting of seven respectively six primary care unit employees from different staff categories that are directly or indirectly involved in the treatment of depression at Hagfors Primary Care Centre in Sweden. The following table is a compilation of the group members:\\\\
 {\bf Group A}\\
 \begin{tabular}{p{10em}|l|l}
 Work title & Interview 1 & Interview 2 \\
@@ -203,7 +131,27 @@ Foot therapists & 0 & 0\\
 Physician assistants & 1 & 1\\
 Psychotherapists & 1 & 1\\
 \hline
-\end{tabular}\\ \ \\ \ \\
+\end{tabular}\\ \ 
+Two 30-minutes long interviews were performed with each group. In order to get a holistic picture of how a primary care unit would be affected by e{\sc madrs}, as many staff categories as possible were interviewed\cite{goal1}. During the interviews the following topics were discussed:\\\ \\
+Interview 1
+\begin{enumerate}[label=\bf \Alph*.]
+%\item {\bf Questions}: How would your work situation change if you would get a mood evaluation from almost every of the patient before getting in touch with the patient? What would it mean for the work quality? What would it mean for the work quantity?
+%\item {\bf Presentation}: What is the app e{\sc madrs}?
+%\item {\bf Presentation}: Problems and solutions that the developer can see.
+\item {\bf} What is specific, measurable and achievable in your work?
+%\item {\bf One word exercise}: Each participant describes e{\sc madrs} with one word.
+\end{enumerate}
+Interview 2
+\begin{enumerate}[label=\bf \Alph*.]\setcounter{enumi}{1}
+\item {\bf} Describe your feelings when a patient's major issue is not related to depression, but the patient seems to be in a very sad mood? 
+\item {\bf} Scenarious are discussed:
+\begin{itemize}
+\item {\bf} What if e{\sc madrs} only could be used by follow-up patients?
+\item {\bf} What if e{\sc madrs} could be used by everyone to send you mood evaluations?
+\item {\bf} What if the result of e{\sc madrs} automatically could direct what lab-tests should be performed before the initial meeting with a healthcare professional?
+\end{itemize}
+\end{enumerate}
+
 %The interviews will have the following structure:
 %\begin{itemize}
 %\item {\bf One word exercise}: Each participant describes handling a depressed patient with one word. 
@@ -213,227 +161,58 @@ Psychotherapists & 1 & 1\\
 %\item {\bfseries{\scshape{Swot}} analysis} about e{\sc madrs}.
 %\item {\bf One word exercise}: Each participant describes e{\sc madrs} with one word.
 %\end{itemize}
-The interviews were then analyzed using qualitative content analysis\cite{analysis1}. From the recordings, causation codes were derived and categorized. The work was done with the help of the programming language {\sc r} and its library {\sc rqda} \cite{rqda}.
+The interviews were then analysed using qualitative content analysis\cite{analysis1}. From the recordings, causation codes were derived and categorized. The work was done with the help of the programming language {\sc r} and its library {\sc rqda} \cite{rqda}.
 
 \section*{Results}
 
-From the recordings, the following codes and  were derived and categorized:\\
-
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlkwd{library}\hlstd{(}\hlstr{"RQDA"}\hlstd{)}
-\end{alltt}
-
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: RSQLite}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: gWidgetsRGtk2}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: RGtk2}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: gWidgets}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: cairoDevice}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: DBI}}\begin{alltt}
-\hlkwd{openProject}\hlstd{(}\hlstr{"/home/rickard/work/emadrs.rqda"}\hlstd{)}
-\hlkwd{getCodingTable}\hlstd{()}
-\end{alltt}
-\begin{verbatim}
-##    rowid cid fid                                 codename
-## 1     59   8   1                     management_financial
-## 2     60   9   1               management_patient_contact
-## 3     61  10   1                management_medical_record
-## 4     62   8   1                     management_financial
-## 5     64   8   1                     management_financial
-## 6     65  11   1                       leadership_empathy
-## 7     67   9   8               management_patient_contact
-## 8     68  10   8                management_medical_record
-## 9     70   9   8               management_patient_contact
-## 10    71  10   8                management_medical_record
-## 11    72   8   8                     management_financial
-## 12    73   8   8                     management_financial
-## 13    76  15   7   management_medical_practice_staff_part
-## 14    77  15   7   management_medical_practice_staff_part
-## 15    78  15   7   management_medical_practice_staff_part
-## 16    79  16   7               leadership_contact_patient
-## 17    80  15   7   management_medical_practice_staff_part
-## 18    81  16   7               leadership_contact_patient
-## 19    82  12   7        emadrs_in_dev_screening_follow_up
-## 20    83  15   6   management_medical_practice_staff_part
-## 21    84  13   6  emadrs_already_(+)_possebility_to_check
-## 22    85  15   5   management_medical_practice_staff_part
-## 23    86  15   5   management_medical_practice_staff_part
-## 24    87  15   5   management_medical_practice_staff_part
-## 25    88  16   5               leadership_contact_patient
-## 26    89  15   5   management_medical_practice_staff_part
-## 27    90  14   5     emadrs_not_in_dev_everybody_too_many
-## 28    91  16  12               leadership_contact_patient
-## 29    92  18  12 management_medical_practice_patient_part
-## 30    94  19  12                 management_contact_staff
-## 31    95  16   4               leadership_contact_patient
-## 32    96  20   4               management_contact_patient
-## 33    97  20   4               management_contact_patient
-## 34    98  16   4               leadership_contact_patient
-## 35    99  15   3   management_medical_practice_staff_part
-## 36   100  16   3               leadership_contact_patient
-## 37   101  15   3   management_medical_practice_staff_part
-## 38   102  15   3   management_medical_practice_staff_part
-## 39   103  18   3 management_medical_practice_patient_part
-## 40   104  16   3               leadership_contact_patient
-## 41   105  12   3        emadrs_in_dev_screening_follow_up
-## 42   106  15   2   management_medical_practice_staff_part
-## 43   107  15   2   management_medical_practice_staff_part
-## 44   108  18   2 management_medical_practice_patient_part
-## 45   109  15   2   management_medical_practice_staff_part
-## 46   110  16   2               leadership_contact_patient
-## 47   112  16  11               leadership_contact_patient
-## 48   113  15  11   management_medical_practice_staff_part
-## 49   114  15  11   management_medical_practice_staff_part
-## 50   115  16  11               leadership_contact_patient
-## 51   116  12  11        emadrs_in_dev_screening_follow_up
-## 52   117  15   9   management_medical_practice_staff_part
-## 53   118  16   9               leadership_contact_patient
-## 54   119  14   9     emadrs_not_in_dev_everybody_too_many
-## 55   125  15  10   management_medical_practice_staff_part
-## 56   126  15  10   management_medical_practice_staff_part
-## 57   127  15  10   management_medical_practice_staff_part
-## 58   128  15  10   management_medical_practice_staff_part
-## 59   133  15  13   management_medical_practice_staff_part
-## 60   134  15  13   management_medical_practice_staff_part
-## 61   135  16  13               leadership_contact_patient
-## 62   136  15  13   management_medical_practice_staff_part
-## 63   137  20  13               management_contact_patient
-## 64   138  15  13   management_medical_practice_staff_part
-## 65   140  12  13        emadrs_in_dev_screening_follow_up
-## 66   142  21   8       emadrs_already_(+)_less_paper_work
-## 67   145  12  13        emadrs_in_dev_screening_follow_up
-## 68   146  22   9   emadrs_not_in_dev_everybody_diagnostic
-## 69   147  22   9   emadrs_not_in_dev_everybody_diagnostic
-## 70   148  22  10   emadrs_not_in_dev_everybody_diagnostic
-## 71   149  22  13   emadrs_not_in_dev_everybody_diagnostic
-## 72   150  22   8   emadrs_not_in_dev_everybody_diagnostic
-## 73   151  23   1                     emadrs_in_dev_lympha
-## 74   152  23   2                     emadrs_in_dev_lympha
-## 75   153  23   2                     emadrs_in_dev_lympha
-## 76   154  24   2             emadrs_in_dev_only_follow_up
-## 77   155  23   9                     emadrs_in_dev_lympha
-## 78   156  23   9                     emadrs_in_dev_lympha
-## 79   157  23   9                     emadrs_in_dev_lympha
-## 80   158  23  10                     emadrs_in_dev_lympha
-## 81   159  23  10                     emadrs_in_dev_lympha
-##               filename index1 index2 CodingLength
-## 1       administrator1    528    555           27
-## 2       administrator1    165    183           18
-## 3       administrator1    187    201           14
-## 4       administrator1    242    375          133
-## 5       administrator1    389    511          122
-## 6       administrator1    643    649            6
-## 7       administrator2    229    305           76
-## 8       administrator2    306    350           44
-## 9       administrator2     46     91           45
-## 10      administrator2    106    149           43
-## 11      administrator2    151    216           65
-## 12      administrator2    438    502           64
-## 13 assistant_physician     11     36           25
-## 14 assistant_physician     51     86           35
-## 15 assistant_physician     99    165           66
-## 16 assistant_physician    165    202           37
-## 17 assistant_physician    291    356           65
-## 18 assistant_physician    362    445           83
-## 19 assistant_physician    535    604           69
-## 20   auxiliary_nurse_1     82    122           40
-## 21   auxiliary_nurse_1    161    275          114
-## 22   auxiliary_nurse_2     28     36            8
-## 23   auxiliary_nurse_2     54    154          100
-## 24   auxiliary_nurse_2    241    372          131
-## 25   auxiliary_nurse_2    168    240           72
-## 26   auxiliary_nurse_2    462    492           30
-## 27   auxiliary_nurse_2    669    724           55
-## 28      foot_therapist     11    739          728
-## 29      foot_therapist    752    832           80
-## 30      foot_therapist    844    881           37
-## 31             nurse_1     11     38           27
-## 32             nurse_1     56    107           51
-## 33             nurse_1    122    181           59
-## 34             nurse_1    183    263           80
-## 35          nurse_COPD     11    237          226
-## 36          nurse_COPD    238    479          241
-## 37          nurse_COPD    480    815          335
-## 38          nurse_COPD    829    877           48
-## 39          nurse_COPD    890   1005          115
-## 40          nurse_COPD   1096   1144           48
-## 41          nurse_COPD   1159   1191           32
-## 42            nurse_DM     11    680          669
-## 43            nurse_DM    693    751           58
-## 44            nurse_DM    804    922          118
-## 45            nurse_DM    773    803           30
-## 46            nurse_DM   1010   1034           24
-## 47     nurse_geriatric     11    290          279
-## 48     nurse_geriatric    302    359           57
-## 49     nurse_geriatric    371    464           93
-## 50     nurse_geriatric    554    580           26
-## 51     nurse_geriatric    598    623           25
-## 52           physician     82    201          119
-## 53           physician    202    344          142
-## 54           physician    361    521          160
-## 55    psychotherapist1     11    655          644
-## 56    psychotherapist1    667   1025          358
-## 57    psychotherapist1   1036   1125           89
-## 58    psychotherapist1   1217   1443          226
-## 59    psychotherapist2     11     52           41
-## 60    psychotherapist2     66    424          358
-## 61    psychotherapist2    425    470           45
-## 62    psychotherapist2    484    868          384
-## 63    psychotherapist2    882   1013          131
-## 64    psychotherapist2   1102   1199           97
-## 65    psychotherapist2   1343   1810          467
-## 66      administrator2    517    590           73
-## 67    psychotherapist2   1216   1342          126
-## 68           physician    652    720           68
-## 69           physician   1055   1135           80
-## 70    psychotherapist1   1573   1643           70
-## 71    psychotherapist2   1957   2125          168
-## 72      administrator2    592    687           95
-## 73      administrator1    665   1013          348
-## 74            nurse_DM   1053   1119           66
-## 75            nurse_DM   1208   1248           40
-## 76            nurse_DM   1120   1207           87
-## 77           physician    719    938          219
-## 78           physician    522    651          129
-## 79           physician    972   1054           82
-## 80    psychotherapist1   1644   1748          104
-## 81    psychotherapist1   1463   1572          109
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
+From the recordings, the following codes were derived:\vspace{-1em}
+<<>>=
+library("RQDA")
+openProject("/home/rickard/work/emadrs.rqda")
+print(summaryCodings(byFile=FALSE))
+@
+%NumOfCoding <- table(Codings$codename,...)
+%print(x$NumOfCoding)
+%summaryCodings(byFile=TRUE)
 %summaryCodings()
 
-Categories named XYZd are answers to the topics B and C. From those topics the following statements could be derived:
+The codes on page 4 stands for the followin statements:
 
-Statement A
-E{\sc madrs} could be very useful for following up patients that are in risk of relapse of depression.
+{\bf emadrs\_in\_dev\_only\_follow\_up}\\
+E{\sc madrs} could be very useful for following up patients that are at risk of relapse of depression.
 
-Statement B
-there is a need for digital tools with validated questionnaires for broader spectrum of pathologies.
+{\bf emadrs\_in\_dev\_screening\_follow\_up}\\
+There is a need for digital tools with validated questionnaires for a broader spectrum of pathologies.
 
-Statement C 
-There should be some kind of flow control for those questionnaires.
+{\bf emadrs\_in\_dev\_controll}\\
+These questionnaires (in previous code) should be connected with each other in a controlled way.
 
-Interviews pointed out that there's certainly quantitative benefits from digital tools. 
-During the interviews the question arised of who should be responsible and who should be accountable for the incoming questionnaire results.
-The project shows XYZ qualitative and quantitative benefits from e{\sc madrs} as a compliment in the follow-up and screening for depressed patients.
+{\bf emadrs\_already\_(+)\_less\_paper\_work}\\
+E{\sc madrs} could reduce the work load of the administrators
 
-The depressed patient is often locked in a state of not being able to manage the worsening of the depression. The faster the staff knows about a deepening of depression, the faster the staff can intervene. The faster the intervention starts, the better is the prognosis. From the patient's perspective, the new ways of communication through a mobile app could be very beneficial. The key question is how the new possibilities should be handled by the healthcare professionals. Currently, the outward patient doesn't have a frequent contact with health care professionals, and the interventions have to be powerful in order to stop the progression of the depression. In those interventions, the beneficence model is often applied and the patient's integrity and feeling of autonomy are often hurt \cite{ethics1}. If, on the other hand, the patient's condition was to be analyzed more frequently, then perhaps it would be possible to handle the depression in a cost effective and better way. The new ways of managing the patient's health could respect the autonomy of the patient. The patient's health could be managed together with the patient\cite{leader1}. 
+{\bf emadrs\_already\_(+)\_possebility\_to\_check}\\
+Important that someone should be responsible and accountable for the incoming questionnaire results.
+
+{\bf emadrs\_not\_in\_dev\_everybody\_diagnostic}\\
+E{\sc madrs} should not be used in the process of diagnosing depression.
+
+{\bf emadrs\_not\_in\_dev\_everybody\_too\_many}\\
+E{\sc madrs} should not be possible to use by everyone in order to send the results to the healthcare provider.
+
+\ \\
+%There should be some kind of flow control for those questionnaires.
+
+Digital questionnaires would effect the {\it managing of communication with the patient}. According to the codes on page 5 the staff categories that are working with that task are: nurses, administrators and psychotherapists.
+%The project shows XYZ qualitative and quantitative benefits from e{\sc madrs} as a compliment in the follow-up and screening for depressed patients.
+In order to foresee shifts in work load that the new digital tools could lead to, further scientific work has to be done. This is important since economic benefits could only be gained if the work tasks would change, since the finances are a mirroring of what work is acuallty done.
+
+%The depressed patient is often locked in a state of not being able to manage the worsening of the depression. The faster the staff knows about a deepening of depression, the faster the staff can intervene. The faster the intervention starts, the better is the prognosis. From the patient's perspective, the new ways of communication through a mobile app could be very beneficial. The key question is how the new possibilities should be handled by the healthcare professionals. Currently, the outward patient doesn't have a frequent contact with health care professionals, and the interventions have to be powerful in order to stop the progression of the depression. In those interventions, the beneficence model is often applied and the patient's integrity and feeling of autonomy are often hurt \cite{ethics1}. If, on the other hand, the patient's condition was to be analysed more frequently, then perhaps it would be possible to handle the depression in a cost effective and better way. The new ways of managing the patient's health could respect the autonomy of the patient. The patient's health could be managed together with the patient\cite{leader1}. 
 
 
 
 \section*{Discussion}
 %yAccording to the Swedish law: ''The goal of the health care is a good health and care on equal terms for the entire population''\cite{law}. 
-For at least the last 7 years, the county council's expenses have increased by approximately 5\% per year. Adjusted for inflation, it will be approximately 3\% per annum\cite{numbers3.1, numbers3.2}. The strategies in healthcare must change. Hopefully, this project can be a step in the right direction. The results show new ways to improve the communication between the health care and the patient. Further research has to be done in order to foresee shifts in work load that the new tools will lead to. This is important since no economic benefits could be gained without restructuring the work.
-
+For at least the last 7 years, the county council's expenses have increased by approximately 5\% per year. Adjusted for inflation, it will be approximately 3\% per annum\cite{numbers3.1, numbers3.2}. The strategies in healthcare must change. Hopefully, this project can be a step in the right direction. The results show new ways to improve the communication between the healthcare system and the patient. Further research has to be done in order to figure out what staff categories are best suited for helping with the leadership of patients.
 
 %\section*{Planned format and language of the essay}
 %The work will be a scientific article in English with the Oxford citation and journal style guidelines\cite{style1}. The cited %article and {\fontfamily{pplj}\selectfont{\LaTeX}} will be used for writing the article\cite{style2}.
