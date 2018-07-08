@@ -75,7 +75,7 @@
 % {\small Assistant supervisor:} {\small \bf Helj{\"a} Pihkala} {\small \it helj{\"a}.p@hotmail.com}\\
  {\small Assistant supervisor:} {\small \bf Helj{\"a} Pihkala} {\small \it helja.pihkala@umu.se}\\
  {\small\it Inst f klinisk vetenskap/psykiatri; Ume\r{a} universitet; 901 85 Ume\r{a}}\vspace{.5cm}\\
-{\fontsize{15pt}{15pt}{\fontfamily{ptm}\selectfont{Project title:}}\\\fontsize{18pt}{18pt}{\fontfamily{ptm}\selectfont{ Staff attitudes towards follow-up and screening via the patient's smartphone, exemplified by a questionnaire for self-rating symptoms of depression.}}}\\
+{\fontsize{15pt}{15pt}{\fontfamily{ptm}\selectfont{Project title:}}\\\fontsize{18pt}{18pt}{\fontfamily{ptm}\selectfont{ Staff attitudes towards follow-up and screening via the patient's smartphone, exemplified by a questionnaire for self-rating of depression symptoms.}}}\\
 \hrule
 \ \\
 \fontfamily{iwona}\selectfont
@@ -91,10 +91,10 @@ The health care system is in need of new cost-effective tools. How would the hea
 \section*{Background}
 In Sweden, the lifetime prevalence of depression is estimated to be 13.2\% among men and 25.1\% among women\cite{numbers0}. There is a well-established relationship between suicide and mood disorders\cite{numbers1.1}. It has been estimated that 50--80\% of completed suicides are associated with mood disorders\cite{numbers1.1}. Suicide is the leading cause of death among men between the ages of 15 and 44 in Sweden\cite{numbers3.0.1}. Nevertheless, it is estimated that just over \nicefrac{2}{3} of all suicide cases had recently been in touch with the healthcare. Only \nicefrac{1}{3} of all suicide cases had contact with a psychiatric clinic\cite{numbers2}. In many cases, the suicide could have been prevented if adequate efforts had been made\cite{numbers1}. Guidelines for the treatment and follow-up of depression exist, but the increase in mental problems among young people poses a major challenge\cite{guide1, regionjh1}.
 
-Thus solving the difficult situation require new ways of dealing with depression. Perhaps smartphones can be used to fight depression? Some smartphone apps have been developed for the purpose of benefiting the health care of depressed patients. The apps could be categorized into two groups depending on what end-user they are meant for. If the end-user is a patient, then the app helps the patient track and understand the symptoms through a mood diary\cite{app1}. If the app is meant to be used by healthcare staff, then the app is constructed around different questionnaires\cite{app2}. Both approaches may result in somewhat better results for the patient, but by focusing on either the patient or the staff a key aspect is neglected. In order for the healthcare staff to help the patient as good and effective as possible, it is necessary to focus on the communication between both parties.
+Thus solving the difficult situation require new ways of dealing with depression. Some smartphone apps have been developed for the purpose of benefiting the health care of depressed patients. The apps could be categorized into two groups depending on what end-user they are meant for. If the end-user is a patient, then the app helps the patient to track and understand the symptoms through a mood diary\cite{app1}. If the app is meant to be used by healthcare staff, then the app is constructed around different questionnaires\cite{app2}. Both approaches may result in somewhat better results for the patient, but by focusing on either the patient or the staff a key aspect is neglected. In order for the healthcare staff to help the patient as good and effective as possible, it is necessary to focus on the communication between both parties.
 
 \section*{Purpose}
-In order for the healthcare staff to give the depressed patient adequate help, the staff needs adequate information about the patient. In investigations of somatic pathologies, adequate laboratory tests are usually done before an appointment. What if the patient's mood could be measured in a similar way before an appointment? With the purpose of enhancing the communication between the patient and healthcare staff an app prototype (e{\sc madrs}) for android smartphones has been developed by the first author\cite{emadrs1, emadrs2}. The app consists of a {\sc madrs-s} form where the result is sent to a phone number, preferred by the patient as an {\sc sms} text message. {\sc Madrs-s} is a verified tool commonly used for screening and follow-up of depression\cite{madrs2,madrs3}. It consists of nine questions where the patient answers with a rating from zero to six. The score is categorized as follows:\\
+In order for the healthcare staff to give the depressed patient adequate help, the staff needs adequate information about the patient. In investigations of somatic pathologies, adequate laboratory tests are usually done before an appointment. What if the patient's mood could be measured in a similar way before an appointment? With the purpose of enhancing the communication between the patient and healthcare staff an app prototype (e{\sc madrs}) for android smartphones has been developed by the first author\cite{emadrs1, emadrs2}. The app consists of a {\sc madrs-s} form. The result is sent to a phone number, preferred by the patient as an {\sc sms} text message. {\sc Madrs-s} is a verified tool commonly used for screening and follow-up of depression\cite{madrs2,madrs3}. It consists of nine questions. The patient answers each question with a rating from zero to six. The score is categorized as follows:\\
 
 \begin{tabular}{r|l}
 {\bf score} & {\bf severity of depression}\\
@@ -102,38 +102,36 @@ In order for the healthcare staff to give the depressed patient adequate help, t
 {\it 7--19} & mild depression\\
 {\it 20--34} & moderate depression\\
 {\it 35--60} & severe depression\\
-\end{tabular}\\\\
-
-The research question is: What advantages and disadvantages are identified from a professional clinical perspective, using a digital mood evaluation instrument for depression in screening and follow-up? The aim is also to collect proposals for further development of e{\sc madrs}.
+\end{tabular}\vspace{1em}
+\\The research-topics are three areas, closely bound up with each other:
+\begin{enumerate}[label=\bf \Alph*.]
+\item What advantages and disadvantages are identified from a professional clinical perspective, using a digital mood evaluation instrument for depression in screening and follow-up?
+\item What staff categories would be most affected by digital questionnaires?
+\item The aim is also to collect proposals for further development of e{\sc madrs}.
+\end{enumerate}
 
 \section*{Materials and Methods}
 %Interviews with at least {\sc 2} focus groups, consisting of about {\sc 5--7} primary care unit employees from different staff categories that are involved in the treatment of depression. The staff categories concerned are primarily physicians, nurses and members from the so-called psycho-social teams (e.g. psychologists)\cite{goal1}. Each group will consist of as few staff categories as possible. This would be beneficial for the interviews since it would minimize the risk of hierarchical group dynamics.
 Two focus groups were formed, consisting of seven respectively six primary care unit employees from different staff categories that are directly or indirectly involved in the treatment of depression at Hagfors Primary Care Centre in Sweden. The following table is a compilation of the group members:\\\\
-{\bf Group A}\\
-\begin{tabular}{p{10em}|l|l}
-Work title & Interview 1 & Interview 2 \\
+\begin{tabular}{p{2em}|p{10em}|l|l}
+Group & Work title & Interview 1 & Interview 2 \\
 \hline
-Administrators & 1 & 1 \\
-Nurses & 3 & 3 \\
-Foot therapists & 1 & 0\\
-Physicians & 0 & 1\\
-Psychotherapists & 1 & 1\\
+\multirow{ 5}{*}{A} & Administrators & 1 & 1 \\
+& Nurses & 3 & 3 \\
+& Foot therapists & 1 & 0\\
+& Physicians & 0 & 1\\
+& Psychotherapists & 1 & 1\\
 \hline
-\end{tabular}\\\ \\\ \\
-{\bf Group B}\\
-\begin{tabular}{p{10em}|l|l}
-Work title & Interview 1 & Interview 2 \\
-\hline
-Administrators & 1 & 1 \\
-Auxiliary nurses & 1 & 2 \\
-Nurses & 0 & 1 \\
-Foot therapists & 0 & 0\\
-Physician assistants & 1 & 1\\
-Psychotherapists & 1 & 1\\
+\multirow{ 6}{*}{B} & Administrators & 1 & 1 \\
+& Auxiliary nurses & 1 & 2 \\
+& Nurses & 0 & 1 \\
+& Foot therapists & 0 & 0\\
+& Physician assistants & 1 & 1\\
+& Psychotherapists & 1 & 1\\
 \hline
 \end{tabular}\\ \\\ \\\ 
-Two 30-minutes long interviews were performed with each group. In order to get a holistic picture of how a primary care unit would be affected by e{\sc madrs}, as many staff categories as possible were interviewed\cite{goal1}. During the interviews the following topics were discussed:\\\ \\
-Interview 1
+Two 30-minutes long interviews were performed with each group. In order to get a holistic picture of how a primary care unit would be affected by e{\sc madrs}, many staff categories were interviewed\cite{goal1}. During the interviews the following questions were discussed:\\\ \\
+Interview 1%\vspace{-.5em}
 \begin{enumerate}[label=\bf \Alph*.]
 %\item {\bf Questions}: How would your work situation change if you would get a mood evaluation from almost every of the patient before getting in touch with the patient? What would it mean for the work quality? What would it mean for the work quantity?
 %\item {\bf Presentation}: What is the app e{\sc madrs}?
@@ -141,17 +139,18 @@ Interview 1
 \item {\bf} What is specific, measurable and achievable in your work?
 %\item {\bf One word exercise}: Each participant describes e{\sc madrs} with one word.
 \end{enumerate}
-Interview 2
+Interview 2%\vspace{-.5em}
 \begin{enumerate}[label=\bf \Alph*.]\setcounter{enumi}{1}
+%\setlength\itemsep{0em}
 \item {\bf} Describe your feelings when a patient's major issue is not related to depression, but the patient seems to be in a very sad mood? 
 \item {\bf} Scenarious are discussed:
-\begin{itemize}
+\begin{itemize}\vspace{-.5em}
+%\setlength\itemsep{0em}
 \item {\bf} What if e{\sc madrs} only could be used by follow-up patients?
 \item {\bf} What if e{\sc madrs} could be used by everyone to send you mood evaluations?
-\item {\bf} What if the result of e{\sc madrs} automatically could direct what lab-tests should be performed before the initial meeting with a healthcare professional?
+\item {\bf} What if the result of e{\sc madrs} automatically could regulate what lab-tests should be performed?
 \end{itemize}
 \end{enumerate}
-
 %The interviews will have the following structure:
 %\begin{itemize}
 %\item {\bf One word exercise}: Each participant describes handling a depressed patient with one word. 
@@ -161,124 +160,103 @@ Interview 2
 %\item {\bfseries{\scshape{Swot}} analysis} about e{\sc madrs}.
 %\item {\bf One word exercise}: Each participant describes e{\sc madrs} with one word.
 %\end{itemize}
-The interviews were then analysed using qualitative content analysis\cite{analysis1}. From the recordings, causation codes were derived and categorized. The work was done with the help of the programming language {\sc r} and its library {\sc rqda} \cite{rqda}.
+The interviews were then analysed using qualitative content analysis\cite{analysis1}. From the recordings, causation codes were derived and categorized. The work was done with the help of the programming language library {\sc rqda}\cite{rqda}.
 
 \section*{Results}
-Around the example e{madrs} following potentials, strengths and weaknesses were identified:\\\ \\
-The codes on page 4 stands for the followin statements:\\\ \\
-{\bf emadrs\_in\_dev\_only\_follow\_up}\\
-E{\sc madrs} could be very useful for following up patients that are at risk of relapse of depression.\\\ \\
-{\bf emadrs\_in\_dev\_screening\_follow\_up}\\
-There is a need for digital tools with validated questionnaires for a broader spectrum of pathologies.\\\ \\
-{\bf emadrs\_in\_dev\_controll}\\
-These questionnaires (in previous code) should be connected with each other in a controlled way.\\\ \\
-{\bf emadrs\_already\_(+)\_less\_paper\_work}\\
-E{\sc madrs} could reduce the work load of the administrators\\\ \\
-{\bf emadrs\_already\_(+)\_possebility\_to\_check}\\
-Important that someone should be responsible and accountable for the incoming questionnaire results.\\\ \\
-{\bf emadrs\_not\_in\_dev\_everybody\_diagnostic}\\
-E{\sc madrs} should not be used in the process of diagnosing depression.\\\ \\
-{\bf emadrs\_not\_in\_dev\_everybody\_too\_many}\\
-E{\sc madrs} should not be possible to use by everyone in order to send the results to the healthcare provider.
-
-\ \\
+Around the example e{\sc madrs} the following potentials, strengths and weaknesses were identified:
+\begin{itemize}
+\item E{\sc madrs} could be very useful for following up patients that are at risk of relapse of depression.\\{\it Code name in appendix: {\bfseries emadrs\_in\_dev\_only\_follow\_up}}
+\item There is a need for digital tools with validated questionnaires for a broader spectrum of pathologies.\\{\it Code name in appendix: {\bfseries emadrs\_in\_dev\_screening\_follow\_up}}
+\item These questionnaires (in previous code) should be connected with each other in a controlled way.\\{\it Code name in appendix: {\bfseries emadrs\_in\_dev\_controll}}
+\item E{\sc madrs} could reduce the work load of the administrators\\{\it Code name in appendix: {\bfseries emadrs\_already\_(+)\_less\_paper\_work}}
+\item Important that someone should be responsible and accountable for the incoming questionnaire results.\\{\it Code name in appendix: {\bfseries emadrs\_already\_(+)\_possebility\_to\_check}}
+\item E{\sc madrs} should not be used in the process of diagnosing depression.\\{\it Code name in appendix: {\bfseries emadrs\_not\_in\_dev\_everybody\_diagnostic}}
+\item E{\sc madrs} should not be possible to use by everyone in order to send the results to the healthcare provider.\\{\it Code name in appendix: {\bfseries emadrs\_not\_in\_dev\_everybody\_too\_many}}
+\end{itemize}
 %There should be some kind of flow control for those questionnaires.
-In an effective organisation the managing process is distinguished from the leadership \cite{leader1}. Below is a table describing what different staff categories are managing or leading during in their work:
-\\\ 
-leadership\_contact\_patient \\
-\begin{itemize}
-{ \item assistant\_physician [ 165: 202] }%</font></b><br><br>Och att patienten och jag är överens.<br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
-{ \item assistant\_physician [ 362: 445] }%</font></b><br><br>om det är något psykiatriskt då får man känna efter mer. Man får vara mer förljsam.<br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
-{ \item auxiliary\_nurse\_2 [ 168: 240] }%</font></b><br><br>Man försöker ju göra sitt bästa, men det kan vara frustrerande att t.ex.<br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
-{ \item foot\_therapist [  11: 739] }%</font></b><br><br>Eller när patienten sitter i stolen hos mig Då börjar dom att prata och det har hänt några gånger också till läkaren till kallats speciellt att de var min mat psykiskt dåligt. Det har till exempel hänt att en patient har uttryckt vilja att gå till det mesta livet så att säga, och då har jag tillkallat läkare. det är alltså inte bara fötter utan mycket prat om annat också. alltså när dom sitter så sitter dom i med fotbad och slappnar av och då börjar de dom prata. Man är lite halvt en dietist då. Det är mycket annat. Ibland känns det som att jag inte kan ge bra svar på frågorna, men ibland kan jag ge bra svar. Ibland vill patienterna veta mer om resultat från undersökningar. Ibland vill de veta mer om diabetes och mat. <br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
-{ \item nurse\_1 [  11:  38] }%</font></b><br><br>Tillgodose patientens behov<br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
-{ \item nurse\_1 [ 183: 263] }%</font></b><br><br>och inte göra patienten alltför förbannad. Försöker linda bort aggressiviteten.<p><br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
-{ \item nurse\_COPD [ 238: 479] }%</font></b><br><br>Ibland vill du inte komma på grund av att de inte vill veta att det är så dåligt som det kanske är. Sen så har vi då de som kommer på årskontroller som har sin diagnos och då har vi problem med att de kanske isolerar sig och har det jobbigt.<br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
-{ \item nurse\_COPD [1096:1144] }%</font></b><br><br>Känna av. Märka vad det är som har hänt just nu.<br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
-{ \item nurse\_DM [1010:1034] }%</font></b><br><br>Vad är det som har hänt?<br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
-{ \item nurse\_geriatric [  11: 290] }%</font></b><br><br>Vi har ju allt. Det beror ju på att äldre har inte bara en sjukdom. Det är ju diabetes, KOL. Det är alla saker och vad gäller psykisk ohälsa så är det mest anhöriga som har besvär. Patienter och anhöriga ska kunna kontakta direkt. Oftast är det anhöriga som behöver samtalsstöd. <br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
-{ \item nurse\_geriatric [ 554: 580] }%</font></b><br><br>Patientens behov i centrum<br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
-{ \item physician [ 202: 344] }%</font></b><br><br>Sen får man känna av vad det handlar om till exempel suicidrisk. Visa att vården finns där för sådana besvär, för det är svårt att söka själv.<br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
-{ \item psychotherapist2 [ 425: 470] }%</font></b><br><br>Det finns alltså en dialog runt behandlingen.<br><a href='#leadership\_contact\_patient+b'>Back<a><br><br><hr><p align='center'><b><font color='blue' size='+2'>1 Coding of 
-\end{itemize}
-{leadership\_empathy}
-\begin{itemize}
-{ \item administrator1 [643:649] }%</font></b><br><br>Empati<br><a href='#leadership\_empathy+b'>Back<a><br><br><hr><p align='center'><b><font color='blue' size='+2'>6 Codings of 
-\end{itemize}
-{management\_contact\_patient}
-\begin{itemize}
-{ \item administrator1 [160: 182] }%</font></b><br><br>a och boka in patiente<br><a href='#management\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
-{ \item administrator2 [ 47:  92] }%</font></b><br><br>Man kan ju få journalkopior och tider av oss.<br><a href='#management\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
-{ \item administrator2 [229: 306] }%</font></b><br><br>Det är väl att vi har ju mycket tidböcöker -- Vi ska ju kunna erbjuda tider. <br><a href='#management\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
-{ \item nurse\_1 [ 56: 107] }%</font></b><br><br>Nu kommer ju telefonsamtalen fram. Det känner vi av<br><a href='#management\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
-{ \item nurse\_1 [122: 181] }%</font></b><br><br>Sitter mest i telefonrådgivningen, och vill få jobbet gjort<br><a href='#management\_contact\_patient+b'>Back<a><br><br><b><font color='red'>
-{ \item psychotherapist2 [882:1013] }%</font></b><br><br><p>De flesta vill träffa samtalsterapeut personligen, men i brist på det går det per telefon. Finns väl formulärtjänst via internet. <br><a href='#management\_contact\_patient+b'>Back<a><br><br><hr><p align='center'><b><font color='blue' size='+2'>1 Coding of 
-\end{itemize}
-{management\_contact\_staff}
-\begin{itemize}
-{ \item foot\_therapist [844:881] }%</font></b><br><br>Pratar med doktorn om mål i diabetes.<br><a href='#management\_contact\_staff+b'>Back<a><br><br><hr><p align='center'><b><font color='blue' size='+2'>5 Codings of 
-\end{itemize}
-{management\_financial}% files.</b></font><hr><p align='left'><b><font color='red'>
-\begin{itemize}
-{ \item administrator1 [528:555] }%</font></b><br><br>ACG ska spegla verkligheten<br><a href='#management\_financial+b'>Back<a><br><br><b><font color='red'>
-{ \item administrator1 [242:375] }%</font></b><br><br>Ibland kan det vara diagnoskoder som vi letar efter som man inte stöter på ofta. Och vi letar efter kroniska ICD koder sedan tidigare<br><a href='#management\_financial+b'>Back<a><br><br><b><font color='red'>
-{ \item administrator1 [389:511] }%</font></b><br><br>Det är ju ACG. Med diagnoser ser vi hur vi ligger till. Sedan vi har börjat  koda alla kroniska diagnoser så gick vi upp. <br><a href='#management\_financial+b'>Back<a><br><br><b><font color='red'>
-{ \item administrator2 [151:216] }%</font></b><br><br>Vi gör sammanställningar varje vecka för hela verskamhetsområdet.<br><a href='#management\_financial+b'>Back<a><br><br><b><font color='red'>
-{ \item administrator2 [438:502] }%</font></b><br><br>Man måste ju vara säker på att ICD-koder om nedstämdhet gäller. <br><a href='#management\_financial+b'>Back<a><br><br><hr><p align='center'><b><font color='blue' size='+2'>3 Codings of 
-\end{itemize}
-{management\_medical\_practice\_patient\_part}% files.</b></font><hr><p align='left'><b><font color='red'>
-\begin{itemize}
-{ \item foot\_therapist [752: 832] }%</font></b><br><br>Man kan se  resultatet av egenvård,  om t.ex. Om de smörjt i fötterna varje dag.<br><a href='#management\_medical\_practice\_patient\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item nurse\_COPD [890:1005] }%</font></b><br><br>Sluta röka. Om de slutar så kan de ju faktiskt må bättre. Gångtest kan göras men görs sällan på grund av tidsbrist.<br><a href='#management\_medical\_practice\_patient\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item nurse\_DM [804: 922] }%</font></b><br><br>Och de har viktnedgångsmål så klart. De har en del krav på sig vad gäller mål för att få fortsätta en viss behandling.<br><a href='#management\_medical\_practice\_patient\_part+b'>Back<a><br><br><hr><p align='center'><b><font color='blue' size='+2'>26 Codings of 
-\end{itemize}
-{management\_medical\_practice\_staff\_part}% files.</b></font><hr><p align='left'><b><font color='red'>
-\begin{itemize}
-{ \item assistant\_physician [  11:  36] }%</font></b><br><br>Diagnostik och behandling<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item assistant\_physician [  51:  86] }%</font></b><br><br>Labblistor. Används lite som facit.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item assistant\_physician [  99: 165] }%</font></b><br><br>Oftast symptomlindring, och att värden rätt sida referensvärdena. <br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item assistant\_physician [ 291: 356] }%</font></b><br><br>Om det är somatiskt rätt fram så gör man på samma sätt varje gång<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item auxiliary\_nurse\_1 [  82: 122] }%</font></b><br><br>Jag försöker hjälpa till så gott jag kan<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item auxiliary\_nurse\_2 [  28:  36] }%</font></b><br><br>Hälsan. <br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item auxiliary\_nurse\_2 [  54: 154] }%</font></b><br><br>Vi håller på mycket med sår. Såren minskar ju. De mäter med längd och olika cirklar. Görs månadsvis.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item auxiliary\_nurse\_2 [ 241: 372] }%</font></b><br><br>Undersöka sår som går fram och tillbaka. Det är inte så mycket som jag kan påverka. Jag gör ju det jag kan efter min bästa förmåga.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item auxiliary\_nurse\_2 [ 462: 492] }%</font></b><br><br>Det är mitt jobb att fixa det.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item nurse\_COPD [  11: 237] }%</font></b><br><br>Det är i regel en del i utredningen man gör spirometri. Man har i regel varit hos läkaren och fått reda på att man ska göra spirometri. Ibland säger de att de misstänker KOL. Ibland vet de ju det själva då de har varit rökare.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item nurse\_COPD [ 480: 815] }%</font></b><br><br>Då får man ju också erbjuda någon att prata mer med för att de ska kunna må bättre. Vi har även ett frågeformulär kring psykosocialt. Det handlar mycket om hur patienten kan klara av sin vardag. Det är ju det som egentligen är behandlingen. Det finns ju egentligen inte så mycket annat att göra än att spara på energin och röra på sig.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item nurse\_COPD [ 829: 877] }%</font></b><br><br>Det är ju självskattningsformulär och spirometri<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item nurse\_DM [  11: 680] }%</font></b><br><br>Jag måste ju stå i telefonen och göra en bedömning utan att se personen. Jag måste ju lyssna in på kort tid. Det är tidsbegränsat också. Och göra en korrekt bedömning. Var den hör hemma och hur snabbt de måste in. Jag är inte alltid bombarderad av data, men det ringer nån och mår väldigt dåligt och då måste jag veta vad jag ska fråga om. Och det är inte alltid så enkelt Speciellt som jag inte har den specifika utbildningen men det gäller inte diabetes, men även där måste jag veta vilka patienter som kanske behöver gå till annat område… och få ett fjärde ben att stå på i diabetes-behandlingen, så därför har vi börjat erbjuda samtalsterapi för diabetes patienter.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item nurse\_DM [ 693: 751] }%</font></b><br><br>Vid diabetes kan man se förändring i vikt eller blodsocker<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item nurse\_DM [ 773: 803] }%</font></b><br><br>Tydliga mål enligt riktlinjer.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item nurse\_geriatric [ 302: 359] }%</font></b><br><br>Klocktest, olika frågeformulär, bl.a. skatta hur man mår.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item nurse\_geriatric [ 371: 464] }%</font></b><br><br>Att få så gott som möjligt för patienterna och se i kvalitetsregister hur vi ligger över lag.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item physician [  82: 201] }%</font></b><br><br>Det de söker för måste ju åtgärdas. Jag tycker det är oerhört viktigt Se till att uppföljning på den andra biten sker. <br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item psychotherapist1 [  11: 655] }%</font></b><br><br>Det är ju en svår fråga. Jag tänker om vi utgår från samtalsmottagningen här på vårdcentralen, så är det väl mycket bedömning först och främst. Göra bedömningar av patienters psykiska mående och sedan i den bedömningen ingår där ju att göra bedömning om de kan få hjälp - om det är hälso- och sjukvård, för det första. Kan ju också vara någonting som är ganska normalt, vanlig ångest som alla har. Och om det är det, så är det något som ska till primärvården eller om vi ska på remittera vidare. Och sen är det att hålla i behandling när man väl har fått patienter till primärvården. Så tänker man att man kan hjälpa dem må bättre genom samtal.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item psychotherapist1 [ 667:1025] }%</font></b><br><br>Vi mäter ju med skattningsskalor. Objektivt? Det är ju patienten själv som ska skatta. Ii början av en behandling och sen ser man att symptom sjunker och att de kommit rätt och vi använder Ossr ssr. Och vi skattar patientens tillfredsställelse och tänker att den ska bli bättre. De uppskattar tillfredsställelse på fyra olika områden för att ge oss feedback.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item psychotherapist1 [1036:1125] }%</font></b><br><br>De brukar ha en tydlighet att de vill klara av saker som att till exempel gå och handla .<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item psychotherapist1 [1217:1443] }%</font></b><br><br>Det beror på hur mycket information sköterskorna har fått eller hur mycket information läkarna har tagit ibland kan det vara svårt för vissa situationer. Ibland kan du ta med dig imorgon förmiddag.<p>Utredande. Känna in känslor.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item psychotherapist2 [  11:  52] }%</font></b><br><br>Ja du. Symptomlindring. Funktionsökning. <br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item psychotherapist2 [  66: 424] }%</font></b><br><br>Vi mäter ju med formulär. Nästan varje patient fyller före varjesamtal i en symptomskattning. Efter samtalen fyller de en skala som mäter hur nöjda de har varit med innehållet i just det samtalet. Hos många finns också specifika skalor för deras problem. Om man mäter symptom och livskvalitet -- så tar man upp det under samtalet och adresserar förändringar.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item psychotherapist2 [ 484: 868] }%</font></b><br><br>Dialogen avgör om man har mål eller inte. Patienten kanske tycker det är rimligt att de inte kommer ha stöttning från oss och ska kunna fungera -- Klara av sitt jobb eller familjesituation. Så den är ju ofta ganska tydlig. Vi har ju ganska ofta en tidssatt målbild -- Det där ska vi uppnå inom 8 samtal t.ex. Sen lyckas man ju inte alltid det. Men sen får man se hur långt man kommit.<br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><b><font color='red'>
-{ \item psychotherapist2 [1102:1199] }%</font></b><br><br>Det ingår ju alltid att man bedömer depression. Det gör vi på alla nya patienter. Det är jobbet. <br><a href='#management\_medical\_practice\_staff\_part+b'>Back<a><br><br><hr><p align='center'><b><font color='blue' size='+2'>3 Codings of 
-\end{itemize}
-{management\_medical\_record}% files.</b></font><hr><p align='left'><b><font color='red'>
-\begin{itemize}
-{ \item administrator1 [187:201] }%</font></b><br><br> skriva diktat<br><a href='#management\_medical\_record+b'>Back<a><br><br><b><font color='red'>
-{ \item administrator2 [306:350] }%</font></b><br><br>Diktaten ska skrivas, och remisser ska iväg.<br><a href='#management\_medical\_record+b'>Back<a><br><br><b><font color='red'>
-{ \item administrator2 [106:149] }%</font></b><br><br>Vid mäter hur mycket diktat vi ligger efter<br><a href='#management\_medical\_record+b'>Back<a><br><br>
-\end{itemize}
-
-Digital questionnaires would effect the {\it managing of communication with the patient}. According to the table above, the staff categories that are working with that task are: nurses, administrators and psychotherapists.
+In an effective organisation the managing process is distinguished from the leadership \cite{leader1}. Below is a table describing what different staff categories are managing or leading in their work according to the interviews:
+\nopagebreak
+\begin{table}
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+Tasks of contacting the patient, that imply leadership
+{\newline\tiny Coding in appindix: {leadership\_contact\_patient}}&{\begin{itemize}
+\vspace{-1.5em}\setlength\itemsep{0em}
+{ \item assistant physician}
+{ \item auxiliary nurse}
+{ \item foot therapist}
+{ \item nurse}
+{ \item nurse COPD}
+{ \item nurse DM2}
+{ \item nurse geriatric}
+{ \item physician}
+{ \item psychotherapist}\vspace{-.5em}\vspace{-.5em}\end{itemize}}\\
+\hline
+Tasks of contacting the patient, that imply management
+{\newline\tiny Coding in appindix: {management\_contact\_patient}}&{\begin{itemize}
+\vspace{-1.5em}\setlength\itemsep{0em}
+{ \item administrator}
+{ \item nurse}
+{ \item psychotherapist}
+\vspace{-.5em}\end{itemize}}\\
+\hline
+Tasks of feeling empathy, that imply leadership
+{\newline\tiny Coding in appindix: {leadership\_empathy}}&{\begin{itemize}
+\vspace{-1.5em}\setlength\itemsep{0em}
+{ \item administrator}
+\vspace{-.5em}\end{itemize}}\\
+\hline
+Tasks of contacting staff, that imply management
+{\newline\tiny Coding in appindix: {management\_contact\_staff}}&{\begin{itemize}
+\vspace{-1.5em}\setlength\itemsep{0em}
+{ \item foot\_therapist}
+\vspace{-.5em}\end{itemize}}\\
+\hline
+Managing finances
+{\newline\tiny Coding in appindix: {management\_financial}}&{\begin{itemize}
+\vspace{-1.5em}\setlength\itemsep{0em}
+{ \item administrator}
+\vspace{-.5em}\end{itemize}}\\
+\hline
+Tasks of maintaing patient's health, that imply managing the patient
+{\newline\tiny Coding in appindix:\newline {management\_medical\_practice\_patient\_part}}&{\begin{itemize}
+\vspace{-1.5em}\setlength\itemsep{0em}
+{ \item foot therapist}
+{ \item nurse COPD}
+{ \item nurse DM2}
+\vspace{-.5em}\end{itemize}}\\
+\hline
+Tasks of maintaining patient's health, that imply managing other professionals
+{\newline\tiny Coding in appindix: {management\_medical\_practice\_staff\_part}}&{\begin{itemize}
+\vspace{-1.5em}\setlength\itemsep{0em}
+{ \item assistant physician}
+{ \item auxiliary nurse }
+{ \item nurse COPD}
+{ \item nurse DM2}
+{ \item nurse geriatric}
+{ \item physician}
+{ \item psychotherapist}
+\vspace{-.5em}\end{itemize}}\\
+\hline
+Tasks of managing medical records
+{\newline\tiny Coding in appindix: {management\_medical\_record}}&{\begin{itemize}
+\vspace{-1.5em}\setlength\itemsep{0em}
+{ \item administrator}
+\vspace{-.5em}\end{itemize}}\\
+\hline
+\end{tabularx}
+\end{table}
+\newpage
+Digital questionnaires are a way to {\it manage the communication with the patient}. According to the table above, the staff categories that are working with that task are: nurses, administrators and psychotherapists. Thus those staff categories would probably be most affected by the use of digital questionaires.
 %The project shows XYZ qualitative and quantitative benefits from e{\sc madrs} as a compliment in the follow-up and screening for depressed patients.
-In order to foresee shifts in work load that the new digital tools could lead to, further scientific work has to be done. This is important since economic benefits could only be gained if the work tasks would change, since the finances are a mirroring of what work is acuallty done.
-
 %The depressed patient is often locked in a state of not being able to manage the worsening of the depression. The faster the staff knows about a deepening of depression, the faster the staff can intervene. The faster the intervention starts, the better is the prognosis. From the patient's perspective, the new ways of communication through a mobile app could be very beneficial. The key question is how the new possibilities should be handled by the healthcare professionals. Currently, the outward patient doesn't have a frequent contact with health care professionals, and the interventions have to be powerful in order to stop the progression of the depression. In those interventions, the beneficence model is often applied and the patient's integrity and feeling of autonomy are often hurt \cite{ethics1}. If, on the other hand, the patient's condition was to be analysed more frequently, then perhaps it would be possible to handle the depression in a cost effective and better way. The new ways of managing the patient's health could respect the autonomy of the patient. The patient's health could be managed together with the patient\cite{leader1}. 
 
 
 
 \section*{Discussion}
 %yAccording to the Swedish law: ''The goal of the health care is a good health and care on equal terms for the entire population''\cite{law}. 
-For at least the last 7 years, the county council's expenses have increased by approximately 5\% per year. Adjusted for inflation, it will be approximately 3\% per annum\cite{numbers3.1, numbers3.2}. The strategies in healthcare must change. Hopefully, this project can be a step in the right direction. The results show new ways to improve the communication between the healthcare system and the patient. Further research has to be done in order to figure out what staff categories are best suited for helping with the leadership of patients.
+For at least the last 7 years, the county council's expenses have increased by approximately 5\% per year. Adjusted for inflation, it will be approximately 3\% per annum\cite{numbers3.1, numbers3.2}. The strategies in healthcare must change. Hopefully, this project can be a step in the right direction. The results show new ways to improve the communication between the healthcare system and the patient. 
+In order to foresee shifts in work load that the new digital tools could lead to, further scientific work has to be done. This is important since economic benefits could only be gained if the work tasks would change, since the finances are a mirroring of what work is actuallty done.
 
 %\section*{Planned format and language of the essay}
 %The work will be a scientific article in English with the Oxford citation and journal style guidelines\cite{style1}. The cited %article and {\fontfamily{pplj}\selectfont{\LaTeX}} will be used for writing the article\cite{style2}.
