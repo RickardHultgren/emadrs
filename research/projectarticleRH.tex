@@ -27,7 +27,7 @@
 \usepackage{enumitem}
 \usepackage{titlesec}
 \titleformat*{\section}{\normalsize\bfseries\vspace{0.25cm}}
-%\titleformat*{\subsection}{\Large\bfseries}
+\titleformat*{\subsection}{\vspace{-0.25cm}\normalsize\it\vspace{0.25cm}}
 %\titleformat*{\subsubsection}{\large\bfseries}
 %\titleformat*{\paragraph}{\large\bfseries}
 %\titleformat*{\subparagraph}{\large\bfseries}
@@ -94,21 +94,21 @@ In Sweden, the lifetime prevalence of depression is estimated to be 13.2\% among
 Thus solving the difficult situation require new ways of dealing with depression. Some smartphone apps have been developed for the purpose of benefiting the health care of depressed patients. The apps could be categorized into two groups depending on what end-user they are meant for. If the end-user is a patient, then the app helps the patient to track and understand the symptoms through a mood diary\cite{app1}. If the app is meant to be used by healthcare staff, then the app is constructed around different questionnaires\cite{app2}. Both approaches may result in somewhat better results for the patient, but by focusing on either the patient or the staff a key aspect is neglected. In order for the healthcare staff to help the patient as good and effective as possible, it is necessary to focus on the communication between both parties.
 
 \section*{Purpose}
-In order for the healthcare staff to give the depressed patient adequate help, the staff needs adequate information about the patient. In investigations of somatic pathologies, adequate laboratory tests are usually done before an appointment. What if the patient's mood could be measured in a similar way before an appointment? With the purpose of enhancing the communication between the patient and healthcare staff an app prototype (e{\sc madrs}) for android smartphones has been developed by the first author\cite{emadrs1, emadrs2}. The app consists of a {\sc madrs-s} form. The result is sent to a phone number, preferred by the patient as an {\sc sms} text message. {\sc Madrs-s} is a verified tool commonly used for screening and follow-up of depression\cite{madrs2,madrs3}. It consists of nine questions. The patient answers each question with a rating from zero to six. The score is categorized as follows:\\
+In order for the healthcare staff to give the depressed patient adequate help, the staff needs adequate information about the patient. In investigations of somatic pathologies, adequate laboratory tests are usually done before an appointment. What if the patient's mood could be measured in a similar way before an appointment? With the purpose of enhancing the communication between the patient and healthcare staff an app prototype (e{\sc madrs}) for android smartphones has been developed by the first author\cite{emadrs1, emadrs2}. The app consists of a {\sc madrs-s} form. The result is sent to a phone number, preferred by the patient as an {\sc sms} text message. {\sc Madrs-s} is a verified tool commonly used for screening and follow-up of depression\cite{madrs2,madrs3}. It consists of nine questions. The patient answers each question with a rating from zero to six. The total score from all questions is categorized as follows:\\
 
 \begin{tabular}{r|l}
 {\bf score} & {\bf severity of depression}\\
 \hline{\it 0--6} &  no depression\\
 {\it 7--19} & mild depression\\
 {\it 20--34} & moderate depression\\
-{\it 35--60} & severe depression\\
+{\it 35--54} & severe depression\\
 \end{tabular}\vspace{1em}
 \\The research-topics are three areas, closely bound up with each other:
-\begin{enumerate}[label=\bf \Alph*.]
-\item What advantages and disadvantages are identified from a professional clinical perspective, using a digital mood evaluation instrument for depression in screening and follow-up?
-\item What staff categories would be most affected by digital questionnaires?
-\item The aim is also to collect proposals for further development of e{\sc madrs}.
-\end{enumerate}
+\begin{itemize}
+\item[$\alpha$] What advantages and disadvantages are identified from a professional clinical perspective, using a digital mood evaluation instrument for depression in screening and follow-up?
+\item[$\beta$] The aim is also to collect proposals for further development of e{\sc madrs}.
+\item[$\gamma$] What staff categories would be most affected by digital questionnaires?
+\end{itemize}
 
 \section*{Materials and Methods}
 %Interviews with at least {\sc 2} focus groups, consisting of about {\sc 5--7} primary care unit employees from different staff categories that are involved in the treatment of depression. The staff categories concerned are primarily physicians, nurses and members from the so-called psycho-social teams (e.g. psychologists)\cite{goal1}. Each group will consist of as few staff categories as possible. This would be beneficial for the interviews since it would minimize the risk of hierarchical group dynamics.
@@ -131,16 +131,12 @@ Group & Work title & Interview 1 & Interview 2 \\
 \hline
 \end{tabular}\\ \\\ \\\ 
 Two 30-minutes long interviews were performed with each group. In order to get a holistic picture of how a primary care unit would be affected by e{\sc madrs}, many staff categories were interviewed\cite{goal1}. During the interviews the following questions were discussed:\\\ \\
-Interview 1%\vspace{-.5em}
-\begin{enumerate}[label=\bf \Alph*.]
-%\item {\bf Questions}: How would your work situation change if you would get a mood evaluation from almost every of the patient before getting in touch with the patient? What would it mean for the work quality? What would it mean for the work quantity?
-%\item {\bf Presentation}: What is the app e{\sc madrs}?
-%\item {\bf Presentation}: Problems and solutions that the developer can see.
+Interview 1
+\begin{enumerate}[label=1.\arabic*.]
 \item {\bf} What is specific, measurable and achievable in your work?
-%\item {\bf One word exercise}: Each participant describes e{\sc madrs} with one word.
 \end{enumerate}
-Interview 2%\vspace{-.5em}
-\begin{enumerate}[label=\bf \Alph*.]\setcounter{enumi}{1}
+Interview 2
+\begin{enumerate}[label=2.\arabic*.]
 %\setlength\itemsep{0em}
 \item {\bf} Describe your feelings when a patient's major issue is not related to depression, but the patient seems to be in a very sad mood? 
 \item {\bf} Scenarious are discussed:
@@ -163,18 +159,19 @@ Interview 2%\vspace{-.5em}
 The interviews were then analysed using qualitative content analysis\cite{analysis1}. From the recordings, causation codes were derived and categorized. The work was done with the help of the programming language library {\sc rqda}\cite{rqda}.
 
 \section*{Results}
-Around the example e{\sc madrs} the following potentials, strengths and weaknesses were identified:
+%\subsection*{Research topic $\alpha$ and $\beta$}
+{\bf Research topic $\alpha$ and $\beta$:} Around the example e{\sc madrs} the following potentials, strengths and weaknesses were identified:
 \begin{itemize}
 \item E{\sc madrs} could be very useful for following up patients that are at risk of relapse of depression.\\{\it Code name in appendix: {\bfseries emadrs\_in\_dev\_only\_follow\_up}}
 \item There is a need for digital tools with validated questionnaires for a broader spectrum of pathologies.\\{\it Code name in appendix: {\bfseries emadrs\_in\_dev\_screening\_follow\_up}}
-\item These questionnaires (in previous code) should be connected with each other in a controlled way.\\{\it Code name in appendix: {\bfseries emadrs\_in\_dev\_controll}}
+\item These questionnaires should be connected with each other in a controlled way.\\{\it Code name in appendix: {\bfseries emadrs\_in\_dev\_controll}}
 \item E{\sc madrs} could reduce the work load of the administrators\\{\it Code name in appendix: {\bfseries emadrs\_already\_(+)\_less\_paper\_work}}
 \item Important that someone should be responsible and accountable for the incoming questionnaire results.\\{\it Code name in appendix: {\bfseries emadrs\_already\_(+)\_possebility\_to\_check}}
 \item E{\sc madrs} should not be used in the process of diagnosing depression.\\{\it Code name in appendix: {\bfseries emadrs\_not\_in\_dev\_everybody\_diagnostic}}
 \item E{\sc madrs} should not be possible to use by everyone in order to send the results to the healthcare provider.\\{\it Code name in appendix: {\bfseries emadrs\_not\_in\_dev\_everybody\_too\_many}}
 \end{itemize}
 %There should be some kind of flow control for those questionnaires.
-In an effective organisation the managing process is distinguished from the leadership \cite{leader1}. Below is a table describing what different staff categories are managing or leading in their work according to the interviews:
+{\bf Research topic $\gamma$:} In effective organisations the management is distinguished from the leadership\cite{leader1}. Below is a table describing what different staff categories are managing or leading in their work according to the interviews:
 \nopagebreak
 \begin{table}
 \begin{tabularx}{\textwidth}{|X|X|}
@@ -247,7 +244,7 @@ Tasks of managing medical records
 \end{tabularx}
 \end{table}
 \newpage
-Digital questionnaires are a way to {\it manage the communication with the patient}. According to the table above, the staff categories that are working with that task are: nurses, administrators and psychotherapists. Thus those staff categories would probably be most affected by the use of digital questionaires.
+Digital questionnaires are a way to {\it manage the communication with the patient}. According to the table above, the staff categories that are working with that task are: nurses, administrators and psychotherapists. Thus those staff categories would probably be most affected by the digital questionaires.
 %The project shows XYZ qualitative and quantitative benefits from e{\sc madrs} as a compliment in the follow-up and screening for depressed patients.
 %The depressed patient is often locked in a state of not being able to manage the worsening of the depression. The faster the staff knows about a deepening of depression, the faster the staff can intervene. The faster the intervention starts, the better is the prognosis. From the patient's perspective, the new ways of communication through a mobile app could be very beneficial. The key question is how the new possibilities should be handled by the healthcare professionals. Currently, the outward patient doesn't have a frequent contact with health care professionals, and the interventions have to be powerful in order to stop the progression of the depression. In those interventions, the beneficence model is often applied and the patient's integrity and feeling of autonomy are often hurt \cite{ethics1}. If, on the other hand, the patient's condition was to be analysed more frequently, then perhaps it would be possible to handle the depression in a cost effective and better way. The new ways of managing the patient's health could respect the autonomy of the patient. The patient's health could be managed together with the patient\cite{leader1}. 
 
@@ -256,7 +253,7 @@ Digital questionnaires are a way to {\it manage the communication with the patie
 \section*{Discussion}
 %yAccording to the Swedish law: ''The goal of the health care is a good health and care on equal terms for the entire population''\cite{law}. 
 For at least the last 7 years, the county council's expenses have increased by approximately 5\% per year. Adjusted for inflation, it will be approximately 3\% per annum\cite{numbers3.1, numbers3.2}. The strategies in healthcare must change. Hopefully, this project can be a step in the right direction. The results show new ways to improve the communication between the healthcare system and the patient. 
-In order to foresee shifts in work load that the new digital tools could lead to, further scientific work has to be done. This is important since economic benefits could only be gained if the work tasks would change, since the finances are a mirroring of what work is actuallty done.
+In order to foresee shifts in work load that the new digital tools could lead to, further scientific work has to be done. %This is important since economic benefits could only be gained if the work tasks would change, since the finances are a mirroring of what work is actuallty done.
 
 %\section*{Planned format and language of the essay}
 %The work will be a scientific article in English with the Oxford citation and journal style guidelines\cite{style1}. The cited %article and {\fontfamily{pplj}\selectfont{\LaTeX}} will be used for writing the article\cite{style2}.
@@ -302,11 +299,11 @@ http://www.scb.se/hitta-statistik/statistik-efter-amne/offentlig-ekonomi/finanse
 \bibitem{guide1}Riitta Sorsa; \emph{Nationella riktlinjer -- M\r{a}lniv\r{a}er -- V\r{a}rd vid depression och \r{a}ngestsyndrom -- M\r{a}lniv\r{a}er f{\"o}r indikatorer}; socialstyrelsen.se december 2017\\\textbf{\emph{\href{http://www.socialstyrelsen.se/publikationer2017/2017-12-1}{\url{http://www.socialstyrelsen.se/publikationer2017/2017-12-1}}}}
 \bibitem{regionjh1}Majvor Enstr{\"o}m; \emph{Granskning av Psykiatrin 2014 Region J{\"a}mtland-H{\"a}rjedalen}\\\textbf{\emph{\href{https://www.regionjh.se/download/18.61342ea415bcfb51720c5fd7}{\url{https://www.regionjh.se/download/18.61342ea415bcfb51720c5fd7}}}}
 %\bibitem{style0}Vakhtang Tchantchaleishvili, Jan D Schmitto; \emph{Preparing a scientific manuscript in Linux: Today's possibilities and limitations.}; BMC Res Notes. 2011; 4: 434. \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3227619/}{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3227619/}}}}
-\bibitem{style1}\emph{Style Guide for Authors} \\\textbf{\emph{\href{https://academic.oup.com/cdj/pages/Style_Guide}{\url{https://academic.oup.com/cdj/pages/Style_Guide}}}}
-\bibitem{style2}Barbara J. Hoogenboom, Robert C. Manske; \emph{How to write a scientific article.} Int J Sports Phys Ther. 2012 Oct; 7(5): 512--517. \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3474301/}{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3474301/}}}}
+%\bibitem{style1}\emph{Style Guide for Authors} \\\textbf{\emph{\href{https://academic.oup.com/cdj/pages/Style_Guide}{\url{https://academic.oup.com/cdj/pages/Style_Guide}}}}
+%\bibitem{style2}Barbara J. Hoogenboom, Robert C. Manske; \emph{How to write a scientific article.} Int J Sports Phys Ther. 2012 Oct; 7(5): 512--517. \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3474301/}{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3474301/}}}}
 %\bibitem{style3}\emph{Latex Instructions - Elsevier}; Elsevier 2018;\\\textbf{\emph{\href{https://www.elsevier.com/authors/author-schemas/latex-instructions}{\url{https://www.elsevier.com/authors/author-schemas/latex-instructions}}}}
 \bibitem{leader1}Kotter JP \emph{What leaders really do.} Harvard Business Review 1990
-\bibitem{ethics1}Will JF \emph{A brief historical and theoretical perspective on patient autonomy and medical decision making: Part I: The beneficence model.} Chest. 2011 Mar;139(3):669-673. doi: 10.1378/chest.10-2532. \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/21362653}{\url{https://www.ncbi.nlm.nih.gov/pubmed/21362653}}}}
+%\bibitem{ethics1}Will JF \emph{A brief historical and theoretical perspective on patient autonomy and medical decision making: Part I: The beneficence model.} Chest. 2011 Mar;139(3):669-673. doi: 10.1378/chest.10-2532. \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/21362653}{\url{https://www.ncbi.nlm.nih.gov/pubmed/21362653}}}}
 
 \bibitem{analysis1}Granheim, Lundman \emph{Qualitative content analysis in nursing research concepts, procedures and measures to achieve trustworthiness.} Nurse Educ Today. 2004 Feb;24(2):105-12 \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/14769454}{\url{https://www.ncbi.nlm.nih.gov/pubmed/14769454}}}}
 
