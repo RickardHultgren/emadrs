@@ -42,6 +42,20 @@
 \usepackage{cclicenses}
 \usepackage{nicefrac}
 
+
+\renewcommand{\abstractname}{Abstract}
+\renewenvironment{abstract}
+ {\small
+  %\begin{center}
+  \vspace{1em}\hspace{-1.5em}\bfseries \abstractname\vspace{-.5em}\vspace{0pt}
+  %\end{center}
+  \list{}{%
+    \setlength{\leftmargin}{0mm}% <---------- CHANGE HERE
+    \setlength{\rightmargin}{\leftmargin}%
+  }%
+  \item\relax}
+ {\endlist}
+
 %\bibliography{test}
 %\usepackage[sort, numbers]{natbib}
 \begin{document}
@@ -75,8 +89,8 @@
  {\small\it Inst f klinisk vetenskap/psykiatri; Ume\r{a} universitet; 901 85 Ume\r{a}}\vspace{.25cm}\\
 % {\small Assistant supervisor:} {\small \bf Helj{\"a} Pihkala} {\small \it helj{\"a}.p@hotmail.com}\\
  {\small Assistant supervisor:} {\small \bf Helj{\"a} Pihkala} {\small \it helja.pihkala@umu.se}\\
- {\small\it Inst f klinisk vetenskap/psykiatri; Ume\r{a} universitet; 901 85 Ume\r{a}}\vspace{.5cm}\\
-{\fontsize{15pt}{15pt}{\fontfamily{ptm}\selectfont{Project title:}}\\\fontsize{18pt}{18pt}{\fontfamily{ptm}\selectfont{ Staff attitudes towards follow-up and screening via the patient's smartphone, exemplified by a questionnaire for self-rating of depression symptoms.}}}\\
+ {\small\it Inst f klinisk vetenskap/psykiatri; Ume\r{a} universitet; 901 85 Ume\r{a}}\vspace{1cm}\\
+{\fontsize{18pt}{18pt}{\fontfamily{ptm}\selectfont{ Staff attitudes towards follow-up and screening via the patient's smartphone, exemplified by a questionnaire for self-rating of depression symptoms.}}}\\
 \hrule
 \ \\
 \fontfamily{iwona}\selectfont
@@ -95,7 +109,7 @@ In Sweden, the lifetime prevalence of depression is estimated to be {\sc 13.2}\%
 Thus solving the difficult situation require new ways of dealing with depression. Some smartphone apps have been developed for the purpose of benefiting the health care of depressed patients. The apps could be categorized into two groups depending on what end-user they are meant for. If the end-user is a patient, then the app helps the patient to track and understand the symptoms through a mood diary\cite{app1}. If the app is meant to be used by healthcare staff, then the app is constructed around different questionnaires\cite{app2}. Both approaches may result in somewhat better results for the patient, but by focusing on either the patient or the staff a key aspect is neglected. In order for the healthcare staff to help the patient as good and effective as possible, it is necessary to focus on the communication between both parties.
 
 \section*{Purpose}
-In order for the healthcare staff to give the depressed patient adequate help, the staff needs adequate information about the patient. In investigations of somatic pathologies, adequate laboratory tests are usually done before an appointment. What if the patient's mood could be measured in a similar way before an appointment? With the purpose of enhancing the communication between the patient and healthcare staff an app prototype (e{\sc madrs}) for android smartphones has been developed by the first author\cite{emadrs1, emadrs2}. The app is thought to be used by the patient in order to send a mood evaluation to a phone number owned by a trusted person or institution, e.g. a health care unit. The app consists of a {\sc madrs-s} form. The result is sent as an {\sc sms} text message to a phone number, that is previously set by the patient. {\sc Madrs-s} is a verified tool commonly used for screening and follow-up of depression\cite{madrs2,madrs3}. It consists of nine questions. The patient answers each question with a rating from zero to six. The total score from all questions is categorized as follows:\\
+In order for the healthcare staff to give the depressed patient adequate help, the staff needs adequate information about the patient. In investigations of somatic pathologies, adequate laboratory tests are usually done before an appointment. What if the patient's mood could be measured in a similar way before an appointment? With the purpose of enhancing the communication between the patient and healthcare staff an app prototype (e{\sc madrs}) for android smartphones has been developed by the first author\cite{emadrs1, emadrs2}. The app is thought to be used by the patient in order to send a mood evaluation to a phone number owned by a trusted person or organisation, e.g. a health care unit. The app consists of a {\sc madrs-s} form. The result is sent as an {\sc sms} text message to a phone number, that is previously set by the patient. {\sc Madrs-s} is a verified tool commonly used for screening and follow-up of depression\cite{madrs2,madrs3}. It consists of nine questions. The patient answers each question with a rating from zero to six. The total score from all questions is categorized as follows:\\
 
 \begin{tabular}{r|l}
 {\bf score} & {\bf severity of depression}\\

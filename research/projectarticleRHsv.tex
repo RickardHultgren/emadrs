@@ -42,6 +42,20 @@
 \usepackage{cclicenses}
 \usepackage{nicefrac}
 
+\renewcommand{\abstractname}{Abstract}
+\renewenvironment{abstract}
+ {\small
+  %\begin{center}
+  \vspace{1em}\hspace{-1.5em}\bfseries \abstractname\vspace{-.5em}\vspace{0pt}
+  %\end{center}
+  \list{}{%
+    \setlength{\leftmargin}{0mm}% <---------- CHANGE HERE
+    \setlength{\rightmargin}{\leftmargin}%
+  }%
+  \item\relax}
+ {\endlist}
+
+
 %\bibliography{test}
 %\usepackage[sort, numbers]{natbib}
 \begin{document}
@@ -68,8 +82,8 @@
  {\small\it Inst f klinisk vetenskap/psykiatri; Ume\r{a} universitet; 901 85 Ume\r{a}}\vspace{.25cm}\\
 % {\small Assistant supervisor:} {\small \bf Helj{\"a} Pihkala} {\small \it helj{\"a}.p@hotmail.com}\\
  {\small Bihandledare:} {\small \bf Helj{\"a} Pihkala} {\small \it helja.pihkala@umu.se}\\
- {\small\it Inst f klinisk vetenskap/psykiatri; Ume\r{a} universitet; 901 85 Ume\r{a}}\vspace{.5cm}\\
-{\fontsize{15pt}{15pt}{\fontfamily{ptm}\selectfont{Projektets titel:}}\\\fontsize{18pt}{18pt}{\fontfamily{ptm}\selectfont{ Personalens inst{\"a}llning till uppf{\"o}ljning och screening via patientens smartphone, exemplifierad av ett fr{\aa}geformul{\"a}r f{\"o}r sj{\"a}lvbed{\"o}mning av depressionssymptom.}}}\\
+ {\small\it Inst f klinisk vetenskap/psykiatri; Ume\r{a} universitet; 901 85 Ume\r{a}}\vspace{1cm}\\
+{\fontsize{18pt}{18pt}{\fontfamily{ptm}\selectfont{ Personalens inst{\"a}llning till uppf{\"o}ljning och screening via patientens smartphone, exemplifierad av ett fr{\aa}geformul{\"a}r f{\"o}r sj{\"a}lvbed{\"o}mning av depressionssymptom.}}}\\
 \hrule
 \ \\
 \fontfamily{iwona}\selectfont
@@ -88,7 +102,7 @@ I Sverige uppskattas livstidsprevalensen av depression vara {\sc 13,2}\% hos m{\
 Att l{\"o}sa den sv{\aa}ra situationen kr{\"a}ver s{\aa}ledes nya s{\"a}tt att hantera depression. Vissa smartphone-appar har utvecklats f{\"o}r att gynna sjukv{\aa}rden hos deprimerade patienter. Apparna kan kategoriseras i tv{\aa} grupper beroende p{\aa} vilken slutanv{\"a}ndare de {\"a}r avsedda f{\"o}r. Om slutanv{\"a}ndaren {\"a}r en patient hj{\"a}lper appen patienten att uppt{\"a}cka och f{\"o}rst{\aa} symptomen genom en st{\"a}mningsdagbok\cite {app1}. Om appen {\"a}r avsedd att anv{\"a}ndas av v{\aa}rdpersonal, {\"a}r appen uppbyggd kring olika fr{\aa}geformul{\"a}r\cite {app2}. B{\aa}da metoderna kan leda till n{\aa}got b{\"a}ttre resultat f{\"o}r patienten, men genom att fokusera p{\aa} antingen patienten eller personalen ignoreras en nyckelaspekt. F{\"o}r att v{\aa}rden ska kunna hj{\"a}lpa patienten s{\aa} bra och effektiv som m{\"o}jligt, {\"a}r det n{\"o}dv{\"a}ndigt att fokusera p{\aa} kommunikationen mellan b{\aa}da parter.
 
 \section*{Syfte}
-F{\"o}r att v{\aa}rden ska kunna ge den deprimerade patienten adekvat hj{\"a}lp, beh{\"o}ver personalen adekvat information om patienten. Vid unders{\"o}kningar av somatiska patologier utf{\"o}rs vanliga laboratorieprover vanligtvis f{\"o}re ett mottagningsm{\"o}te. Vad h{\"a}nder om patientens nedst{\"a}mdhet kan m{\"a}tas p{\aa} ett liknande s{\"a}tt f{\"o}re bes{\"o}ket? I syfte att f{\"o}rb{\"a}ttra kommunikationen mellan patient och v{\aa}rdpersonal har en app-prototyp (e{\sc madrs}) f{\"o}r android-smartphones utvecklats av f{\"o}rste f{\"o}rfattaren\cite {emadrs1, emadrs2}. Appen {\"a}r t{\"a}nkt att anv{\"a}ndas av patienten f{\"o}r att skicka en st{\"a}mningsutv{\"a}rdering till ett telefonnummer som {\"a}gs av en betrodd person eller institution, t.ex. en enhet inom h{\"a}lsov{\aa}rden. Appen best{\aa}r av fr{\aa}geformul{\"a}ret {\sc madrs-s}. Resultatet skickas som ett {\sc sms}-textmeddelande till ett telefonnummer som tidigare angetts av patienten. {\sc Madrs-s} {\"a}r ett verifierat verktyg som vanligtvis anv{\"a}nds f{\"o}r screening och uppf{\"o}ljning av depression\cite {madrs2, madrs3}. Den best{\aa}r av nio fr{\aa}gor. Patienten svarar p{\aa} varje fr{\aa}ga med ett betyg fr{\aa}n noll till sex. Den sammanlagda po{\"a}ngen fr{\aa}n alla fr{\aa}gor kategoriseras enligt f{\"o}ljande: \\
+F{\"o}r att v{\aa}rden ska kunna ge den deprimerade patienten adekvat hj{\"a}lp, beh{\"o}ver personalen adekvat information om patienten. Vid unders{\"o}kningar av somatiska patologier utf{\"o}rs vanliga laboratorieprover vanligtvis f{\"o}re ett mottagningsm{\"o}te. Vad h{\"a}nder om patientens nedst{\"a}mdhet kan m{\"a}tas p{\aa} ett liknande s{\"a}tt f{\"o}re bes{\"o}ket? I syfte att f{\"o}rb{\"a}ttra kommunikationen mellan patient och v{\aa}rdpersonal har en app-prototyp (e{\sc madrs}) f{\"o}r android-smartphones utvecklats av f{\"o}rste f{\"o}rfattaren\cite {emadrs1, emadrs2}. Appen {\"a}r t{\"a}nkt att anv{\"a}ndas av patienten f{\"o}r att skicka en st{\"a}mningsutv{\"a}rdering till ett telefonnummer som {\"a}gs av en betrodd person eller organisation, t.ex. en enhet inom h{\"a}lsov{\aa}rden. Appen best{\aa}r av fr{\aa}geformul{\"a}ret {\sc madrs-s}. Resultatet skickas som ett {\sc sms}-textmeddelande till ett telefonnummer som tidigare angetts av patienten. {\sc Madrs-s} {\"a}r ett verifierat verktyg som vanligtvis anv{\"a}nds f{\"o}r screening och uppf{\"o}ljning av depression\cite {madrs2, madrs3}. Den best{\aa}r av nio fr{\aa}gor. Patienten svarar p{\aa} varje fr{\aa}ga med ett betyg fr{\aa}n noll till sex. Den sammanlagda po{\"a}ngen fr{\aa}n alla fr{\aa}gor kategoriseras enligt f{\"o}ljande: \\
 
 \begin{tabular}{r|l}
 {\bf score} & {\bf allvarlighetsgrad} \\
@@ -165,7 +179,7 @@ Uppgifter om att kontakta patienten, vilket inneb{\"a}r ledarskap
 {\item undersk{\"o}terska}
 {\item fotterapeut}
 {\item sjuksk{\"o}terska}
-{\item sjuksk{\"o}terska COPD}
+{\item sjuksk{\"o}terska KOL}
 {\item sjuksk{\"o}terska DM2}
 {\item sjuksk{\"o}terska geriatrik}
 {\item l{\"a}kare}
@@ -201,7 +215,7 @@ Uppgifter f{\"o}r att uppr{\"a}tth{\aa}lla patientens h{\"a}lsa, vilket inneb{\"
 {\newline \tiny kodning i appindix: \newline {management\_medical\_practice\_patient\_part}} & {\begin{itemize}
 \vspace{-1.5em} \setlength\itemsep{0em}
 {\item fotterapeut}
-{\item sjuksk{\"o}terska COPD}
+{\item sjuksk{\"o}terska KOL}
 {\item sjuksk{\"o}terska DM2}
 \vspace{-.5em}\end{itemize}}\\
 \hline
@@ -210,7 +224,7 @@ Uppgifter f{\"o}r att beh{\aa}lla patientens h{\"a}lsa, vilket inneb{\"a}r att m
 \vspace{-1.5em}\setlength\itemsep{0em}
 {\item l{\"a}karassistent}
 {\item undersk{\"o}terska}
-{\item sjuksk{\"o}terska COPD}
+{\item sjuksk{\"o}terska KOL}
 {\item sjuksk{\"o}terska DM2}
 {\item sjuksk{\"o}terska geriatrik}
 {\item l{\"a}kare}
