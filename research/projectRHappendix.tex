@@ -1,0 +1,502 @@
+\documentclass[12pt,a4paper,oneside]{article}
+\newcommand{\latex}{\LaTeX\xspace}
+\usepackage{textcomp}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}% http://ctan.org/pkg/xcolo
+\usepackage[latin1]{inputenc}
+%\usepackage[swedish]{babel}
+\usepackage{/usr/lib/R/share/texmf/tex/latex/Sweave}
+\usepackage[math]{iwona}
+\usepackage[T1]{fontenc}
+%\usepackage[swedish]{babel}
+\usepackage[UKenglish]{babel}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{url} 
+\renewcommand{\oldstylenums}[1]{{\fontfamily{pplj}\selectfont #1}}
+%\usepackage[textwidth=11cm]{geometry}
+%\newcommand{\blob}{\rule[-.2\unitlength]{2\unitlength}{.5\unitlength}}
+%\renewcommand{\_}{\hspace{0.1cm}}
+\usepackage{bold-extra}
+\usepackage{multirow}
+%\urlstyle{same}
+%\urlstyle{sf}
+\def\mydate{\leavevmode\hbox{\the\year-\twodigits\month-\twodigits\day}}
+\def\twodigits#1{\ifnum#1<10 0\fi\the#1}
+\usepackage[round,comma]{natbib}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\titleformat*{\section}{\normalsize\bfseries\vspace{0.25cm}}
+\titleformat*{\subsection}{\vspace{-0.25cm}\normalsize\it\vspace{0.25cm}}
+%\titleformat*{\subsubsection}{\large\bfseries}
+%\titleformat*{\paragraph}{\large\bfseries}
+%\titleformat*{\subparagraph}{\large\bfseries}
+
+\let\oldcite\cite
+\renewcommand*\cite[1]{\textsuperscript{\oldcite{#1}}}
+
+\makeatother
+\bibliographystyle{unsrt}
+%\bibliographystyle{ieeetr}
+%\usepackage{natbib}
+\usepackage{cclicenses}
+\usepackage{nicefrac}
+
+
+\renewcommand{\abstractname}{Abstract}
+\renewenvironment{abstract}
+ {\small
+  %\begin{center}
+  \vspace{1em}\hspace{-1.5em}\bfseries \abstractname\vspace{-.5em}\vspace{0pt}
+  %\end{center}
+  \list{}{%
+    \setlength{\leftmargin}{0mm}% <---------- CHANGE HERE
+    \setlength{\rightmargin}{\leftmargin}%
+  }%
+  \item\relax}
+ {\endlist}
+
+%\bibliography{test}
+%\usepackage[sort, numbers]{natbib}
+\begin{document}
+\title{
+\vspace{-3.9cm}
+\resizebox{1\hsize}{!}{{\sc\mydate}\ Project article for {\sc t10} scientific work at the medical programme, Ume\r{a} university}
+\\\vspace{-.4cm}
+\resizebox{1\hsize}{!}{\fontfamily{iwona}\selectfont\small Download English version from: {\textbf\emph{\href{https://github.com/RickardHultgren/emadrs/blob/master/research/projectarticleRH.pdf}{\url{https://github.com/RickardHultgren/emadrs/blob/master/research/projectarticleRH.pdf}}}}}\\\vspace{-.4cm}
+\resizebox{1\hsize}{!}{\fontfamily{iwona}\selectfont\small Ladda ner svensk version fr\r{a}n: {\textbf\emph{\href{https://github.com/RickardHultgren/emadrs/blob/master/research/projectarticleRHsv.pdf}{\url{https://github.com/RickardHultgren/emadrs/blob/master/research/projectarticleRHsv.pdf}}}}}\\\vspace{-.4cm}
+\resizebox{1\hsize}{!}{\fontfamily{iwona}\selectfont\small Appendix -- data: {\textbf\emph{\href{https://github.com/RickardHultgren/emadrs/blob/master/research/projectarticleRHappendix.pdf}{\url{https://github.com/RickardHultgren/emadrs/blob/master/research/projectarticleRHappendix.pdf}}}}}\\\vspace{-.4cm}
+\resizebox{1\hsize}{!}{{\fontfamily{iwona}\selectfont\small\cc This work by Rickard Hultgren is licensed under a Creative Commons Attribution {\sc 4.0} Unported License.}}
+%{\fontsize{15pt}{15pt}{\fontfamily{ptm}\selectfont{Project title:}}\\\fontsize{18pt}{18pt}{\fontfamily{ptm}\selectfont{Staff attitudes towards follow-up of depression treatment via the patient's mobile phone.}}}\\
+%\vspace{0.2cm}\fontfamily{iwona}\selectfont
+%\hrule
+\vspace{-2cm}
+\fontsize{12pt}{12pt}{\fontfamily{iwona}\selectfont
+}}
+%\author{{\small First author} {\small \bf Rickard Hultgren:} {\small \it rihu0003@student.umu.se}\vspace{.25cm}\\
+% {\small Inst f klinisk vetenskap/psykiatri; Ume\r{a} universitet; 901 85 Ume\r{a}}\\
+% {\small Supervisor:} {\small \bf Mikael Sandlund} {\small \it mikael.sandlund@umu.se}\\
+% {\small Assistant supervisor:} {\small \bf Helj{\"a} Pihkala} {\small \it helj{\"a}.p@hotmail.com}}
+\date{}
+\maketitle
+\vspace{-0.9cm}
+%\hrule
+\hrule
+\ \\\ \\
+{\fontsize{18pt}{18pt}{\fontfamily{ptm}\selectfont{ Appendix -- data}}}\\
+{\fontsize{13pt}{13pt}{\fontfamily{ptm}\selectfont{ Staff attitudes towards follow-up and screening via the patient's smartphone, exemplified by a questionnaire for self-rating of depression symptoms.}}}\\
+\fontfamily{iwona}\selectfont
+\ \vspace{.66em}\\
+\hrule
+\ \vspace{.33em}\\
+{\bf leadership\_contact\_patient }
+\\\ \\%'>"leadership\_contact\_patient}9 files.
+ { \it  assistant\_physician %[  165: 202
+}\\
+Och att patienten och jag {\"a}r {\"o}verens. %<br><a href='#leadership\_contact\_patient+b
+\ \\\ \\
+ { \it   assistant\_physician %[  362: 445
+}\\
+om det {\"a}r n{\aa}got psykiatriskt d{\aa} f{\aa}r man k{\"a}nna efter mer. Man f{\aa}r vara mer f{\"o}ljsam. %<br><a href='#leadership\_contact\_patient+b
+\ \\\ \\
+ { \it   auxiliary\_nurse\_2 %[  168: 240
+}\\
+Man f{\"o}rs{\"o}ker ju g{\"o}ra sitt b{\"a}sta, men det kan vara frustrerande %<br><a href='#leadership\_contact\_patient+b
+\ \\\ \\
+ { \it   foot\_therapist %[   11: 739
+}\\
+Eller n{\"a}r patienten sitter i stolen hos mig, d{\aa} b{\"o}rjar de att prata. Det har h{\"a}nt n{\aa}gra g{\aa}nger ocks{\aa} att l{\"a}kare tillkallats då de mådde psykiskt d{\aa}ligt. Det har till exempel h{\"a}nt att en patient hade uttryckt vilja att g{\aa} till det n{\"a}sta livet s{\aa} att s{\"a}ga, och d{\aa} har jag tillkallat l{\"a}kare. Det {\"a}r allts{\aa} inte bara f{\"o}tter utan mycket prat om annat ocks{\aa}. Allts{\aa} n{\"a}r de sitter s{\aa} sitter de i med fotbadet och slappnar av och d{\aa} b{\"o}rjar de prata. Man {\"a}r lite halvt en dietist d{\aa}. Det {\"a}r mycket annat. Ibland k{\"a}nns det som att jag inte kan ge bra svar p{\aa} fr{\aa}gorna, men ibland kan jag ge bra svar. Ibland vill patienterna veta mer om resultat fr{\aa}n unders{\"o}kningar. Ibland vill de veta mer om diabetes och mat.  %<br><a href='#leadership\_contact\_patient+b
+\ \\\ \\
+ { \it   nurse\_1 %[   11:  38
+}\\
+Tillgodose patientens behov %<br><a href='#leadership\_contact\_patient+b
+\ \\\ \\
+ { \it   nurse\_1 %[  183: 263
+}\\
+och inte g{\"o}ra patienten alltf{\"o}r f{\"o}rbannad. F{\"o}rs{\"o}ker linda bort aggressiviteten. %<br><a href='#leadership\_contact\_patient+b
+\ \\\ \\
+ { \it   nurse\_COPD %[  238: 479
+}\\
+Ibland vill de inte komma p{\aa} grund av att de inte vill veta att det {\"a}r s{\aa} d{\aa}ligt som det kanske {\"a}r. Sen s{\aa} har vi d{\aa} de som kommer p{\aa} {\aa}rskontroller som har sin diagnos och d{\aa} har vi problem med att de kanske isolerar sig och har det jobbigt. %<br><a href='#leadership\_contact\_patient+b
+\ \\\ \\
+ { \it   nurse\_COPD %[  1096:1144
+}\\
+K{\"a}nna av. M{\"a}rka vad det {\"a}r som har h{\"a}nt just nu. %<br><a href='#leadership\_contact\_patient+b
+\ \\\ \\
+ { \it   nurse\_DM %[  1010:1034
+}\\
+Vad {\"a}r det som har h{\"a}nt? %<br><a href='#leadership\_contact\_patient+b
+\ \\\ \\
+ { \it   nurse\_geriatric %[   11: 290
+}\\
+Vi har ju allt. Det beror ju p{\aa} att {\"a}ldre har inte bara en sjukdom. Det {\"a}r ju diabetes, KOL. Det {\"a}r alla saker och vad g{\"a}ller psykisk oh{\"a}lsa s{\aa} {\"a}r det mest anh{\"o}riga som har besv{\"a}r. Patienter och anh{\"o}riga ska kunna kontakta direkt. Oftast {\"a}r det anh{\"o}riga som beh{\"o}ver samtalsst{\"o}d.  %<br><a href='#leadership\_contact\_patient+b
+\ \\\ \\
+ { \it   nurse\_geriatric %[  554: 580
+}\\
+Patientens behov i centrum %<br><a href='#leadership\_contact\_patient+b
+\ \\\ \\
+ { \it   physician %[  202: 344
+}\\
+Sen f{\aa}r man k{\"a}nna av vad det handlar om till exempel suicidrisk. Visa att v{\aa}rden finns d{\"a}r f{\"o}r s{\aa}dana besv{\"a}r, f{\"o}r det {\"a}r sv{\aa}rt att s{\"o}ka sj{\"a}lv. %<br><a href='#leadership\_contact\_patient+b
+\ \\\ \\
+ { \it   psychotherapist2 %[  425: 470
+}\\
+Det finns allts{\aa} en dialog runt behandlingen. %<br><a href='#leadership\_contact\_patient+b'>
+
+
+\ \vspace{.66em}\\
+\hrule
+\ \vspace{.33em}\\
+\ \\{\bf leadership\_empathy }
+\\\ \\%'>"leadership\_empathy}1 files.
+ { \it administrator1 %[  643:649
+}\\
+Empati %<br><a href='#leadership\_empathy+b'>
+
+
+\ \vspace{.66em}\\
+\hrule
+\ \vspace{.33em}\\
+\ \\{\bf management\_contact\_patient }
+\\\ \\%'>"management\_contact\_patient}4 files.
+ { \it administrator1 %[  160: 182
+}\\
+och boka in patienten %<br><a href='#management\_contact\_patient+b
+\ \\\ \\
+ { \it   administrator2 %[  47:  92
+}\\
+Man kan ju f{\aa} journalkopior och tider av oss. %<br><a href='#management\_contact\_patient+b
+\ \\\ \\
+ { \it   administrator2 %[  229: 306
+}\\
+Det {\"a}r v{\"a}l att vi har ju mycket tidb{\"o}c{\"o}ker -- Vi ska ju kunna erbjuda tider.  %<br><a href='#management\_contact\_patient+b
+\ \\\ \\
+ { \it   nurse\_1 %[  56: 107
+}\\
+Nu kommer ju telefonsamtalen fram. Det k{\"a}nner vi av %<br><a href='#management\_contact\_patient+b
+\ \\\ \\
+ { \it   nurse\_1 %[  122: 181
+}\\
+Sitter mest i telefonr{\aa}dgivningen, och vill f{\aa} jobbet gjort %<br><a href='#management\_contact\_patient+b
+\ \\\ \\
+ { \it   psychotherapist2 %[  882:1013
+}\\
+De flesta vill tr{\"a}ffa samtalsterapeut personligen, men i brist p{\aa} det g{\aa}r det per telefon. Finns v{\"a}l formul{\"a}rtj{\"a}nst via internet?  %<br><a href='#management\_contact\_patient+b'>
+
+
+\ \vspace{.66em}\\
+\hrule
+\ \vspace{.33em}\\
+\ \\{\bf management\_contact\_staff }
+\\\ \\%'>"management\_contact\_staff}1 files.
+ { \it foot\_therapist %[  844:881
+}\\
+Pratar med doktorn om m{\aa}l i diabetes. %<br><a href='#management\_contact\_staff+b'>
+
+
+\ \vspace{.66em}\\
+\hrule
+\ \vspace{.33em}\\
+\ \\{\bf management\_financial }
+\\\ \\%'>"management\_financial}2 files.
+ { \it administrator1 %[  528:555
+}\\
+ACG ska spegla verkligheten %<br><a href='#management\_financial+b
+\ \\\ \\
+ { \it   administrator1 %[  242:375
+}\\
+Ibland kan det vara diagnoskoder som vi letar efter som man inte st{\"o}ter p{\aa} ofta. Och vi letar efter kroniska ICD koder sedan tidigare %<br><a href='#management\_financial+b
+\ \\\ \\
+ { \it   administrator1 %[  389:511
+}\\
+Det {\"a}r ju ACG. Med diagnoser ser vi hur vi ligger till. Sedan vi har b{\"o}rjat  koda alla kroniska diagnoser s{\aa} gick vi upp.  %<br><a href='#management\_financial+b
+\ \\\ \\
+ { \it   administrator2 %[  151:216
+}\\
+Vi g{\"o}r sammanst{\"a}llningar varje vecka f{\"o}r hela verskamhetsomr{\aa}det. %<br><a href='#management\_financial+b
+\ \\\ \\
+ { \it   administrator2 %[  438:502
+}\\
+Man m{\aa}ste ju vara s{\"a}ker p{\aa} att ICD-koder om nedst{\"a}mdhet g{\"a}ller.  %<br><a href='#management\_financial+b'>
+
+
+\ \vspace{.66em}\\
+\hrule
+\ \vspace{.33em}\\
+\ \\{\bf management\_medical\_practice\_patient\_part }
+\\\ \\%'>"management\_medical\_practice\_patient\_part}3 files.
+ { \it foot\_therapist %[  752: 832
+}\\
+Man kan se  resultatet av egenv{\aa}rd,  om t.ex. de sm{\"o}rjt in f{\"o}tterna varje dag. %<br><a href='#management\_medical\_practice\_patient\_part+b
+\ \\\ \\
+ { \it   nurse\_COPD %[  890:1005
+}\\
+Sluta r{\"o}ka. Om de slutar s{\aa} kan de ju faktiskt m{\aa} b{\"a}ttre. G{\aa}ngtest kan g{\"o}ras men g{\"o}rs s{\"a}llan p{\aa} grund av tidsbrist. %<br><a href='#management\_medical\_practice\_patient\_part+b
+\ \\\ \\
+ { \it   nurse\_DM %[  804: 922
+}\\
+Och de har viktnedg{\aa}ngsm{\aa}l s{\aa} klart. De har en del krav p{\aa} sig vad g{\"a}ller m{\aa}l f{\"o}r att f{\aa} forts{\"a}tta en viss behandling. %<br><a href='#management\_medical\_practice\_patient\_part+b'>
+
+
+\ \vspace{.66em}\\
+\hrule
+\ \vspace{.33em}\\
+\ \\{\bf management\_medical\_practice\_staff\_part }
+\\\ \\%'>"management\_medical\_practice\_staff\_part}9 files.
+ { \it assistant\_physician %[   11:  36
+}\\
+Diagnostik och behandling %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   assistant\_physician %[   51:  86
+}\\
+Labblistor. Anv{\"a}nds lite som fascit. %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   assistant\_physician %[   99: 165
+}\\
+Oftast symptomlindring, och att v{\"a}rden {\"a}r p{\aa} r{\"a}tt sida referensv{\"a}rdena.  %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   assistant\_physician %[  291: 356
+}\\
+Om det {\"a}r somatiskt r{\"a}tt fram s{\aa} g{\"o}r man p{\aa} samma s{\"a}tt varje g{\aa}ng %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   auxiliary\_nurse\_1 %[   82: 122
+}\\
+Jag f{\"o}rs{\"o}ker hj{\"a}lpa till s{\aa} gott jag kan %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   auxiliary\_nurse\_2 %[   28:  36
+}\\
+H{\"a}lsan.  %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   auxiliary\_nurse\_2 %[   54: 154
+}\\
+Vi h{\aa}ller p{\aa} mycket med s{\aa}r. S{\aa}ren minskar ju. De m{\"a}ter vi med l{\"a}ngd och olika cirklar. G{\"o}rs m{\aa}nadsvis. %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   auxiliary\_nurse\_2 %[  241: 372
+}\\
+Unders{\"o}ka s{\aa}r som g{\aa}r fram och tillbaka. Det {\"a}r inte s{\aa} mycket som jag kan p{\aa}verka. Jag g{\"o}r ju det jag kan efter min b{\"a}sta f{\"o}rm{\aa}ga. %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   auxiliary\_nurse\_2 %[  462: 492
+}\\
+Det {\"a}r mitt jobb att fixa det. %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   nurse\_COPD %[   11: 237
+}\\
+Det {\"a}r i regel en del i utredningen man g{\"o}r spirometri. Man har i regel varit hos l{\"a}karen och f{\aa}tt reda p{\aa} att man ska g{\"o}ra spirometri. Ibland s{\"a}ger de att de misst{\"a}nker KOL. Ibland vet de ju det sj{\"a}lva d{\aa} de har varit r{\"o}kare. %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   nurse\_COPD %[  480: 815
+}\\
+D{\aa} f{\aa}r man ju ocks{\aa} erbjuda n{\aa}gon att prata mer med f{\"o}r att de ska kunna m{\aa} b{\"a}ttre. Vi har {\"a}ven ett fr{\aa}geformul{\"a}r kring psykosocialt. Det handlar mycket om hur patienten kan klara av sin vardag. Det {\"a}r ju det som egentligen {\"a}r behandlingen. Det finns ju egentligen inte s{\aa} mycket annat att g{\"o}ra {\"a}n att spara p{\aa} energin och r{\"o}ra p{\aa} sig. %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   nurse\_COPD %[  829: 877
+}\\
+Det {\"a}r ju sj{\"a}lvskattningsformul{\"a}r och spirometri %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   nurse\_DM %[   11: 680
+}\\
+Jag m{\aa}ste ju st{\aa} i telefonen och g{\"o}ra en bed{\"o}mning utan att se personen. Jag m{\aa}ste ju lyssna in p{\aa} kort tid. Det {\"a}r tidsbegr{\"a}nsat ocks{\aa}. Och g{\"o}ra en korrekt bed{\"o}mning. Var den h{\"o}r hemma och hur snabbt de m{\aa}ste in. Jag {\"a}r inte alltid bombarderad av data, men det ringer n{\aa}n och m{\aa}r v{\"a}ldigt d{\aa}ligt och d{\aa} m{\aa}ste jag veta vad jag ska fr{\aa}ga om. Och det {\"a}r inte alltid s{\aa} enkelt, speciellt som jag inte har den specifika utbildningen men det g{\"a}ller inte diabetes, men {\"a}ven d{\"a}r m{\aa}ste jag veta vilka patienter som kanske beh{\"o}ver g{\aa} till annat omr{\aa}de och f{\aa} ett fj{\"a}rde ben att st{\aa} p{\aa} i diabetes-behandlingen, s{\aa} d{\"a}rf{\"o}r har vi b{\"o}rjat erbjuda samtalsterapi f{\"o}r diabetespatienter. %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   nurse\_DM %[  693: 751
+}\\
+Vid diabetes kan man se f{\"o}r{\"a}ndring i vikt eller blodsocker %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   nurse\_DM %[  773: 803
+}\\
+Tydliga m{\aa}l enligt riktlinjer. %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   nurse\_geriatric %[  302: 359
+}\\
+Klocktest, olika fr{\aa}geformul{\"a}r, bl.a. skatta hur man m{\aa}r. %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   nurse\_geriatric %[  371: 464
+}\\
+Att f{\aa} s{\aa} gott som m{\"o}jligt f{\"o}r patienterna och se i kvalitetsregister hur vi ligger {\"o}ver lag. %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   physician %[   82: 201
+}\\
+Det de s{\"o}ker f{\"o}r m{\aa}ste ju {\aa}tg{\"a}rdas. Jag tycker det {\"a}r oerh{\"o}rt viktigt. Se till att uppf{\"o}ljning p{\aa} den andra biten sker.  %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   psychotherapist1 %[   11: 655
+}\\
+Det {\"a}r ju en sv{\aa}r fr{\aa}ga. Jag t{\"a}nker om vi utg{\aa}r fr{\aa}n samtalsmottagningen h{\"a}r p{\aa} v{\aa}rdcentralen, s{\aa} {\"a}r det v{\"a}l mycket bed{\"o}mning f{\"o}rst och fr{\"a}mst. G{\"o}ra bed{\"o}mningar av patienters psykiska m{\aa}ende och sedan i den bed{\"o}mningen ing{\aa}r d{\"a}r ju att g{\"o}ra bed{\"o}mning om de kan f{\aa} hj{\"a}lp - om det {\"a}r h{\"a}lso- och sjukv{\aa}rd, f{\"o}r det f{\"o}rsta. Kan ju ocks{\aa} vara n{\aa}gonting som {\"a}r ganska normalt, vanlig {\aa}ngest som alla har. Och om det {\"a}r det, s{\aa} {\"a}r det n{\aa}got som ska till prim{\"a}rv{\aa}rden eller om vi ska remittera vidare. Och sen {\"a}r det att h{\aa}lla i behandling n{\"a}r man v{\"a}l har f{\aa}tt patienter till prim{\"a}rv{\aa}rden. S{\aa} t{\"a}nker man att man kan hj{\"a}lpa dem m{\aa} b{\"a}ttre genom samtal. %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   psychotherapist1 %[  667:1025
+}\\
+Vi m{\"a}ter ju med skattningsskalor. Objektivt? Det {\"a}r ju patienten sj{\"a}lv som ska skatta. I b{\"o}rjan av en behandling och sen ser man att symptom sjunker och att de kommit r{\"a}tt och vi anv{\"a}nder ORS SRS. Och vi skattar patientens tillfredsst{\"a}llelse och t{\"a}nker att den ska bli b{\"a}ttre. De uppskattar tillfredsst{\"a}llelse p{\aa} fyra olika omr{\aa}den f{\"o}r att ge oss feedback. %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   psychotherapist1 %1036:1125
+}\\
+De brukar ha en tydlighet att de vill klara av saker som att till exempel g{\aa} och handla . %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   psychotherapist1 %[ 1217:1443
+}\\
+Det beror p{\aa} hur mycket information sk{\"o}terskorna har f{\aa}tt eller hur mycket information l{\"a}karna har tagit. Ibland kan det vara sv{\aa}rt f{\"o}r vissa situationer. Utredande. K{\"a}nna in k{\"a}nslor. %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   psychotherapist2 %[   11:  52
+}\\
+Ja du. Symptomlindring. Funktions{\"o}kning.  %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   psychotherapist2 %[   66: 424
+}\\
+Vi m{\"a}ter ju med formul{\"a}r. N{\"a}stan varje patient fyller f{\"o}re varje samtal i en symptomskattning. Efter samtalen fyller de i en skala som m{\"a}ter hur n{\"o}jda de har varit med inneh{\aa}llet i just det samtalet. Hos m{\aa}nga finns ocks{\aa} specifika skalor f{\"o}r deras problem. Om man m{\"a}ter symptom och livskvalitet -- s{\aa} tar man upp det under samtalet och adresserar f{\"o}r{\"a}ndringar. %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   psychotherapist2 %[  484: 868
+}\\
+Dialogen avg{\"o}r om man har m{\aa}l eller inte. Patienten kanske tycker det {\"a}r rimligt att de inte kommer ha st{\"o}ttning fr{\aa}n oss och ska kunna fungera -- Klara av sitt jobb eller familjesituation. S{\aa} den {\"a}r ju ofta ganska tydlig. Vi har ju ganska ofta en tidssatt m{\aa}lbild -- Det d{\"a}r ska vi uppn{\aa} inom {\aa}tta samtal t.ex. Sen lyckas man ju inte alltid det. Men sen f{\aa}r man se hur l{\aa}ngt man kommit. %<br><a href='#management\_medical\_practice\_staff\_part+b
+\ \\\ \\
+ { \it   psychotherapist2 %[  1102:1199
+}\\
+Det ing{\aa}r ju alltid att man bed{\"o}mer depression. Det g{\"o}r vi p{\aa} alla nya patienter. Det {\"a}r jobbet.  %<br><a href='#management\_medical\_practice\_staff\_part+b'>
+
+
+\ \vspace{.66em}\\
+\hrule
+\ \vspace{.33em}\\
+\ \\{\bf management\_medical\_record }
+\\\ \\%'>"management\_medical\_record}2 files.
+ { \it administrator1 %[  187:201
+}\\
+ skriva diktat %<br><a href='#management\_medical\_record+b
+\ \\\ \\
+ { \it   administrator2 %[  306:350
+}\\
+Diktaten ska skrivas, och remisser ska iv{\"a}g. %<br><a href='#management\_medical\_record+b
+\ \\\ \\
+ { \it   administrator2 %[  106:149<
+}\\
+Vid m[{\"a}ter hur mycket diktat vi ligger efter %<br><a href='#management\_medical\_record+b'>Back<a><br><br>
+
+\ \vspace{.66em}\\
+\hrule
+\ \vspace{.33em}\\
+\ \\{\bf emadrs\_already\_(+)\_less\_paper\_work }
+\\\ \\%'>"emadrs\_already\_(+)\_less\_paper\_work}1 files.
+ { \it \it administrator2 %[  517:590
+}\\ 
+Vi skannar ju nu massa papper s{\aa} att f{\aa} MADRS-S elektroniskt blir l{\"a}ttare %<br><a href='#emadrs\_already\_(+)\_less\_paper\_work+b'>
+
+
+\ \vspace{.66em}\\
+\hrule
+\ \vspace{.33em}\\
+\ \\{\bf emadrs\_already\_(+)\_possebility\_to\_check }
+\\\ \\%'>"emadrs\_already\_(+)\_possebility\_to\_check}1 files.
+ { \it \it auxiliary\_nurse\_1 %[  161:275
+}\\ 
+ k{\"a}nns viktigt att kolla upp MADRS -- jag f{\aa}r uppm{\"a}rksamma n{\aa}gon annan som p{\aa} , det ing{\aa}r ju inte i mina uppgifter. %<br><a href='#emadrs\_already\_(+)\_possebility\_to\_check+b'>
+
+
+\ \vspace{.66em}\\
+\hrule
+\ \vspace{.33em}\\
+\ \\{\bf emadrs\_in\_dev\_controll }
+\\\ \\%'>"emadrs\_in\_dev\_controll}4 files.
+ { \it administrator1 %[   665:1013
+}\\ 
+Med samtalsmottagningen diskuterade vi ig{\aa}r efter intervjun att ist{\"a}llet f{\"o}r att anv{\"a}nda MADRS kan man kanske skicka fr{\aa}gorna som sk{\"o}terskorna ska st{\"a}lla. F{\"o}r det tar annars l{\aa}ng tid f{\"o}r sk{\"o}terskorna. Om sk{\"o}terskorna ist{\"a}llet kan skicka fr{\aa}gor till patientens mobiltelefon. S{\aa} kan man sedan under telefonuppringningen hj{\"a}lpa p{\aa} ett annat s{\"a}tt.  %<br><a href='#emadrs\_in\_dev\_controll+b
+\ \\\ \\
+ { \it   nurse\_DM %[  1053:1119
+}\\ 
+Bra anv{\"a}nda formul{\"a}r som m{\"a}ter hur bra patienten m{\aa}r i allm{\"a}nhet.  %<br><a href='#emadrs\_in\_dev\_controll+b
+\ \\\ \\
+ { \it   nurse\_DM %[  1208:1248
+}\\ 
+Jo viktgt veta vad som inte {\"a}r diabetes. %<br><a href='#emadrs\_in\_dev\_controll+b
+\ \\\ \\
+ { \it   physician %[   719: 938
+}\\ 
+ Syftet ska vara att hitta psykisk oh{\"a}lsa, s{\aa} att en kontakt g{\"o}rs i v{\aa}rden. Den stora fr{\aa}gan {\"a}r hur kontakten ska g{\"o}ras. Du ska fundera p{\aa} om MADRS {\"a}r det r{\"a}tta formul{\"a}ret. Men t{\"a}nket {\"a}r helt r{\"a}tt, det kan f{\aa} genomslag.  %<br><a href='#emadrs\_in\_dev\_controll+b
+\ \\\ \\
+ { \it   physician %[   522: 651
+}\\ 
+Jag {\"a}r mer intresserad av att anv{\"a}nda formul{\"a}r i allm{\"a}n screening f{\"o}r att korta gapet till att v{\"a}l s{\"o}ka f{\"o}r sin psykiska oh{\"a}lsa.  %<br><a href='#emadrs\_in\_dev\_controll+b
+\ \\\ \\
+ { \it   physician %[   972:1054
+}\\ 
+Viktigt ha i {\aa}tanke vilka formul{\"a}r {\"a}r f{\"o}r v{\aa}rdpersonal f{\"o}r att validera patienten. %<br><a href='#emadrs\_in\_dev\_controll+b
+\ \\\ \\
+ { \it   psychotherapist1 %[  1644:1748
+}\\ 
+L{\aa}ter bra med automatiserade lab prover, men b{\"a}ttre med b{\"a}ttre journalsystem som skulle signalera saker. %<br><a href='#emadrs\_in\_dev\_controll+b
+\ \\\ \\
+ { \it   psychotherapist1 %[  1463:1572
+}\\ 
+Beror p{\aa} vad man g{\"o}r med v{\"a}rdet. Det {\"a}r viktigt att n{\aa}gon handhar det och m{\"o}ter symptomen. Att det f{\"o}ljs upp. %<br><a href='#emadrs\_in\_dev\_controll+b'>
+
+
+\ \vspace{.66em}\\
+\hrule
+\ \vspace{.33em}\\
+\ \\{\bf emadrs\_in\_dev\_only\_follow\_up }
+\\\ \\%'>"emadrs\_in\_dev\_only\_follow\_up}1 files.
+ { \it \it nurse\_DM %[  1120:1207
+}\\ 
+Bra att det begr{\"a}nsas till uppf{\"o}ljning s{\aa} det inte blir som med receptionens blodtryck. %<br><a href='#emadrs\_in\_dev\_only\_follow\_up+b'>
+
+
+\ \vspace{.66em}\\
+\hrule
+\ \vspace{.33em}\\
+\ \\{\bf emadrs\_in\_dev\_screening\_follow\_up }
+\\\ \\%'>"emadrs\_in\_dev\_screening\_follow\_up}4 files.
+ { \it assistant\_physician %[   535: 604
+}\\ 
+MADRS-S blir ju bra screeningverktyg, men kan vara st{\"o}d vid {\aa}terbes{\"o}k %<br><a href='#emadrs\_in\_dev\_screening\_follow\_up+b
+\ \\\ \\
+ { \it   nurse\_COPD %[  1159:1191
+}\\ 
+Viktgt veta vad som inte {\"a}r KOL. %<br><a href='#emadrs\_in\_dev\_screening\_follow\_up+b
+\ \\\ \\
+ { \it   nurse\_geriatric %[   598: 623
+}\\ 
+Allt h{\"o}r till geriatrik.  %<br><a href='#emadrs\_in\_dev\_screening\_follow\_up+b
+\ \\\ \\
+ { \it   psychotherapist2 %[  1343:1810
+}\\ 
+Man beh{\"o}ver ha dialog med patienten, men om man avslutar en patient som {\"a}r rimligt symptomfri s{\aa} finns det alltid en risk f{\"o}r {\aa}terfall. S{\aa} om man fyller i appen med j{\"a}mna mellanrum och kommer p{\aa} annat bes{\"o}k s{\aa} s{\aa} kan man kankse se om det stuckit iv{\"a}g. Men man m{\aa}ste presentera MADRS bra grafiskt f{\"o}r personalen, s{\aa} det inte missas. F{\"o}r annars kan det vara farligt eftersom patienten litar p{\aa} att personalen har sett resultatet. Det skulle nog kunna {\"o}ka kvaliteten.  %<br><a href='#emadrs\_in\_dev\_screening\_follow\_up+b
+\ \\\ \\
+ { \it   psychotherapist2 %[  1216:1342
+}\\ 
+Under f{\"o}ruts{\"a}ttningen att appen bara {\"a}r f{\"o}r personer som behandlas f{\"o}r neds{\"a}mdhet, s{\aa} {\"a}r det ett j{\"a}tte bra s{\"a}tt att f{\"o}lja upp. %<br><a href='#emadrs\_in\_dev\_screening\_follow\_up+b'>
+
+
+\ \vspace{.66em}\\
+\hrule
+\ \vspace{.33em}\\
+\ \\{\bf emadrs\_not\_in\_dev\_everybody\_diagnostic }
+\\\ \\%'>"emadrs\_not\_in\_dev\_everybody\_diagnostic}4 files.
+ { \it administrator2 %[   592: 687
+}\\ 
+Automatisk provtagning: Labprover {\"a}r inget vi tar st{\"a}llning till. Vi bara best{\"a}ller labbprover. %<br><a href='#emadrs\_not\_in\_dev\_everybody\_diagnostic+b
+\ \\\ \\
+ { \it   physician %[   652: 720
+}\\ 
+Men vi ska passa oss f{\"o}r att i {\"o}vrigt automatisera diagnostisering.  %<br><a href='#emadrs\_not\_in\_dev\_everybody\_diagnostic+b
+\ \\\ \\
+ { \it   physician %[  1055:1135
+}\\ 
+Automatisera lab-tagning kommer i framtiden, men det tror jag {\"a}r f{\"o}r stort steg. %<br><a href='#emadrs\_not\_in\_dev\_everybody\_diagnostic+b
+\ \\\ \\
+ { \it   psychotherapist1 %[  1573:1643
+}\\ 
+Automatisk diagnostisering med blockad kan vara f{\"o}rknippat med risker. %<br><a href='#emadrs\_not\_in\_dev\_everybody\_diagnostic+b
+\ \\\ \\
+ { \it   psychotherapist2 %[  1957:2125
+}\\ 
+Man ska ju aldrig anv{\"a}nda MADRS diagnostiskt f{\"o}r det finns ju de som underrapporterar. S{\aa} att anv{\"a}nda appen till alla f{\"o}r att s{\"o}ka ny tid kan det vara v{\"a}ldigt farligt. %<br><a href='#emadrs\_not\_in\_dev\_everybody\_diagnostic+b'>
+
+
+\ \vspace{.66em}\\
+\hrule
+\ \vspace{.33em}\\
+\ \\{\bf emadrs\_not\_in\_dev\_everybody\_too\_many }
+\\\ \\%'>"emadrs\_not\_in\_dev\_everybody\_too\_many}2 files.
+ { \it auxiliary\_nurse\_2 %[  669:724
+}\\ 
+Om man riktar appen till alla blir det f{\"o}r mycket folk. %<br><a href='#emadrs\_not\_in\_dev\_everybody\_too\_many+b
+\ \\\ \\
+ { \it   physician %[  361:521
+}\\ 
+Risk f{\"o}r bara belastning om det inte bara sker som uppf{\"o}ljning. Jag vet inte om elekronisk MADRS g{\"o}r n{\aa}gon skillnad-vi g{\"o}r ju upp{\"o}ljning {\"a}nd{\aa}, t,ex, ringer upp. %<br><a href='#emadrs\_not\_in\_dev\_everybody\_too\_many+b'>Back<a><br><br>
+
+
+\end{document}
