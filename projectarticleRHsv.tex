@@ -1,0 +1,339 @@
+\documentclass[12pt,a4paper,oneside]{article}
+\newcommand{\latex}{\LaTeX\xspace}
+\usepackage{textcomp}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}% http://ctan.org/pkg/xcolo
+\usepackage[latin1]{inputenc}
+%\usepackage[swedish]{babel}
+\usepackage{/usr/lib/R/share/texmf/tex/latex/Sweave}
+\usepackage[math]{iwona}
+\usepackage[T1]{fontenc}
+%\usepackage[swedish]{babel}
+\usepackage[UKenglish]{babel}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{url} 
+\renewcommand{\oldstylenums}[1]{{\fontfamily{pplj}\selectfont #1}}
+%\usepackage[textwidth=11cm]{geometry}
+%\newcommand{\blob}{\rule[-.2\unitlength]{2\unitlength}{.5\unitlength}}
+%\renewcommand{\_}{\hspace{0.1cm}}
+\usepackage{bold-extra}
+\usepackage{multirow}
+%\urlstyle{same}
+%\urlstyle{sf}
+\def\mydate{\leavevmode\hbox{\the\year-\twodigits\month-\twodigits\day}}
+\def\twodigits#1{\ifnum#1<10 0\fi\the#1}
+\usepackage[round,comma]{natbib}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\titleformat*{\section}{\normalsize\bfseries\vspace{0.25cm}}
+%\titleformat*{\subsection}{\Large\bfseries}
+%\titleformat*{\subsubsection}{\large\bfseries}
+%\titleformat*{\paragraph}{\large\bfseries}
+%\titleformat*{\subparagraph}{\large\bfseries}
+
+\let\oldcite\cite
+\renewcommand*\cite[1]{\textsuperscript{\oldcite{#1}}}
+
+\makeatother
+\bibliographystyle{unsrt}
+%\bibliographystyle{ieeetr}
+%\usepackage{natbib}
+\usepackage{cclicenses}
+\usepackage{nicefrac}
+
+\renewcommand{\abstractname}{Abstract}
+\renewenvironment{abstract}
+ {\small
+  %\begin{center}
+  \vspace{1em}\hspace{-1.5em}\bfseries \abstractname\vspace{-.5em}\vspace{0pt}
+  %\end{center}
+  \list{}{%
+    \setlength{\leftmargin}{0mm}% <---------- CHANGE HERE
+    \setlength{\rightmargin}{\leftmargin}%
+  }%
+  \item\relax}
+ {\endlist}
+
+
+%\bibliography{test}
+%\usepackage[sort, numbers]{natbib}
+\begin{document}
+\title{
+\vspace{-3.9cm}
+\resizebox{1\hsize}{!}{{\sc\mydate}\ Projektartikel f{\"o}r {\sc t10} vetenskapligt arbete vid l{\"a}karprogrammet, Ume\r{a} universitet}
+\\\vspace{-.55cm}
+\resizebox{1\hsize}{!}{\fontfamily{iwona}\selectfont\small Ladda ner svensk version fr\r{a}n: {\textbf\emph{\href{https://github.com/RickardHultgren/emadrs/blob/master/research/projectarticleRHsv.pdf}{\url{https://github.com/RickardHultgren/emadrs/blob/master/research/projectarticleRHsv.pdf}}}}}\\\vspace{-.55cm}
+\resizebox{1\hsize}{!}{\fontfamily{iwona}\selectfont\small Download English version from: {\textbf\emph{\href{https://github.com/RickardHultgren/emadrs/blob/master/research/projectarticleRH.pdf}{\url{https://github.com/RickardHultgren/emadrs/blob/master/research/projectarticleRH.pdf}}}}}\\\vspace{-.55cm}
+\resizebox{1\hsize}{!}{\fontfamily{iwona}\selectfont\small Appendix -- data: {\textbf\emph{\href{https://github.com/RickardHultgren/emadrs/blob/master/research/projectarticleRHappendix.pdf}{\url{https://github.com/RickardHultgren/emadrs/blob/master/research/projectarticleRHappendix.pdf}}}}}\\\vspace{-.55cm}
+\resizebox{1\hsize}{!}{{\fontfamily{iwona}\selectfont\small\cc Detta verk av Rickard Hultgren {\"a}r licensierat under en Creative Commons Erk{\"a}nnande {\sc 4.0} Internationell Licens.}}
+\vspace{-2.35cm}
+\fontsize{12pt}{12pt}{\fontfamily{iwona}\selectfont
+}}
+\date{}
+\maketitle
+\vspace{-0.9cm}
+%\hrule
+\hrule
+\ \\ 
+{\small F{\"o}rste f{\"o}rfattare:} {\small \bf Rickard Hultgren} {\small \it rihu0003@student.umu.se}\vspace{.25cm}\\
+ {\small Handledare:} {\small \bf Mikael Sandlund} {\small \it mikael.sandlund@umu.se}\\
+ {\small\it Inst f klinisk vetenskap/psykiatri; Ume\r{a} universitet; 901 85 Ume\r{a}}\vspace{.25cm}\\
+% {\small Assistant supervisor:} {\small \bf Helj{\"a} Pihkala} {\small \it helj{\"a}.p@hotmail.com}\\
+ {\small Bihandledare:} {\small \bf Helj{\"a} Pihkala} {\small \it helja.pihkala@umu.se}\\
+ {\small\it Inst f klinisk vetenskap/psykiatri; Ume\r{a} universitet; 901 85 Ume\r{a}}\vspace{.5cm}\\
+{\fontsize{18pt}{18pt}{\fontfamily{ptm}\selectfont{ Personalens inst{\"a}llning till uppf{\"o}ljning och screening via patientens smartphone, exemplifierad av ett fr{\aa}geformul{\"a}r f{\"o}r sj{\"a}lvbed{\"o}mning av depressionssymptom.}}}\\
+\hrule
+\ \\
+\fontfamily{iwona}\selectfont
+
+\begin{abstract}
+\ \\\vspace{-2em}\ \\
+%\emph{
+\bfseries{
+H{\"a}lso- och sjukv{\aa}rden beh{\"o}ver nya, kostnadseffektiva verktyg. Hur skulle h{\"a}lso- och sjukv{\aa}rden p{\aa}verkas om prim{\"a}rv{\aa}rden skulle f{\aa} resultat av fr{\aa}geformul{\"a}r fr{\aa}n patientens smartphone? Intervjuer om detta {\"a}mne har utf{\"o}rts med fokusgrupper best{\aa}ende av prim{\"a}rv{\aa}rds-personal vid Hagfors v{\aa}rdcentral. En android-app baserad p{\aa} formul{\"a}ret \textbf{\textsc{madrs-s}} har anv{\"a}nts som exempel under intervjuerna. Inspelningarna unders{\"o}ktes med kvalitativ inneh{\aa}llsanalys. Projektet visar olika potentialer i digitala fr{\aa}geformul{\"a}r och vilka f{\"o}r{\"a}ndringar detta kan medf{\"o}ra.
+}
+\end{abstract}
+
+\section*{Bakgrund}
+I Sverige uppskattas livstidsprevalensen av depression vara {\sc 13,2}\% hos m{\"a}n och {\sc 25,1}\% bland kvinnor\cite{numbers0}. Det finns ett v{\"a}letablerat samband mellan sj{\"a}lvmord och affektiva sjukdomar\cite{numbers1.1}. Det har uppskattats att {\sc 50--80}\% av beg{\aa}ngna suicid {\"a}r associerade med affektiva sjukdomar\cite{numbers1.1}. Suicid {\"a}r den fr{\"a}msta orsaken till d{\"o}dsfall bland m{\"a}n mellan {\sc 15} och {\sc 44} {\aa}r i Sverige\cite{numbers3.0.1}. {\"A}nd{\aa} uppskattas det att drygt \nicefrac {2} {3} av alla suicid nyligen hade varit i kontakt med v{\aa}rden. Endast \nicefrac {1} {3} av alla suicid hade kontakt med en psykiatrisk klinik\cite{numbers2}. I m{\aa}nga fall kunde sj{\"a}lvmordet ha f{\"o}rhindrats om adekvata anstr{\"a}ngningar hade gjorts\cite{numbers1}. Riktlinjer f{\"o}r behandling och uppf{\"o}ljning av depression finns, men {\"o}kningen av psykiska problem bland unga utg{\"o}r en stor utmaning\cite{guide1, regionjh1}.
+
+Att l{\"o}sa den sv{\aa}ra situationen kr{\"a}ver s{\aa}ledes nya s{\"a}tt att hantera depression. Vissa smartphone-appar har utvecklats f{\"o}r att gynna sjukv{\aa}rden hos deprimerade patienter. Apparna kan kategoriseras i tv{\aa} grupper beroende p{\aa} vilken slutanv{\"a}ndare de {\"a}r avsedda f{\"o}r. Om slutanv{\"a}ndaren {\"a}r en patient hj{\"a}lper appen patienten att uppt{\"a}cka och f{\"o}rst{\aa} symptomen genom en st{\"a}mningsdagbok\cite {app1}. Om appen {\"a}r avsedd att anv{\"a}ndas av v{\aa}rdpersonal, {\"a}r appen uppbyggd kring olika fr{\aa}geformul{\"a}r\cite {app2}. B{\aa}da metoderna kan leda till n{\aa}got b{\"a}ttre resultat f{\"o}r patienten, men genom att fokusera p{\aa} antingen patienten eller personalen ignoreras en nyckelaspekt. F{\"o}r att v{\aa}rden ska kunna hj{\"a}lpa patienten s{\aa} bra och effektiv som m{\"o}jligt, {\"a}r det n{\"o}dv{\"a}ndigt att fokusera p{\aa} kommunikationen mellan b{\aa}da parter.
+
+\section*{Syfte}
+F{\"o}r att v{\aa}rden ska kunna ge den deprimerade patienten adekvat hj{\"a}lp, beh{\"o}ver personalen adekvat information om patienten. Vid unders{\"o}kningar av somatiska patologier utf{\"o}rs vanliga laboratorieprover vanligtvis f{\"o}re ett mottagningsm{\"o}te. Vad h{\"a}nder om patientens nedst{\"a}mdhet kan m{\"a}tas p{\aa} ett liknande s{\"a}tt f{\"o}re bes{\"o}ket? I syfte att f{\"o}rb{\"a}ttra kommunikationen mellan patient och v{\aa}rdpersonal har en app-prototyp (e{\sc madrs}) f{\"o}r android-smartphones utvecklats av f{\"o}rste f{\"o}rfattaren\cite {emadrs1, emadrs2}. Appen {\"a}r t{\"a}nkt att anv{\"a}ndas av patienten f{\"o}r att skicka en st{\"a}mningsutv{\"a}rdering till ett telefonnummer som {\"a}gs av en betrodd person eller organisation, t.ex. en enhet inom h{\"a}lsov{\aa}rden. Appen best{\aa}r av fr{\aa}geformul{\"a}ret {\sc madrs-s}. Resultatet skickas som ett {\sc sms}-textmeddelande till ett telefonnummer som tidigare angetts av patienten. {\sc Madrs-s} {\"a}r ett verifierat verktyg som vanligtvis anv{\"a}nds f{\"o}r screening och uppf{\"o}ljning av depression\cite {madrs2, madrs3}. Den best{\aa}r av nio fr{\aa}gor. Patienten svarar p{\aa} varje fr{\aa}ga med ett betyg fr{\aa}n noll till sex. Den sammanlagda po{\"a}ngen fr{\aa}n alla fr{\aa}gor kategoriseras enligt f{\"o}ljande: \\
+
+\begin{tabular}{r|l}
+{\bf score} & {\bf allvarlighetsgrad} \\
+\hline {\it 0--6} & ingen depression \\
+{\it 7-19} & mild depression \\
+{\it 20--34} & m{\aa}ttlig depression \\
+{\it 35--54} & allvarlig depression \\\end{tabular}\vspace{1em}
+\\Forsknings{\"a}mnena {\"a}r tre omr{\aa}den, n{\"a}ra f{\"o}rbundna med varandra:
+\begin{itemize}
+\item[$\alpha$] Vilka f{\"o}rdelar och nackdelar identifieras ur ett professionellt kliniskt perspektiv, med att anv{\"a}nda ett digitalt utv{\"a}rderingsinstrument f{\"o}r depression i screening och uppf{\"o}ljning?
+\item[$\beta$] Syftet {\"a}r ocks{\aa} att samla f{\"o}rslag till vidareutveckling av e{\sc madrs}.
+\item[$\gamma$] Vilka personalkategorier skulle p{\aa}verkas mest av digitala fr{\aa}geformul{\"a}r?
+\end{itemize}
+
+\section*{Material och metod}
+%Interviews with at least {\sc 2} focus groups, consisting of about {\sc 5--7} primary care unit employees from different staff categories that are involved in the treatment of depression. The staff categories concerned are primarily physicians, nurses and members from the so-called psycho-social teams (e.g. psychologists)\cite{goal1}. Each group will consist of as few staff categories as possible. This would be beneficial for the interviews since it would minimize the risk of hierarchical group dynamics.
+F{\"o}r att f{\aa} en helhetsbild av hur en v{\aa}rdcentral skulle p{\aa}verkas av digitala fr{\aa}geformul{\"a}r, intervjuades representanter fr{\aa}n m{\aa}nga personalkategorier\cite {goal1}. Tv{\aa} fokusgrupper bildades, best{\aa}ende av sju respektive sex anst{\"a}llda inom prim{\"a}rv{\aa}rden fr{\aa}n olika personalkategorier som direkt eller indirekt {\"a}r involverade i behandling av depression hos Hagfors v{\aa}rdcentral. F{\"o}ljande tabell {\"a}r en sammanst{\"a}llning av gruppmedlemmarna:\\\\
+\begin{tabular}{p{3em}|p{10em}|l|l}
+Grupp & Arbetstitel & Intervju 1 & Intervju 2 \\
+\hline
+\multirow {5} {*} {A} & Administrat{\"o}rer & 1 & 1 \\
+& Sjuksk{\"o}terskor & 3 & 3 \\
+& Fotterapeuter & 1 & 0 \\
+& L{\"a}kare & 0 & 1 \\
+& Samtalsterapeuter & 1 & 1 \\
+\hline
+\multirow {6} {*} {B} & Administrat{\"o}rer & 1 & 1 \\
+& Undersk{\"o}terskor & 1 & 2 \\
+& Sjuksk{\"o}terskor & 0 & 1 \\
+%& Fotterapeuter & 0 & 0 \\
+& L{\"a}karassistenter & 1 & 1 \\
+& Samtalsterapeuter & 1 & 1 \\
+\hline
+\end{tabular}\\\\\\\\
+Tv{\aa} 30-minuters intervjuer utf{\"o}rdes med varje grupp. Under intervjuerna diskuterades f{\"o}ljande fr{\aa}gor: \\\\\
+Intervju {\sc 1}\vspace{-.33em}
+\begin{enumerate}[label=\sc 1.\arabic*.]
+\item {\bf} Vad {\"a}r specifikt, m{\"a}tbart och uppn{\aa}eligt i ditt arbete?
+\end{enumerate}
+Intervju {\sc 2}\vspace{-.33em}
+\begin{enumerate}[label=\sc 2.\arabic*.]
+%\setlength\itemsep{0em}
+\item {\bf} Beskriv hur du upplever din arbetssituation n{\"a}r patientens huvudproblem inte {\"a}r relaterat till depression, men patienten verkar vara mycket nedst{\"a}md?\vspace{-.33em}
+\item {\bf} Scenarier diskuteras:\vspace{-.33em}
+\begin{itemize}\vspace{-.33em}
+% \Setlength \itemsep {0em}
+\item {\bf} Vad h{\"a}nder om e{\sc madrs} bara kan anv{\"a}ndas f{\"or} uppf{\"o}ljning?\vspace{-.33em}
+\item {\bf} Vad h{\"a}nder om e{\sc madrs} kan anv{\"a}ndas av vem som helst f{\"o}r att skicka dig bed{\"o}mningar av sitt affektiva tillst{\aa}nd?\vspace{-.33em}
+\item {\bf} Vad h{\"a}nder om resultatet av e{\sc madrs} automatiskt skulle kunna reglera vilka laboratorietester som ska utf{\"o}ras?
+\end{itemize}
+\end{enumerate}
+Intervjuerna analyserades sedan med hj{\"a}lp av kvalitativ inneh{\aa}llsanalys\cite{analysis1}. Fr{\aa}n inspelningarna h{\"a}rleddes och kategoriserades orsakskoder. Arbetet gjordes med hj{\"a}lp av programmeringsspr{\aa}kbiblioteket {\sc rqda}\cite{rqda}.
+
+\section*{Resultat}
+{\bf Forskningsomr{\aa}de $\alpha$ and $\beta$:} Runt exemplet e{\sc madrs} identifierades f{\"o}ljande potentialer, styrkor och svagheter:
+\begin{itemize}
+\item E{\sc madrs} kan vara mycket anv{\"a}ndbart f{\"o}r att f{\"o}lja upp patienter som {\"a}r i riskzonen f{\"o}r {\aa}terfall av depression. \\{\it Kodnamn i appendix: {\bfseries emadrs\_in\_dev\_only\_follow\_up}}
+\item Det finns ett behov av digitala verktyg med validerade fr{\aa}geformul{\"a}r f{\"o}r ett bredare spektrum av patologier. \\{\it Kodnamn i appendix: {\bfseries emadrs\_in\_dev\_screening\_follow\_up}}
+\item Dessa fr{\aa}geformul{\"a}r ska vara kopplade till varandra p{\aa} ett kontrollerat s{\"a}tt. \\{\it Kodnamn i bilaga: {\bfseries emadrs\_in\_dev\_controll}}
+\item E{\sc madrs} kan minska administrat{\"o}rens arbetsbelastning.\\{\it kodnamn i appendix: {\bfseries emadrs\_already\_ (+)\_ less\_paper\_work}}
+\item Viktigt att n{\aa}gon ansvarar f{\"o}r, och {\"a}r betrodd att hantera de inkomna fr{\aa}geformul{\"a}rens resultat. \\{\it Kodnamn i bilaga: {\bfseries emadrs\_already\_ (+)\_ possebility\_to\_check}}
+\item E{\sc madrs} b{\"o}r inte anv{\"a}ndas f{\"o}r att diagnostisera depression. \\{\it Kodnamn i bilaga: {\bfseries emadrs\_not\_in\_dev\_everybody\_diagnostic}}
+\item E{\sc madrs} b{\"o}r inte vara m{\"o}jligt att anv{\"a}nda av vem som helst f{\"o}r att skicka resultaten till v{\aa}rdgivaren. \\{\it Kodnamn i appendix: {\bfseries emadrs\_not\_in\_dev\_everybody\_too\_many}}
+\end{itemize}
+% Det b{\"o}r finnas n{\aa}gon form av fl{\"o}desstyrning f{\"o}r dessa fr{\aa}geformul{\"a}r.
+{\bf Forskningsomr{\aa}de $\gamma$:} I en effektiv organisation skiljer man hanteringsprocessen fr{\aa}n ledarskapet\cite {leader1}.
+%new
+K{\"a}rnan i ledarskapet {\"a}r att veta vad man ska {\"o}nska, medan hantering inneb{\"a}r att veta hur man f{\"o}rverkligar {\"o}nskningarna.
+%
+Nedan f{\"o}ljer en tabell som beskriver vilka personalkategorier som, enligt intervjuerna hanterar eller leder i sitt arbete:\nopagebreak
+\begin{table}
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+Uppgifter om att kontakta patienten, vilket inneb{\"a}r ledarskap
+{\newline \tiny kodning i appindix: {leadership\_contact\_patient}} & {\begin{itemize}
+\vspace{-1.5em} \setlength \itemsep {0em}
+{\item l{\"a}kare}assistent
+{\item undersk{\"o}terska}
+{\item fotterapeut}
+{\item sjuksk{\"o}terska}
+{\item sjuksk{\"o}terska KOL}
+{\item sjuksk{\"o}terska DM2}
+{\item sjuksk{\"o}terska geriatrik}
+{\item l{\"a}kare}
+{\item samtalsterapeut}\vspace{-.5em}\end{itemize}}\\
+\hline
+Uppgifter om att kontakta patienten, vilket inneb{\"a}r hantering
+{\newline \tiny kodning i appindix: {management\_contact\_patient}} & {\begin{itemize}
+\vspace{-1.5em} \setlength \itemsep{0em}
+{\item administrat{\"o}r}
+{\item sjuksk{\"o}terska}
+{\item samtalsterapeut}
+\vspace{-.5em}\end{itemize}}\\
+\hline
+Uppgifter om k{\"a}nsla av empati, vilket inneb{\"a}r ledarskap
+{\newline \tiny kodning i appindix: {leadership\_empathy}} & {\begin{itemize}
+\vspace{-1.5em} \setlength\itemsep{0em}
+{\item administrat{\"o}r}
+\vspace{-.5em}\end{itemize}}\\
+\hline
+Uppgifter att kontakta personalen, vilket inneb{\"a}r ledning
+{\newline \tiny kodning i appindix: {management\_contact\_staff}} & {\begin{itemize}
+\vspace{-1.5em} \setlength\itemsep{0em}
+{\item fotterapeut}
+\vspace{-.5em}\end{itemize}}\\
+\hline
+Hantera finanser
+{\newline \tiny kodning i appindix: {management\_financial}} & {\begin{itemize}
+\vspace{-1.5em} \setlength\itemsep{0em}
+{\item administrat{\"o}r}
+\vspace{-.5em}\end{itemize}}\\
+\hline
+Uppgifter f{\"o}r att uppr{\"a}tth{\aa}lla patientens h{\"a}lsa, vilket inneb{\"a}r att patienten ska hanteras
+{\newline \tiny kodning i appindix: \newline {management\_medical\_practice\_patient\_part}} & {\begin{itemize}
+\vspace{-1.5em} \setlength\itemsep{0em}
+{\item fotterapeut}
+{\item sjuksk{\"o}terska KOL}
+{\item sjuksk{\"o}terska DM2}
+\vspace{-.5em}\end{itemize}}\\
+\hline
+Uppgifter f{\"o}r att beh{\aa}lla patientens h{\"a}lsa, vilket inneb{\"a}r att man hanterar andra yrkesverksamma
+{\newline \tiny kodning i appindix: {management\_medical\_practice\_staff\_part}} & {\begin{itemize}
+\vspace{-1.5em}\setlength\itemsep{0em}
+{\item l{\"a}karassistent}
+{\item undersk{\"o}terska}
+{\item sjuksk{\"o}terska KOL}
+{\item sjuksk{\"o}terska DM2}
+{\item sjuksk{\"o}terska geriatrik}
+{\item l{\"a}kare}
+{\item samtalsterapeut}
+\vspace{-.5em}\end{itemize}}\\
+\hline
+Uppgifter f{\"o}r hantering av journaler
+{\newline \tiny kodning i appindix: {management\_medical\_record}} & {\begin{itemize}
+\vspace{-1.5em}\setlength\itemsep{0em}
+{\item administrat{\"o}r}\vspace{-.5em}\end{itemize}}\\
+\hline
+\end{tabularx}
+\end{table}
+\newpage
+Digitala fr{\aa}geformul{\"a}r {\"a}r ett s{\"a}tt att {\it hantera kommunikationen med patienten}. Enligt tabellen ovan {\"a}r personalkategorierna som arbetar med den uppgiften: sjuksk{\"o}terskor, administrat{\"o}rer och samltalsterapeuter. S{\aa}lunda skulle dessa personalkategorier sannolikt bli mest p{\aa}verkade av anv{\"a}ndningen av digitala fr{\aa}geformul{\"a}r.
+
+\section*{Diskussion och slutsats}
+Denna studie baserades p{\aa} en digital version av fr{\aa}geformul{\"a}ret f{\"o}r skattning av depression, kallad {\sc madrs-s}. Personalens inst{\"a}llning till digitala fr{\aa}geformul{\"a}r p{\aa} patientens smartphone bed{\"o}mdes i tv{\aa} fokusgruppsintervjuer vid Hagfors v{\aa}rdcentral. Resultaten visar att personalen har en positiv inst{\"a}llning till digitala fr{\aa}geformul{\"a}r p{\aa} patientens smartphone. De tror att screening och uppf{\"o}ljning genom s{\aa}dana verktyg troligen skulle vara till nytta f{\"o}r arbetet p{\aa} v{\aa}rdcentralen. Resultaten visar att det borde finnas m{\"o}jlighet f{\"o}r sjukv{\aa}rdspersonal att kontrollera vilka fr{\aa}geformul{\"a}r patienten skickar till sjukv{\aa}rden. N{\"a}r det g{\"a}ller den digitala versionen av {\sc madrs-s}, ska formul{\"a}ret anv{\"a}ndas fr{\"a}mst f{\"o}r uppf{\"o}ljningar. S{\aa}ledes efter att f{\"o}rst{\aa} patientens behov under det f{\"o}rsta m{\"o}tet skulle digitala verktyg kunna som e{\sc madrs} anv{\"a}ndas f{\"o}r att {\"o}vervaka sjukdomar. F{\"o}rhoppningsvis kan informationsteknologi ({\sc it}) underl{\"a}tta den stora administrativa arbetsbelastningen som sjukv{\aa}rdspersonal k{\"a}mpar med\cite{disc2}. De kategorier av personal vars arbete mest p{\aa}verkas av digitala former {\"a}r sjuksk{\"o}terskor, administrat{\"o}rer och psykoterapeuter. Genom att minska den administrativa b{\"o}rdan skulle v{\aa}rdpersonal kunna fokusera mer p{\aa} samspelet med patienten.
+
+I dagens medicinska debatt {\"a}r diskussions{\"a}mnet alltf{\"o}r ofta ang{\aa}ende vilka delar av l{\"a}karens arbete som kan {\"o}vertas av maskiner\cite{disc3}. Baserat p{\aa} argumentationen ovan f{\"o}resl{\aa}r jag att fr{\aa}gan ist{\"a}llet borde vara - Vilken typ av l{\"o}sningar kan hj{\"a}lpa l{\"a}karen att b{\"a}ttre f{\"o}rst{\aa} patientens situation? Trots den tekniska utvecklingen {\"a}r m{\"o}tet mellan patienten och l{\"a}karen fortfarande en viktig del av l{\"a}kemedelsut{\"o}vningen. L{\"a}karen f{\"o}rst{\aa}r patientens behov genom att vara empatisk\cite{isc3}. Efter att patienten f{\"o}rst{\aa}tt patienten kan l{\"a}karen svara p{\aa} behoven s{\aa} att patienten f{\"o}rst{\aa}r tillst{\aa}ndet och vilka behandlingsalternativ som finns. Med andra ord, st{\"o}djer och utbildar l{\"a}karen patienten. D{\"a}rf{\"o}r kallas l{\"a}kare ofta "doktor", som h{\"a}rr{\"o}r fr{\aa}n latinska doc{\=e}ren, vilket betyder att undervisa\cite{disc5}. Digitala fr{\aa}geformul{\"a}r kan f{\"o}rhoppningsvis ge v{\aa}rdpersonal fler m{\"o}jligheter att fokusera p{\aa} att f{\"o}rst{\aa} och svara p{\aa} patientens behov.
+
+\section*{Begr{\"a}nsningar}
+Genom att anv{\"a}nda kvalitativ inneh{\aa}llsanalys har yrkesspecifika insikter kunnat g{\"o}ras. Tack vare arbetss{\"a}ttet med fokusgrupper har deltagarna tillsammans kunnat diskutera dessa insikter. Detta har resulterat i bra svar p{\aa} de fr{\aa}gest{\"a}llningar som getts. En betydande svaghet med studien {\"a}r att intervjuer genomf{\"o}rts vid enbart en v{\aa}rdcentral. Det {\"a}r d{\"a}rf{\"o}r sv{\aa}rt att exakt s{\"a}ga vilke delar i resultaten som {\"a}ven g{\"a}ller f{\"o}r andra v{\aa}rdcentraler. F{\"o}r vidare utveckling av digitala verktyg {\"a}r d{\"a}rmed mer forskning {\"o}nskv{\"a}rd. F{\"o}r att kunna bedriva trov{\"a}rdig forskning inom detta omr{\aa}de kr{\"a}vs att forskaren har insikt i sjukv{\aa}rdens organisation, medicin och informationsteknologi. Dessa tre omr{\aa}den {\"a}r f{\"o}rste f{\"o}rfattaren v{\"a}l f{\"o}rtrogen med.
+
+\section*{Betydelse}
+%yAccording to the Swedish law: ''The goal of the health care is a good health and care on equal terms for the entire population''\cite{law}. 
+Under de senaste sju {\aa}ren har landstingens utgifter {\"o}kat med cirka {\sc 5}\% per {\aa}r. Justerat f{\"o}r inflationen blir det ungef{\"a}r {\sc 3}\% per {\aa}r\cite{numbers3.1, numbers3.2}. Strategierna inom v{\aa}rden m{\aa}ste f{\"o}r{\"a}ndras. F{\"o}rhoppningsvis kan detta projekt vara ett steg i r{\"a}tt riktning. Resultaten visar nya s{\"a}tt att f{\"o}rb{\"a}ttra kommunikationen mellan sjukv{\aa}rdssystemet och patienten.
+F{\"o}r att kunna f{\"o}rutse f{\"o}r{\"a}ndringar i arbetsbelastningen som de nya digitala verktygen kan leda till m{\aa}ste ytterligare forskning g{\"o}ras.  Detta {\"a}r viktigt eftersom ekonomiska f{\"o}rdelar endast kan uppn{\aa}s om arbetsuppgifterna f{\"o}r{\"a}ndras, d{\aa} finanserna {\"a}r en spegling av vilket arbete som blivit gjort.
+%\section*{Planned format and language of the essay}
+%The work will be a scientific article in English with the Oxford citation and journal style guidelines\cite{style1}. The cited %article and {\fontfamily{pplj}\selectfont{\LaTeX}} will be used for writing the article\cite{style2}.
+
+%\section*{Timetable}
+%The main parts of the project and assigned duration in weeks are listed below: 
+%\begin{tabular}{|r|p{2cm}|}
+%\hline
+%Preparation of the project plan and creation of focus groups. & {{6}}\\
+%Collecting data. & {{2}}\\
+%Data processing. & {{6}}\\
+%Project report. & {{3}}\\
+%Preparing for the presentation. & {{2}}\\
+%\hline
+%\end{tabular}\\
+
+\section*{Etik}
+Projektets karakt{\"a}r {\"a}r utvecklingsarbete inom kliniken. D{\"a}rf{\"o}r har projektet godk{\"a}nts ur sekretess- och s{\"a}kerhetsynpunkt av verksamhetschefen vid Hagfors v{\aa}rdcentral. Projektet omfattas inte av Etikpr{\"o}vningslagens forskningsdefinition.
+
+\begin{thebibliography}{11}
+\bibitem{numbers0}Kendler KS, Gatz M, Gardner CO, Pedersen NL\emph{A Swedish national twin study of lifetime major depression.}; Am J Psychiatry. 2006 Jan; 163(1):109-14.\\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/16390897/}{\url{https://www.ncbi.nlm.nih.gov/pubmed/16390897/}}}}
+\bibitem{numbers1} \emph{Utv{\"a}rdering 2013 -- v\r{a}rd och insatser vid depression, \r{a}ngest och schizofreni. Indikatorer och underlag f{\"o}r bed{\"o}mningar.}; Socialstyrelsen\\\textbf{\emph{\href{http://www.socialstyrelsen.se/publikationer2013/2013-6-7}{\url{http://www.socialstyrelsen.se/publikationer2013/2013-6-7}}}}
+\bibitem{numbers1.1} Kasper S1, Schindler S, Neumeister A.; \emph{Risk of suicide in depression and its implication for psychopharmacological treatment.}; Int Clin Psychopharmacol. 1996 Jun;11(2):71-9.\\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/8803644}{\url{https://www.ncbi.nlm.nih.gov/pubmed/8803644}}}}
+\bibitem{numbers2} \emph{Sj{\"a}lvmord i anslutning till v\r{a}rd Socialstyrelsen};\\\textbf{\emph{\href{http://www.socialstyrelsen.se/patientsakerhet/riskomraden/suicid}{\url{http://www.socialstyrelsen.se/patientsakerhet/riskomraden/suicid
+}}}}
+\bibitem{numbers3.0.1}\emph{Statistics on causes of death 2015 - Socialstyrelsen}; Socialstyrelsen;
+\\\textbf{\emph{\href{https://www.socialstyrelsen.se/Lists/Artikelkatalog/Attachments/20291/2016-8-4.pdf}{\url{
+https://www.socialstyrelsen.se/Lists/Artikelkatalog/Attachments/20291/2016-8-4.pdf}}}}
+\bibitem{numbers3.1} \emph{Resultatr{\"a}kning f{\"o}r landsting \r{a}r 2010--2014}; SCB;\\\textbf{\emph{\href{ http://www.scb.se/hitta-statistik/statistik-efter-amne/offentlig-ekonomi/finanser-for-den-kommunala-sektorn/rakenskapssammandrag-for-kommuner-och-landsting/pong/tabell-och-diagram/kommun--och-landstingssektorn-2014/resultatrakning-for-landsting-ar-20102014/}{\url{http://www.scb.se/hitta-statistik/statistik-efter-amne/offentlig-ekonomi/finanser-for-den-kommunala-sektorn/rakenskapssammandrag-for-kommuner-och-landsting/pong/tabell-och-diagram/kommun--och-landstingssektorn-2014/resultatrakning-for-landsting-ar-20102014/}}}}
+\bibitem{numbers3.2} \emph{Resultatr{\"a}kning f{\"o}r landsting \r{a}r 2012--2016}; SCB;\\\textbf{\emph{\href{
+http://www.scb.se/hitta-statistik/statistik-efter-amne/offentlig-ekonomi/finanser-for-den-kommunala-sektorn/rakenskapssammandrag-for-kommuner-och-landsting/pong/tabell-och-diagram/kommun--och-landstingssektorn-2016/resultatrakning-for-landsting-ar-2012-2016/}{\url{http://www.scb.se/hitta-statistik/statistik-efter-amne/offentlig-ekonomi/finanser-for-den-kommunala-sektorn/rakenskapssammandrag-for-kommuner-och-landsting/pong/tabell-och-diagram/kommun--och-landstingssektorn-2016/resultatrakning-for-landsting-ar-2012-2016/}}}}
+\bibitem{app1}\emph{Appen Uppskatta}; Google Play\\\textbf{\emph{\href https://play.google.com/store/apps/details?id=com.akerlund.uppskattadindag}{\url{{https://play.google.com/store/apps/details?id=com.akerlund.uppskattadindag}}}}
+\bibitem{app2}\emph{Appen PsykTools}; Google Play\\\textbf{\emph{\href https://play.google.com/store/apps/details?id=no.sonat.honos}{\url{{https://play.google.com/store/apps/details?id=no.sonat.honos}}}}
+%\bibitem{madrs1}Zimmerman, Chelminski, Posternak \emph{The Montgomery Asberg Depression Rating Scale in bipolar II and unipolar out-patients: a 405-patient case study.}; Int Clin Psychopharmacol. 2004 Jan;19(1):1-7; \\\textbf{\emph{\href{http://www.ncbi.nlm.nih.gov/pubmed/15101563}{\url{http://www.ncbi.nlm.nih.gov/pubmed/15101563}}}}
+%\bibitem{madrs2}Svanborg, P; \r{A}sberg, M; \emph{A comparison between the Beck Depression Inventory (BDI) and the self-rating version of the Montgomery {\"A}\r{A}sberg Depression Rating Scale (MADRS)}; J. Affective Disorders. 64 (2-3): 203--216. doi:10.1016/S0165-0327(00)00242-1.\\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/11313087}{\url{https://www.ncbi.nlm.nih.gov/pubmed/11313087}}}}
+\bibitem{madrs2}Svanborg, P; \r{A}sberg, M; \emph{A comparison between the Beck Depression Inventory (BDI) and the self-rating version of the Montgomery \r{A}sberg Depression Rating Scale (MADRS)}; J. Affective Disorders. 64 (2-3): 203--216. doi:10.1016/S0165-0327(00)00242-1.\\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/11313087}{\url{https://www.ncbi.nlm.nih.gov/pubmed/11313087}}}}
+\bibitem{madrs3}\emph{Tolkning av MADRS-S}; Region J{\"o}nk{\"o}pings l{\"a}n\\\textbf{\emph{\href{http://plus.rjl.se/info_files/infosida39803/madrs_s_tolkning.pdf}{\url{http://plus.rjl.se/info_files/infosida39803/madrs_s_tolkning.pdf}}}}
+\bibitem{emadrs1}Rickard Hultgren; \emph{eMADRS source code}; github.com; \\\textbf{\emph{\href{https://github.com/RickardHultgren/emadrs}{\url{https://github.com/RickardHultgren/emadrs}}}}
+\bibitem{emadrs2}Rickard Hultgren; \emph{eMADRS compiled}; play.google.com; \\\textbf{\emph{\href{https://play.google.com/store/apps/details?id=rickardverner.hultgren.emadrs}{\url{https://play.google.com/store/apps/details?id=rickardverner.hultgren.emadrs}}}}
+%\bibitem{goal0}Birgitta Lindelius; \emph{{\"O}ppna j{\"a}mf{\"o}relser och utv{\"a}rdering 2010 -- Psykiatrisk v\r{a}rd}; socialstyrelsen.se; \\\textbf{\emph{\href{http://www.socialstyrelsen.se/publikationer2010/2010-6-6}{\url{http://www.socialstyrelsen.se/publikationer2010/2010-6-6}}}}
+\bibitem{goal1}Tracy R.G. Gladstone, William R. Beardslee, Erin E. O'Connor; \emph{The Prevention of Adolescent Depression}; Psychiatr Clin North Am. 2011 Mar; 34(1): 35--52. \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3072710/}{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3072710/}}}}
+%\bibitem{goal2}Maryann Davis, Michael T. Abrams, Lawrence S. Wissow, Eric P. Slade; \emph{Identifying young adults at risk of Medicaid enrollment lapses after inpatient mental health treatment}; Psychiatr Serv. 2014 Apr 1; 65(4): 461--468.doi:  10.1176/appi.ps.201300199 \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3972275/}{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3972275/}}}}
+\bibitem{guide1}Riitta Sorsa; \emph{Nationella riktlinjer -- M\r{a}lniv\r{a}er -- V\r{a}rd vid depression och \r{a}ngestsyndrom -- M\r{a}lniv\r{a}er f{\"o}r indikatorer}; socialstyrelsen.se december 2017\\\textbf{\emph{\href{http://www.socialstyrelsen.se/publikationer2017/2017-12-1}{\url{http://www.socialstyrelsen.se/publikationer2017/2017-12-1}}}}
+\bibitem{regionjh1}Majvor Enstr{\"o}m; \emph{Granskning av Psykiatrin 2014 Region J{\"a}mtland-H{\"a}rjedalen}\\\textbf{\emph{\href{https://www.regionjh.se/download/18.61342ea415bcfb51720c5fd7}{\url{https://www.regionjh.se/download/18.61342ea415bcfb51720c5fd7}}}}
+%\bibitem{style0}Vakhtang Tchantchaleishvili, Jan D Schmitto; \emph{Preparing a scientific manuscript in Linux: Today's possibilities and limitations.}; BMC Res Notes. 2011; 4: 434. \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3227619/}{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3227619/}}}}
+%\bibitem{style1}\emph{Style Guide for Authors} \\\textbf{\emph{\href{https://academic.oup.com/cdj/pages/Style_Guide}{\url{https://academic.oup.com/cdj/pages/Style_Guide}}}}
+%\bibitem{style2}Barbara J. Hoogenboom, Robert C. Manske; \emph{How to write a scientific article.} Int J Sports Phys Ther. 2012 Oct; 7(5): 512--517. \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3474301/}{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3474301/}}}}
+%\bibitem{style3}\emph{Latex Instructions - Elsevier}; Elsevier 2018;\\\textbf{\emph{\href{https://www.elsevier.com/authors/author-schemas/latex-instructions}{\url{https://www.elsevier.com/authors/author-schemas/latex-instructions}}}}
+\bibitem{leader1}Kotter JP \emph{What leaders really do.} Harvard Business Review 1990
+%\bibitem{ethics1}Will JF \emph{A brief historical and theoretical perspective on patient autonomy and medical decision making: Part I: The beneficence model.} Chest. 2011 Mar;139(3):669-673. doi: 10.1378/chest.10-2532. \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/21362653}{\url{https://www.ncbi.nlm.nih.gov/pubmed/21362653}}}}
+
+\bibitem{analysis1}Granheim, Lundman \emph{Qualitative content analysis in nursing research concepts, procedures and measures to achieve trustworthiness.} Nurse Educ Today. 2004 Feb;24(2):105-12 \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/14769454}{\url{https://www.ncbi.nlm.nih.gov/pubmed/14769454}}}}
+
+%\bibitem{law}H{\"a}lso- och sjukv\r{a}rdslag (1982:763)\\\textbf{\emph{\href{http://www.notisum.se/rnp/sls/lag/19820763.htm}{\url{http://www.notisum.se/rnp/sls/lag/19820763.htm}}}}
+
+\bibitem{rqda}Ronggui Huang; \\\textbf{\emph{\href{http://rqda.r-forge.r-project.org/}{\url{http://rqda.r-forge.r-project.org/}}}}
+\bibitem{dynamics1}Murdoch J, Barnes R, Pooler J, Lattimer V, Fletcher E, Campbell JL. \emph{Question design in nurse-led and GP-led telephone triage for same-day appointment requests: a comparative investigation.} BMJ Open. 2014 Mar 5;4(3):e004515. doi: 10.1136/bmjopen-2013-004515.\\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/24598305}{\url{https://www.ncbi.nlm.nih.gov/pubmed/24598305}}}}
+\bibitem{dynamics2}Jany Rademakers, Diana Delnoij, Jessica Nijman, Dolf de Boer; \emph{Educational inequalities in patient-centred care: patients' preferences and experiences.} Published online 2012 Aug 17 doi: 10.1186/1472-6963-12-261\\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3467160/}{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3467160/}}}}
+\bibitem{dynamics3}Petra M Boynton; \emph{Selecting, designing, and developing your questionnaire}; BMJ. 2004 May 29; 328(7451): 1312-1315. doi: 10.1136/bmj.328.7451.1312\\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC420179/}{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC420179/}}}}
+
+
+%\bibitem{disc1}Zerbino DD.; \emph{Biopsy: its history, current and future outlook}; Lik Sprava. 1994 Mar-Apr;(3-4):1-9.\\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pubmed/7975522}{\url{https://www.ncbi.nlm.nih.gov/pubmed/7975522}}}}
+
+\bibitem{disc2}Steven R Kinnear; \emph{Teaching students--whose job is it anyway?}; BMJ 2005; 330 doi: https://doi.org/10.1136/bmj.330.7483.153 (Published 13 January 2005)\\\textbf{\emph{\href{https://www.bmj.com/rapid-response/2011/10/30/docere-teach}{\url{https://www.bmj.com/rapid-response/2011/10/30/docere-teach}}}}
+
+\bibitem{disc3}Ivan Lerner, Raphaël Veil, Dinh-Phong Nguyen, Vinh Phuc Luu, Rodolphe Jantzen; \emph{Revolution in Health Care: How Will Data Science Impact Doctor-Patient Relationships?}; Front Public Health. 2018; 6: 99.
+Published online 2018 Apr 3. doi:  10.3389/fpubh.2018.00099\\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5891626/
+}{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5891626/
+}}}}
+
+\bibitem{disc4}Caroline HD Croxson, Helen F Ashdown, FD Richard Hobbs; \emph{GPs' perceptions of workload in England: a qualitative interview study}; Br J Gen Pract. 2017 Feb; 67(655): e138-e147.
+Published online 2017 Jan 17. doi:  10.3399/bjgp17X688849\\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5308120/
+}{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5308120/}}}}
+
+\bibitem{disc5}Stewart W Mercer and William J Reynolds; \emph{Empathy and quality of care.}; Br J Gen Pract. 2002 Oct; 52(Suppl): S9-12. \\\textbf{\emph{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1316134/
+}{\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1316134/}}}}
+
+
+
+\end{thebibliography} 
+ 
+\end{document}
