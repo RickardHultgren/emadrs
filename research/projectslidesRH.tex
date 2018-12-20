@@ -1,0 +1,180 @@
+\documentclass[english]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[math]{iwona}
+\setcounter{tocdepth}{1}
+
+%\date{October 3--4, 2009}
+
+\usetheme{Boadilla}
+\useoutertheme{infolines}
+\setbeamerfont{section in head/foot}{family=\sffamily}
+\setbeamerfont{subsection in head/foot}{family=\sffamily}
+\setbeamerfont{title in head/foot}{family=\sffamily}
+\setbeamerfont{author in head/foot}{family=\sffamily}
+\setbeamerfont{date in head/foot}{family=\sffamily}
+\setbeamerfont{institute in head/foot}{family=\sffamily, size=\tiny}
+\setbeamerfont{block title}{family=\sffamily}
+\setbeamerfont{block title alerted}{family=\sffamily}
+\setbeamerfont{block title example}{family=\sffamily}
+%\renewcommand{\familydefault}{\rmdefault}
+
+\begin{document}
+
+\title{Personalens inställning till uppföljning och screening via patientens smartphone, exemplifierad av ett frågeformulär för självbedömning av depressionssymptom.}
+%\author[ABC]{ABC\\[5mm]{\footnotesize \textbf{Supervisors:}\\Prof. QWERTY\\Prof. DEF GHI\\Prof. Jklmno Pqrst\\}}
+\author[]{Första författare: Rickard Hultgren\newline Handledare: Mikael Sandlund\newline Bihandledare: Heljä Pihkala}
+%\url{http://slackware.com/~alien/}\\
+%\texttt{alien@slackware.com}
+
+\institute{\\
+Umeå universitet\\
+%\url{http://umu.se/}
+}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+
+\section{Overview}
+\begin{frame}
+	\frametitle{Statistik i psykiatri}
+
+	\begin{itemize}
+	\item 50--80\% av begångna suicid är associerade med affektiva sjukdomar.
+	\item Suicid är den främsta orsaken till dödsfall bland män mellan 15 och 44 år i Sverige.
+	\item 2/3 av alla suicid nyligen hade varit i kontakt med vården.
+	\end{itemize}
+
+	\pause
+
+	\textit{Slutsats:\\Patientens affektiva förstås inte alltid av läkaren.}\\\ \\
+
+\pause
+
+Läkarens fel?\\
+Patientens fel?\\
+Dåliga verktyg för kommunikation?
+\end{frame}
+
+\subsection{}
+\begin{frame}
+\ \\ 
+eMADRS är en app för android som består av ett digitalt MADRS-S formulär. Resultatet skickas via SMS till angivet nummer.\\\ \\
+
+Att utläsa från MADRS-S resultat:
+	\begin{itemize}
+	\item allvarighetgraden av symptombilden.
+	\item MADRS-S ger ej diagnos.
+	\end{itemize}
+Källkod:\\
+\href{https://github.com/RickardHultgren/emadrs}{\url{https://github.com/RickardHultgren/emadrs}}\\
+Nedladdning:\\
+\href{https://play.google.com/store/apps/details?id=rickardverner.hultgren.emadrs}{\url{https://play.google.com/store/apps/details?id=rickardverner.hultgren.emadrs}}
+
+\end{frame}
+
+\subsection{}
+\begin{frame}
+\includegraphics[scale=0.4]{emadrs1.png}
+\end{frame}
+
+\begin{frame}
+\includegraphics[scale=0.4]{emadrs2.png}
+\end{frame}
+
+\begin{frame}
+\includegraphics[scale=0.4]{emadrs3.png}
+\end{frame}
+
+\begin{frame}
+\includegraphics[scale=0.4]{emadrs3.png}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Frågeställningar}
+	\begin{itemize}
+	\item Vilka fördelar och nackdelar identifieras ur ett professionellt kliniskt perspektiv, med att använda ett digitalt utvärderingsinstrument för depression i screening och uppföljning?
+	\item Förslag till vidareutveckling av emadrs.
+	\item Vilka personalkategorier skulle påverkas mest av digitala frågeformulär?
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Metod}
+2 intervjuer av 2 fokusgrupper bestående av olika personalkategorier.\\\ \\
+Intervju {\sc 1}\vspace{-.33em}
+\begin{enumerate}
+\item {\bf} Vad {\"a}r specifikt, m{\"a}tbart och uppn{\aa}eligt i ditt arbete?
+\end{enumerate}
+Intervju {\sc 2}\vspace{-.33em}
+\begin{enumerate}
+%\setlength\itemsep{0em}
+\item {\bf} Beskriv hur du upplever din arbetssituation n{\"a}r patientens huvudproblem inte {\"a}r relaterat till depression, men patienten verkar vara mycket nedst{\"a}md?\vspace{-.33em}
+\item {\bf} Scenarier diskuteras:\vspace{-.33em}
+\begin{itemize}\vspace{-.33em}
+% \Setlength \itemsep {0em}
+\item {\bf} Vad h{\"a}nder om e{\sc madrs} bara kan anv{\"a}ndas f{\"or} uppf{\"o}ljning?\vspace{-.33em}
+\item {\bf} Vad h{\"a}nder om e{\sc madrs} kan anv{\"a}ndas av vem som helst f{\"o}r att skicka dig bed{\"o}mningar av sitt affektiva tillst{\aa}nd?\vspace{-.33em}
+\item {\bf} Vad h{\"a}nder om resultatet av e{\sc madrs} automatiskt skulle kunna reglera vilka laboratorietester som ska utf{\"o}ras?
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Resultat}
+Angående eMADRS
+\begin{itemize}
+\item Emadrs kan vara mycket användbart för att följa upp patienter som är i riskzonen för återfall av depression.
+\item Emadrs bör inte användas för att diagnostisera depression.
+\item Emadrs bör inte vara möjligt att använda av vem som helst för att skicka resultaten till vårdgivaren. 
+\item Emadrs kan minska administratörens arbetsbelastning. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Resultat}
+Angående digitala frågeformulär
+\begin{itemize}
+\item Det finns ett behov av digitala verktyg med validerade frågeformulär för ett bredare spektrum av patologier.
+\item  Dessa frågeformulär ska vara kopplade till varandra på ett kontrollerat sätt. 
+\item  Viktigt att någon ansvarar för, och är betrodd att hantera de inkomna frågeformulärens resultat. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Resultat}
+Personalkategorier som sannolikt blir mest påverkade av användningen av digitala frågeformulär:
+\begin{itemize}\vspace{-.33em}
+% \Setlength \itemsep {0em}
+\item Sjuksköterskor
+\item Administratörer
+\item Samltalsterapeuter
+
+\end{itemize}
+\end{frame}
+
+%\begin{frame}
+%\frametitle{Betydelse}
+%\begin{itemize}\vspace{-.33em}
+%\item Digitala frågeformulär kan förhoppningsvis vara ett stöd i kommunikationen med patienten.
+%\item Genom att minska den administrativa bördan skulle vårdpersonal kunna fokusera mer på samspelet med patienten.
+%\end{itemize}
+%\end{frame}
+
+\begin{frame}
+\frametitle{Betydelse}
+Potentiella fördelar med digitala formulär på mobiltelefon:
+\begin{itemize}\vspace{-.33em}
+% \Setlength \itemsep {0em}
+\item Förbättrar vård
+\item Minska administrativ börda
+\item Minska kostnader för landstingen
+\end{itemize}
+\end{frame}
+
+\end{document}
