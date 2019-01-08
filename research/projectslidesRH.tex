@@ -3,10 +3,41 @@
 \usepackage{url}
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
-\usepackage[math]{iwona}
+%\usepackage[math]{iwona}
+%\usefonttheme{professionalfonts}
+\usepackage{amsmath}
+%\usepackage{pplx}
+%\usepackage{fontspec}
+\setbeamerfont{note page}{family*=pplx,size=\footnotesize} % Palatino for notes
 \setcounter{tocdepth}{1}
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault} 
+\usepackage[T1]{fontenc}
 
 \date{2019-01-09}
+
+
+\definecolor{NavyBlue}{RGB}{0,0,128}
+
+\setbeamercolor{normal text}{fg=white,bg=NavyBlue!90}
+\setbeamercolor{structure}{fg=white}
+
+\setbeamercolor{alerted text}{fg=red!85!black}
+
+\setbeamercolor{item projected}{use=item,fg=black,bg=item.fg!35}
+
+\setbeamercolor*{palette primary}{use=structure,fg=structure.fg}
+\setbeamercolor*{palette secondary}{use=structure,fg=structure.fg!95!black}
+\setbeamercolor*{palette tertiary}{use=structure,fg=structure.fg!90!black}
+\setbeamercolor*{palette quaternary}{use=structure,fg=structure.fg!95!black,bg=black!80}
+
+\setbeamercolor*{framesubtitle}{fg=white}
+
+\setbeamercolor*{block title}{parent=structure,bg=black!60}
+\setbeamercolor*{block body}{fg=black,bg=black!10}
+\setbeamercolor*{block title alerted}{parent=alerted text,bg=black!15}
+\setbeamercolor*{block title example}{parent=example text,bg=black!15}
+
 
 \usetheme{Boadilla}
 \useoutertheme{infolines}
@@ -20,6 +51,38 @@
 \setbeamerfont{block title alerted}{family=\sffamily}
 \setbeamerfont{block title example}{family=\sffamily}
 %\renewcommand{\familydefault}{\rmdefault}
+
+
+
+
+
+
+
+
+
+
+
+\definecolor{foreground}{RGB}{255,255,255}
+\definecolor{background}{RGB}{24,24,24}
+\definecolor{title}{RGB}{107,174,214}
+\definecolor{gray}{RGB}{155,155,155}
+\definecolor{subtitle}{RGB}{102,255,204}
+\definecolor{hilight}{RGB}{102,255,204}
+\definecolor{vhilight}{RGB}{255,111,207}
+
+\setbeamercolor{titlelike}{fg=title}
+\setbeamercolor{subtitle}{fg=subtitle}
+\setbeamercolor{institute}{fg=gray}
+\setbeamercolor{normal text}{fg=foreground,bg=background}
+
+\setbeamercolor{item}{fg=foreground} % color of bullets
+\setbeamercolor{subitem}{fg=gray}
+\setbeamercolor{itemize/enumerate subbody}{fg=gray}
+\setbeamertemplate{itemize subitem}{{\textendash}}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+\setbeamerfont{itemize/enumerate subitem}{size=\footnotesize}
+
+
 
 \begin{document}
 
@@ -51,7 +114,7 @@ UME{\AA} UNIVERSITET\\
 
 	\pause
 
-	\textit{Slutsats:\\Patientens affektiva f{\"o}rst{\aa}s inte alltid av l{\"a}karen.}\\\ \\
+	\textit{Slutsats:\\Patientens affektiva tillst{\aa}nd f{\"o}rst{\aa}s inte alltid av l{\"a}karen.}\\\ \\
 
 \pause
 
@@ -79,27 +142,18 @@ Nedladdning:\\
 
 \subsection{}
 \begin{frame}
-\includegraphics[scale=0.4]{emadrs1.png}
+\includegraphics[scale=0.4]{1.png}
 \end{frame}
 
 \begin{frame}
-\includegraphics[scale=0.4]{emadrs2.png}
+\includegraphics[scale=0.4]{2.png}
 \end{frame}
-
-\begin{frame}
-\includegraphics[scale=0.4]{emadrs3.png}
-\end{frame}
-
-\begin{frame}
-\includegraphics[scale=0.4]{emadrs3.png}
-\end{frame}
-
 
 \begin{frame}
 \frametitle{Fr{\aa}gest{\"a}llningar}
 	\begin{itemize}
 	\item Vilka f{\"o}rdelar och nackdelar identifieras ur ett professionellt kliniskt perspektiv, med att anv{\"a}nda ett digitalt utv{\"a}rderingsinstrument f{\"o}r depression i screening och uppf{\"o}ljning?
-	\item F{\"o}rslag till vidareutveckling av emadrs.
+	\item F{\"o}rslag till vidareutveckling av eMADRS.
 	\item Vilka personalkategorier skulle p{\aa}verkas mest av digitala fr{\aa}geformul{\"a}r?
 	\end{itemize}
 \end{frame}
@@ -107,19 +161,19 @@ Nedladdning:\\
 \begin{frame}
 \frametitle{Metod}
 2 intervjuer av 2 fokusgrupper best{\aa}ende av olika personalkategorier.\\\ \\
-Intervju {\sc 1}\vspace{-.33em}
+Intervju {\sc 1}%\vspace{-.33em}
 \begin{enumerate}
 \item {\bf} Vad {\"a}r specifikt, m{\"a}tbart och uppn{\aa}eligt i ditt arbete?
 \end{enumerate}
-Intervju {\sc 2}\vspace{-.33em}
+Intervju {\sc 2}%\vspace{-.33em}
 \begin{enumerate}
 %\setlength\itemsep{0em}
 \item {\bf} Beskriv hur du upplever din arbetssituation n{\"a}r patientens huvudproblem inte {\"a}r relaterat till depression, men patienten verkar vara mycket nedst{\"a}md?\vspace{-.33em}
-\item {\bf} Scenarier diskuteras:\vspace{-.33em}
-\begin{itemize}\vspace{-.33em}
+\item {\bf} Scenarier diskuteras:%\vspace{-.33em}
+\begin{itemize}%\vspace{-.33em}
 % \Setlength \itemsep {0em}
-\item {\bf} Vad h{\"a}nder om e{\sc madrs} bara kan anv{\"a}ndas f{\"or} uppf{\"o}ljning?\vspace{-.33em}
-\item {\bf} Vad h{\"a}nder om e{\sc madrs} kan anv{\"a}ndas av vem som helst f{\"o}r att skicka dig bed{\"o}mningar av sitt affektiva tillst{\aa}nd?\vspace{-.33em}
+\item {\bf} Vad h{\"a}nder om e{\sc madrs} bara kan anv{\"a}ndas f{\"or} uppf{\"o}ljning?%\vspace{-.33em}
+\item {\bf} Vad h{\"a}nder om e{\sc madrs} kan anv{\"a}ndas av vem som helst f{\"o}r att skicka dig bed{\"o}mningar av sitt affektiva tillst{\aa}nd?%\vspace{-.33em}
 \item {\bf} Vad h{\"a}nder om resultatet av e{\sc madrs} automatiskt skulle kunna reglera vilka laboratorietester som ska utf{\"o}ras?
 \end{itemize}
 \end{enumerate}
@@ -165,6 +219,12 @@ Personalkategorier som sannolikt blir mest p{\aa}verkade av anv{\"a}ndningen av 
 %\item Genom att minska den administrativa b{\"o}rdan skulle v{\aa}rdpersonal kunna fokusera mer p{\aa} samspelet med patienten.
 %\end{itemize}
 %\end{frame}
+
+\begin{frame}
+\frametitle{Svaghet}
+Resultaten g{\"a}ller enbart f{\"o}r Hagors VC.
+\end{frame}
+
 
 \begin{frame}
 \frametitle{Betydelse}
