@@ -2,20 +2,25 @@
 \usepackage[utf8]{inputenc}
 \usepackage{url}
 \usepackage[english]{babel}
+\usepackage{multirow}
 \usepackage[T1]{fontenc}
 %\usepackage[math]{iwona}
 %\usefonttheme{professionalfonts}
-\usepackage{amsmath}
+%\usepackage{avant}
+%\usepackage{lmss}
+%\renewcommand{\sfdefault}{lmss}
+\usepackage{helvet}
+%\usepackage{paratype}
 %\usepackage{pplx}
 %\usepackage{fontspec}
 \setbeamerfont{note page}{family*=pplx,size=\footnotesize} % Palatino for notes
 \setcounter{tocdepth}{1}
-\usepackage[scaled]{helvet}
+%\usepackage[scaled]{helvet}
 \renewcommand\familydefault{\sfdefault} 
 \usepackage[T1]{fontenc}
-
+\renewcommand{\oldstylenums}[1]{{\fontfamily{helvet}\selectfont #1}}
+%\date{\oldstylenums{2019-01-09}}
 \date{2019-01-09}
-
 
 \definecolor{NavyBlue}{RGB}{0,0,128}
 
@@ -37,7 +42,6 @@
 \setbeamercolor*{block body}{fg=black,bg=black!10}
 \setbeamercolor*{block title alerted}{parent=alerted text,bg=black!15}
 \setbeamercolor*{block title example}{parent=example text,bg=black!15}
-
 
 \usetheme{Boadilla}
 \useoutertheme{infolines}
@@ -74,6 +78,7 @@
 \setbeamercolor{subtitle}{fg=subtitle}
 \setbeamercolor{institute}{fg=gray}
 \setbeamercolor{normal text}{fg=foreground,bg=background}
+\setbeamercolor{date}{fg=title}
 
 \setbeamercolor{item}{fg=foreground} % color of bullets
 \setbeamercolor{subitem}{fg=gray}
@@ -121,24 +126,25 @@ UME{\AA} UNIVERSITET\\
 
 	\pause
 
-	\textit{Slutsats:\\Patientens affektiva tillst{\aa}nd f{\"o}rst{\aa}s inte alltid av l{\"a}karen.}\\\ \\
+	\textbf{Slutsats:\\Patientens affektiva tillst{\aa}nd f{\"o}rst{\aa}s inte alltid av l{\"a}karen.}\\\ \\
 
 \pause
 
 L{\"a}karens fel?\\
 Patientens fel?\\
-D{\aa}liga verktyg f{\"o}r kommunikation?
+\pause
+Mittemellan?
 \end{frame}
 
 \subsection{}
 \begin{frame}
 \ \\ 
-eMADRS {\"a}r en app f{\"o}r android som best{\aa}r av ett digitalt MADRS-S formul{\"a}r. Resultatet skickas via SMS till angivet nummer.\\\ \\
+E{\sc madrs} {\"a}r en app f{\"o}r android som best{\aa}r av ett digitalt {\sc madrs-s} formul{\"a}r. Resultatet skickas via SMS till angivet nummer.\\\ \\
 
-Att utl{\"a}sa fr{\aa}n MADRS-S resultat:
+Att utl{\"a}sa fr{\aa}n {\sc madrs-s} resultat:
 	\begin{itemize}
 	\item allvarighetgraden av symptombilden.
-	\item MADRS-S ger ej diagnos.
+	\item {\sc madrs-s} ger ej diagnos.
 	\end{itemize}
 K{\"a}llkod:\\
 \href{https://github.com/RickardHultgren/emadrs}{\url{https://github.com/RickardHultgren/emadrs}}\\
@@ -160,7 +166,7 @@ Nedladdning:\\
 \frametitle{Fr{\aa}gest{\"a}llningar}
 	\begin{itemize}
 	\item Vilka f{\"o}rdelar och nackdelar identifieras ur ett professionellt kliniskt perspektiv, med att anv{\"a}nda ett digitalt utv{\"a}rderingsinstrument f{\"o}r depression i screening och uppf{\"o}ljning?
-	\item F{\"o}rslag till vidareutveckling av eMADRS.
+	\item F{\"o}rslag till vidareutveckling av e{\sc madrs}.
 	\item Vilka personalkategorier skulle p{\aa}verkas mest av digitala fr{\aa}geformul{\"a}r?
 	\end{itemize}
 \end{frame}
@@ -168,6 +174,7 @@ Nedladdning:\\
 \begin{frame}
 \frametitle{Metod}
 2 intervjuer av 2 fokusgrupper best{\aa}ende av olika personalkategorier.\\\ \\
+
 Intervju {\sc 1}%\vspace{-.33em}
 \begin{enumerate}
 \item {\bf} Vad {\"a}r specifikt, m{\"a}tbart och uppn{\aa}eligt i ditt arbete?
@@ -186,19 +193,45 @@ Intervju {\sc 2}%\vspace{-.33em}
 \end{enumerate}
 \end{frame}
 
+
 \begin{frame}
-\frametitle{Resultat}
-Ang{\aa}ende eMADRS
+\frametitle{Metod}
+Fokusgrupper 7 resp. 6 personer\\\ \\
+
+\begin{tabular}{p{3em}|p{10em}|l|l}
+Grupp & Titel & Interju 1 & Intervju 2 \\
+\hline
+\multirow{ 5}{*}{A} & Administrat{\"o}rer & 1 & 1 \\
+& Sjuksk{\"o}terskor & 3 & 3 \\
+& Fotterapeuter & 1 & 0\\
+& L{\"a}kare & 0 & 1\\
+& Samtalsterapeuter & 1 & 1\\
+\hline
+\multirow{ 6}{*}{B} & Administrat{\"o}rer & 1 & 1 \\
+& Undersk{\"o}terskor & 1 & 2 \\
+& Sk{\"o}terskor & 0 & 1 \\
+%& Foot therapists & 0 & 0\\
+& L{\"a}karassistanter & 1 & 1\\
+& Samtalsterapeuter & 1 & 1\\
+\hline
+\end{tabular}\\ 
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Resultat\\fr{\aa}gest{\"a}llning 1}
+Ang{\aa}ende e{\sc madrs}
 \begin{itemize}
-\item Emadrs kan vara mycket anv{\"a}ndbart f{\"o}r att f{\"o}lja upp patienter som {\"a}r i riskzonen f{\"o}r {\aa}terfall av depression.
-\item Emadrs b{\"o}r inte anv{\"a}ndas f{\"o}r att diagnostisera depression.
-\item Emadrs b{\"o}r inte vara m{\"o}jligt att anv{\"a}nda av vem som helst f{\"o}r att skicka resultaten till v{\aa}rdgivaren. 
-\item Emadrs kan minska administrat{\"o}rens arbetsbelastning. 
+\item E{\sc madrs} kan vara mycket anv{\"a}ndbart f{\"o}r att f{\"o}lja upp patienter som {\"a}r i riskzonen f{\"o}r {\aa}terfall av depression.
+\item E{\sc madrs} b{\"o}r inte anv{\"a}ndas f{\"o}r att diagnostisera depression.
+\item E{\sc madrs} b{\"o}r inte vara m{\"o}jligt att anv{\"a}nda av vem som helst f{\"o}r att skicka resultaten till v{\aa}rdgivaren. 
+\item E{\sc madrs} kan minska administrat{\"o}rens arbetsbelastning. 
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Resultat}
+\frametitle{Resultat\\fr{\aa}gest{\"a}llning 2}
 Ang{\aa}ende digitala fr{\aa}geformul{\"a}r
 \begin{itemize}
 \item Det finns ett behov av digitala verktyg med validerade fr{\aa}geformul{\"a}r f{\"o}r ett bredare spektrum av patologier.
@@ -208,7 +241,9 @@ Ang{\aa}ende digitala fr{\aa}geformul{\"a}r
 \end{frame}
 
 \begin{frame}
-\frametitle{Resultat}
+\frametitle{Resultat\\fr{\aa}gest{\"a}llning 3}
+Type av arbete som genomf{\"o}rs via e{\sc madrs}:\\
+{\it Manage the communication with the patient.}\\
 Personalkategorier som sannolikt blir mest p{\aa}verkade av anv{\"a}ndningen av digitala fr{\aa}geformul{\"a}r:
 \begin{itemize}\vspace{-.33em}
 % \Setlength \itemsep {0em}
@@ -229,7 +264,7 @@ Personalkategorier som sannolikt blir mest p{\aa}verkade av anv{\"a}ndningen av 
 
 \begin{frame}
 \frametitle{Svaghet}
-Resultaten g{\"a}ller enbart f{\"o}r Hagors VC.
+Resultaten g{\"a}ller i f{\"o}rsta hand f{\"o}r Hagors VC.
 \end{frame}
 
 
@@ -242,6 +277,12 @@ Potentiella f{\"o}rdelar med digitala formul{\"a}r p{\aa} mobiltelefon:
 \item Minska administrativ b{\"o}rda
 \item Minska kostnader f{\"o}r landstingen
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+Vad skulle en dator kunna hj{\"a}lpa dig med i ditt arbete?\\\ \\
+Tack!
 \end{frame}
 
 \end{document}
